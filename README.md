@@ -5,6 +5,7 @@ Project Overview
 This project evaluates the stability and trustworthiness of TER, a gold-backed digital asset, by analyzing historical gold price trends alongside major cryptocurrencies (Bitcoin and Ethereum) and integrating survey data on user awareness, trust, and adoption willingness. 
 
 Central Question: 
+
 Can a gold-backed digital asset like TER offer greater stability and trust compared to traditional cryptocurrencies such as Bitcoin and Ethereum?
 
 The study also focuses on TER’s potential adoption in Bhutan, particularly within Gelephu Mindfulness City (GMC), where it could serve as a foundation for a new digital financial ecosystem.
@@ -75,17 +76,17 @@ Key Insights
    
 - Awareness: 42.02% of respondents reported knowing a little about TER.
   
--Trust Levels: 
+Trust Levels: 
 
   - 58.82% have moderate trust 
   - 26.47% have complete trust
     
-- Financial Engagement:
+Financial Engagement:
   
   - 58.33% invest at a moderate level  
   - 27.08% invest completely
     
-  Hesitation Factors:
+Hesitation Factors:
   
   - Limited understanding of digital assets  
   - Concerns about volatility  
