@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TER གཏེར་ — Gold-Backed Digital Asset · Bhutan 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gd:#4A2E00;--gm:#7A5200;--gb:#B8860B;--gl:#D4A520;--gp:#F0D870;
+  --gc:#FFFDF5;--bg:#FDFAF0;--bg2:#F5EDD0;--bg3:#EAD89A;
+  --ink:#120B00;--ink2:#2E1C00;--mut:#6B4E10;
+  --bdr:rgba(130,90,0,.16);--sky:#0A3060;--grn:#0F4018;
+  --shd:0 2px 20px rgba(80,50,0,.08);
+  --fd:"Playfair Display",Georgia,serif;
+  --fb:"Outfit",sans-serif;
+  --ez:cubic-bezier(.25,.46,.45,.94);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);overflow-x:hidden;cursor:none}
+#cur,#cur2{position:fixed;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%)}
+#cur{width:7px;height:7px;background:var(--gl)}
+#cur2{width:28px;height:28px;border:1px solid rgba(180,130,10,.35);z-index:9998;transition:left .08s,top .08s,transform .2s,opacity .2s}
+.band{height:5px;background:repeating-linear-gradient(90deg,#6B1010 0,#6B1010 12px,var(--gl) 12px,var(--gl) 24px,#7A3800 24px,#7A3800 36px,#0F4018 36px,#0F4018 48px,#7A3800 48px,#7A3800 60px,var(--gl) 60px,var(--gl) 72px)}
+nav{position:fixed;top:0;left:0;right:0;z-index:800;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(253,250,240,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)}
+.nlogo{display:flex;align-items:center;gap:12px}
+.nlogo-t{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--gd);letter-spacing:.02em}
+.nlogo-t em{font-weight:400;font-style:italic;color:var(--mut);font-size:.82rem;margin-left:6px}
+.nlinks{display:flex;gap:28px;list-style:none}
+.nlinks a{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);text-decoration:none;transition:color .2s;position:relative}
+.nlinks a::after{content:"";position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gl);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ez)}
+.nlinks a:hover,.nlinks a.on{color:var(--gd)}
+.nlinks a:hover::after,.nlinks a.on::after{transform:scaleX(1)}
+#home{padding-top:60px;background:var(--bg2)}
+.hero-strip{display:grid;grid-template-columns:1.2fr 1fr 1fr;height:300px;overflow:hidden}
+.hic{position:relative;overflow:hidden}
+.hic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 9s ease;filter:brightness(.86) saturate(1.1)}
+.hic:hover img{transform:scale(1.07)}
+.hic::after{content:attr(data-lbl);position:absolute;bottom:0;left:0;right:0;padding:28px 14px 10px;background:linear-gradient(transparent,rgba(30,15,0,.68));font-size:.57rem;color:rgba(255,240,200,.8);letter-spacing:.06em;z-index:2}
+.strip-fade{height:50px;background:linear-gradient(var(--bg2),transparent);margin-top:-50px;position:relative;z-index:3;pointer-events:none}
+.hero-body{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;padding:52px 72px 72px;align-items:start}
+.htag{display:flex;align-items:center;gap:10px;margin-bottom:16px;opacity:0;animation:fadeup .7s .1s var(--ez) forwards}
+.htag-line{width:24px;height:1px;background:var(--gl)}
+.htag span{font-size:.57rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gl)}
+h1.ht{font-family:var(--fd);font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:400;line-height:1.09;color:var(--ink);margin-bottom:12px;opacity:0;animation:fadeup .7s .22s var(--ez) forwards}
+h1.ht strong{font-weight:700;display:block}
+h1.ht em{font-style:italic;color:var(--gd)}
+.hero-sub{font-family:var(--fd);font-size:1.15rem;font-weight:400;font-style:italic;color:var(--mut);margin-bottom:22px;opacity:0;animation:fadeup .7s .36s var(--ez) forwards}
+.hero-desc{font-size:.82rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:34px;opacity:0;animation:fadeup .7s .5s var(--ez) forwards}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:fadeup .7s .64s var(--ez) forwards}
+.btn-g{padding:11px 28px;background:var(--gd);color:#fff;font-family:var(--fb);font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:none;transition:background .3s,transform .2s;clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px))}
+.btn-g:hover{background:var(--gm);transform:translateY(-2px)}
+.btn-o{padding:11px 26px;background:transparent;color:var(--gd);font-family:var(--fb);font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(130,90,0,.3);cursor:none;transition:all .3s}
+.btn-o:hover{border-color:var(--gl);background:rgba(180,130,10,.07);transform:translateY(-2px)}
+.hero-stats{display:flex;flex-direction:column;gap:2px;opacity:0;animation:fadeup .7s .45s var(--ez) forwards}
+.sc{background:var(--gc);border:1px solid var(--bdr);padding:16px 20px;display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:center;box-shadow:var(--shd);transition:border-color .3s,transform .2s}
+.sc:hover{border-color:rgba(180,130,10,.38);transform:translateX(3px)}
+.sc-n{font-family:var(--fd);font-size:2.1rem;font-weight:700;color:var(--gd);line-height:1}
+.sc-n sup{font-size:.7rem;vertical-align:super}
+.sc-l strong{display:block;font-size:.54rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);margin-bottom:2px}
+.sc-l p{font-size:.7rem;font-weight:300;color:var(--ink2);line-height:1.45}
+.wrap{max-width:1140px;margin:0 auto;padding:88px 72px}
+.divider{height:1px;background:var(--bdr);margin:0 72px}
+.ey{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.eyl{width:20px;height:1px;background:var(--gl)}
+.ey span{font-size:.55rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gl)}
+.sh{font-family:var(--fd);font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:400;line-height:1.12;color:var(--ink)}
+.sh strong{font-weight:700}.sh em{font-style:italic;color:var(--gd)}
+.srow{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-bottom:52px;align-items:end}
+.sdesc{font-size:.82rem;font-weight:300;color:var(--mut);line-height:1.95;align-self:end}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .65s var(--ez),transform .65s var(--ez)}
+.rv.on{opacity:1;transform:translateY(0)}
+#about{background:var(--bg)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.at p{font-size:.84rem;font-weight:300;color:var(--ink2);line-height:2;margin-bottom:14px}
+.pq{border-left:2px solid var(--gl);padding:14px 18px;background:rgba(180,130,10,.06);margin:18px 0}
+.pq p{font-family:var(--fd);font-size:.98rem;font-style:italic;color:var(--ink);line-height:1.65}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.ob{background:var(--gc);border:1px solid var(--bdr);padding:16px;box-shadow:var(--shd);transition:all .25s;position:relative;overflow:hidden}
+.ob::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gl),var(--gp));transform:scaleX(0);transition:transform .3s var(--ez)}
+.ob:hover::before{transform:scaleX(1)}
+.ob:hover{transform:translateY(-2px)}
+.ob-n{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:rgba(180,130,10,.2);margin-bottom:5px}
+.ob h4{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:5px}
+.ob p{font-size:.71rem;font-weight:300;color:var(--mut);line-height:1.6}
+.img-stack{display:flex;flex-direction:column;gap:0}
+.ic{position:relative;overflow:hidden}
+.ic img{width:100%;height:220px;object-fit:cover;display:block;filter:brightness(.9) saturate(1.05)}
+.ic-cap{background:var(--gc);border:1px solid var(--bdr);border-top:none;padding:11px 15px;box-shadow:var(--shd)}
+.ic-cap h4{font-family:var(--fd);font-size:.88rem;color:var(--ink);margin-bottom:2px}
+.ic-cap p{font-size:.68rem;font-weight:300;color:var(--mut);line-height:1.45}
+.ic-cap a{color:var(--sky);font-size:.66rem;text-decoration:none}
+.ic-cap a:hover{text-decoration:underline}
+.bbs-block{background:var(--bg2);border:1px solid var(--bdr);border-top:2px solid var(--gl);padding:16px 18px;box-shadow:var(--shd);margin-top:0}
+.bbs-tag{font-size:.52rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);margin-bottom:6px}
+.bbs-title{font-family:var(--fd);font-size:.92rem;font-style:italic;color:var(--ink);margin-bottom:8px;line-height:1.4;font-weight:400}
+.bbs-body{font-size:.71rem;font-weight:300;color:var(--mut);line-height:1.72;margin-bottom:10px}
+.bbs-link{display:inline-flex;align-items:center;gap:4px;font-size:.66rem;font-weight:500;color:var(--sky);text-decoration:none;border-bottom:1px solid rgba(10,48,96,.2);padding-bottom:1px;transition:all .3s}
+.bbs-link:hover{color:var(--gd);border-color:var(--gl)}
+.insight-box{background:var(--bg2);border-left:2px solid var(--gl);padding:12px 16px;margin-top:8px}
+.ib-label{font-size:.52rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gl);margin-bottom:5px}
+.insight-box p{font-size:.72rem;font-weight:300;color:var(--ink2);line-height:1.75}
+.chart-card{background:var(--gc);border:1px solid var(--bdr);padding:28px 30px;box-shadow:var(--shd)}
+.chart-head{margin-bottom:18px}
+.chart-area{padding:8px 0}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+@keyframes growUp{from{transform:scaleY(0);transform-origin:bottom}to{transform:scaleY(1);transform-origin:bottom}}
+#ter{background:var(--bg2)}
+.tcg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.tc{background:var(--gc);border:1px solid var(--bdr);padding:26px;box-shadow:var(--shd);transition:all .3s}
+.tc:hover{border-color:rgba(180,130,10,.4);transform:translateY(-3px)}
+.tc-ic{font-size:1.25rem;margin-bottom:12px}
+.tc h3{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:7px}
+.tc p{font-size:.77rem;font-weight:300;color:var(--mut);line-height:1.82}
+.tc-fact{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--gd);display:block;margin-top:9px}
+.tline{background:var(--gc);border:1px solid var(--bdr);padding:26px 30px;box-shadow:var(--shd)}
+.tli{display:grid;grid-template-columns:106px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--bdr)}
+.tli:last-child{border-bottom:none}
+.tld{font-family:var(--fd);font-size:.78rem;font-weight:600;color:var(--gd)}
+.tlb h4{font-size:.74rem;font-weight:500;color:var(--ink);margin-bottom:2px}
+.tlb p{font-size:.7rem;font-weight:300;color:var(--mut);line-height:1.5}
+.tlb a{font-size:.64rem;color:var(--sky);text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:3px;margin-top:4px}
+.tlb a:hover{text-decoration:underline}
+#gmc{overflow:hidden}
+.gmc-g{display:grid;grid-template-columns:1fr 1fr;min-height:360px}
+.gmc-imgs{display:grid;grid-template-rows:1fr 1fr;overflow:hidden}
+.gi{position:relative;overflow:hidden}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease;filter:brightness(.85)}
+.gi:hover img{transform:scale(1.05)}
+.gi::after{content:attr(data-cap);position:absolute;bottom:0;left:0;right:0;padding:22px 14px 8px;background:linear-gradient(transparent,rgba(20,10,0,.72));color:rgba(255,240,190,.76);font-size:.57rem;z-index:2}
+.gmc-panel{background:var(--gd);color:var(--gp);padding:50px 44px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.gmc-ey{font-size:.54rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gl)}
+.gmc-t{font-family:var(--fd);font-size:clamp(1.4rem,2.2vw,2rem);font-weight:400;color:var(--gp);line-height:1.22}
+.gmc-t strong{font-weight:700}
+.gmc-d{font-size:.78rem;font-weight:300;color:rgba(240,220,160,.62);line-height:1.9}
+.gmc-ns{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:6px}
+.gmc-n{padding:13px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);text-align:center}
+.gmc-nn{font-family:var(--fd);font-size:1.45rem;font-weight:700;color:var(--gl);display:block}
+.gmc-nl{font-size:.55rem;color:rgba(240,220,160,.45);line-height:1.4}
+.gmc-src{font-size:.6rem;color:rgba(240,220,160,.3);margin-top:2px}
+.gmc-src a{color:var(--gl);text-decoration:none}
+.gmc-src a:hover{text-decoration:underline}
+#survey{background:var(--bg)}
+.survey-meta{display:flex;align-items:center;gap:0;background:var(--gd);margin-bottom:20px;overflow:hidden}
+.smeta-item{flex:1;padding:18px 22px;text-align:center}
+.smeta-n{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--gl);display:block;margin-bottom:4px}
+.smeta-l{font-size:.62rem;font-weight:400;color:rgba(240,216,112,.6);line-height:1.5;display:block}
+.smeta-l small{font-size:.57rem;color:rgba(240,216,112,.4);display:block;margin-top:2px}
+.smeta-div{width:1px;background:rgba(255,255,255,.1);align-self:stretch}
+.sg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px}
+.scard{background:var(--gc);border:1px solid var(--bdr);padding:24px 20px;box-shadow:var(--shd);transition:border-color .3s}
+.scard:hover{border-color:rgba(180,130,10,.4)}
+.stag{font-size:.53rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);margin-bottom:4px}
+.scard h3{font-family:var(--fd);font-size:1.04rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.sdsc{font-size:.68rem;font-weight:300;color:var(--mut);margin-bottom:18px;line-height:1.4}
+.bars{display:flex;flex-direction:column;gap:11px}
+.bi{display:flex;flex-direction:column;gap:3px}
+.bl{display:flex;justify-content:space-between;font-size:.67rem;color:var(--ink2)}
+.bp{font-family:var(--fd);font-weight:700;color:var(--gd)}
+.btrk{height:5px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.bf{height:100%;border-radius:2px;transform:scaleX(0);transform-origin:left;animation:barIn 1.3s var(--ez) both}
+.b1{background:linear-gradient(90deg,var(--gd),var(--gl))}
+.b2{background:linear-gradient(90deg,#5C3000,#B86000)}
+.b3{background:linear-gradient(90deg,#0F4018,#2A8A40)}
+.b4{background:var(--bg3)}
+.dw{display:flex;justify-content:center;margin-bottom:14px}
+.dleg{display:flex;flex-direction:column;gap:6px}
+.dr{display:flex;align-items:center;justify-content:space-between;font-size:.67rem;color:var(--ink2)}
+.dd{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-right:6px}
+.dp{font-family:var(--fd);font-weight:700;color:var(--gd)}
+.bigs{text-align:center;padding:6px 0 14px}
+.bignum{font-family:var(--fd);font-size:3.6rem;font-weight:700;color:var(--gd);line-height:1;display:block}
+.bigl{font-size:.64rem;font-weight:300;color:var(--mut);margin-top:4px;line-height:1.5}
+/* HESITATION — custom horizontal bar chart */
+.hcard{background:var(--gc);border:1px solid var(--bdr);padding:28px 32px;box-shadow:var(--shd);margin-top:12px}
+.hhead{margin-bottom:22px}
+.htag2{font-size:.53rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);margin-bottom:5px}
+.htitle{font-family:var(--fd);font-size:1.06rem;color:var(--ink);margin-bottom:3px}
+.hsub{font-size:.67rem;font-weight:300;color:var(--mut)}
+.hbars{display:flex;flex-direction:column;gap:0}
+.hb{display:grid;grid-template-columns:230px 1fr 52px;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid rgba(130,90,0,.07)}
+.hb:last-child{border-bottom:none}
+.hb-lbl{font-size:.73rem;font-weight:400;color:var(--ink2);line-height:1.35}
+.hb-track{height:30px;background:var(--bg2);border-radius:3px;overflow:hidden;position:relative}
+.hb-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:10px;font-size:.62rem;font-weight:500;color:rgba(255,255,255,.88);transform:scaleX(0);transform-origin:left;animation:barIn 1.4s var(--ez) both;white-space:nowrap;overflow:hidden}
+.hb-pct{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--gd);text-align:right}
+.hb1 .hb-fill{background:linear-gradient(90deg,#24426A,#3A6496)}
+.hb2 .hb-fill{background:linear-gradient(90deg,#1A5050,#2A7E7E)}
+.hb3 .hb-fill{background:linear-gradient(90deg,#8A2020,#B84040)}
+.hb4 .hb-fill{background:linear-gradient(90deg,#7A3A00,#C07020)}
+.hb5 .hb-fill{background:linear-gradient(90deg,#1A4A1A,#2E7030)}
+#market{background:var(--bg2)}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.mc{background:var(--gc);border:1px solid var(--bdr);padding:24px;box-shadow:var(--shd);transition:all .3s;position:relative;overflow:hidden}
+.mc::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gl),transparent);transform:scaleX(0);transition:transform .4s var(--ez)}
+.mc:hover::after{transform:scaleX(1)}
+.mc:hover{transform:translateY(-3px)}
+.mct{display:flex;align-items:center;gap:11px;margin-bottom:11px}
+.mcic{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:rgba(180,130,10,.09);border:1px solid var(--bdr);font-size:.9rem;flex-shrink:0;border-radius:3px}
+.mc h3{font-family:var(--fd);font-size:1.02rem;font-weight:600;color:var(--ink)}
+.mbadge{font-size:.55rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
+.cg{color:var(--gd)}.cr{color:#A03030}.cb{color:var(--sky)}.cgr{color:var(--grn)}
+.mc>p{font-size:.76rem;font-weight:300;color:var(--mut);line-height:1.85;margin-bottom:12px}
+.mc>p a{color:var(--sky);font-size:.68rem;text-decoration:none}
+.mc>p a:hover{text-decoration:underline}
+.vl{display:flex;justify-content:space-between;font-size:.6rem;color:var(--mut);margin-bottom:3px}
+.vtr{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.vf{height:100%;border-radius:2px;animation:barIn 1.3s var(--ez) both}
+.ctab{background:var(--gc);border:1px solid var(--bdr);overflow:hidden;box-shadow:var(--shd)}
+.crow{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--bdr);transition:background .2s}
+.crow:last-child{border-bottom:none}
+.crow:hover{background:rgba(180,130,10,.04)}
+.crow.head{background:var(--bg3)}
+.cell{padding:11px 15px;font-size:.71rem;color:var(--ink2);border-right:1px solid var(--bdr);display:flex;align-items:center}
+.cell:last-child{border-right:none}
+.crow.head .cell{font-size:.54rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gd)}
+.good{color:var(--grn);font-weight:500}.mid{color:var(--gd);font-weight:500}.bad{color:#A03030;font-weight:500}
+#conclusion{background:var(--bg)}
+.cq{font-family:var(--fd);font-size:clamp(1.1rem,1.8vw,1.55rem);font-weight:400;font-style:italic;color:var(--ink);line-height:1.68;max-width:760px;margin:0 auto 8px;text-align:center}
+.ca{font-size:.62rem;color:var(--mut);letter-spacing:.1em;display:block;text-align:center;margin-bottom:46px}
+.cst{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bdr);margin-bottom:46px}
+.css{background:var(--gc);padding:30px 20px;text-align:center;transition:background .3s}
+.css:hover{background:var(--bg2)}
+.csn{font-family:var(--fd);font-size:2.6rem;font-weight:700;color:var(--gd);display:block;margin-bottom:7px}
+.csl{font-size:.7rem;font-weight:300;color:var(--mut);line-height:1.55}
+.cb2{display:grid;grid-template-columns:1fr 1fr;gap:42px}
+.ct p{font-size:.82rem;font-weight:300;color:var(--ink2);line-height:1.95;margin-bottom:13px}
+.ct strong{color:var(--ink)}
+.recs{display:flex;flex-direction:column;gap:8px}
+.rec{display:flex;gap:13px;align-items:flex-start;padding:13px 16px;background:var(--gc);border:1px solid var(--bdr);box-shadow:var(--shd);transition:border-color .3s}
+.rec:hover{border-color:rgba(180,130,10,.42)}
+.recn{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:rgba(180,130,10,.25);min-width:22px;line-height:1}
+.rec h4{font-size:.69rem;font-weight:600;color:var(--ink);margin-bottom:3px;letter-spacing:.04em}
+.rec p{font-size:.68rem;font-weight:300;color:var(--mut);line-height:1.5}
+#sources{background:var(--bg2)}
+.srcg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.srcc{background:var(--gc);border:1px solid var(--bdr);padding:16px 18px;box-shadow:var(--shd);transition:all .3s}
+.srcc:hover{border-color:rgba(180,130,10,.42);transform:translateY(-2px)}
+.srcc-cat{font-size:.52rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);margin-bottom:5px}
+.srcc-t{font-size:.76rem;font-weight:500;color:var(--ink);margin-bottom:4px;line-height:1.35}
+.srcc-d{font-size:.68rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:8px}
+.srcc-l{display:inline-flex;align-items:center;gap:4px;font-size:.65rem;font-weight:500;color:var(--sky);text-decoration:none;border-bottom:1px solid rgba(10,48,96,.18);padding-bottom:1px;transition:all .3s}
+.srcc-l:hover{color:var(--gd);border-color:var(--gl)}
+footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space-between;align-items:center}
+.ftl{font-family:var(--fd);font-size:.88rem;font-weight:300;color:rgba(240,216,112,.5)}
+.ftl strong{color:var(--gl);font-weight:700}
+.ftr{font-size:.62rem;color:rgba(240,216,112,.36);text-align:right}
+.ftr span{display:block;color:var(--gl)}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes barIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:900px){
+  nav{padding:0 18px}.nlinks{gap:12px}
+  .hero-strip{height:180px;grid-template-columns:1fr}
+  .hic:nth-child(2),.hic:nth-child(3){display:none}
+  .hero-body,.srow,.ag,.tcg,.mg,.cb2,.gmc-g{grid-template-columns:1fr}
+  .hero-body{padding:30px 20px;gap:24px}
+  .wrap{padding:52px 20px}.divider{margin:0 20px}
+  .sg3,.srcg,.cst,.og{grid-template-columns:1fr}
+  .hb{grid-template-columns:1fr 1fr 40px}
+  .hb-lbl{font-size:.62rem}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:22px 20px}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur2"></div>
+<div class="band"></div>
+
+<nav>
+  <div class="nlogo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="#B8860B" stroke-width="1"/>
+      <circle cx="12" cy="12" r="2.5" fill="#B8860B" opacity=".45"/>
+      <line x1="12" y1="2" x2="12" y2="6.5" stroke="#B8860B" stroke-width="1"/>
+      <line x1="12" y1="17.5" x2="12" y2="22" stroke="#B8860B" stroke-width="1"/>
+      <line x1="2" y1="12" x2="6.5" y2="12" stroke="#B8860B" stroke-width="1"/>
+      <line x1="17.5" y1="12" x2="22" y2="12" stroke="#B8860B" stroke-width="1"/>
+      <line x1="5" y1="5" x2="8.4" y2="8.4" stroke="#B8860B" stroke-width="1"/>
+      <line x1="15.6" y1="15.6" x2="19" y2="19" stroke="#B8860B" stroke-width="1"/>
+      <line x1="19" y1="5" x2="15.6" y2="8.4" stroke="#B8860B" stroke-width="1"/>
+      <line x1="8.4" y1="15.6" x2="5" y2="19" stroke="#B8860B" stroke-width="1"/>
+    </svg>
+    <div class="nlogo-t">TER <em>གཏེརི · Treasure</em></div>
+  </div>
+  <ul class="nlinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#ter">TER Token</a></li>
+    <li><a href="#survey">Survey</a></li>
+    <li><a href="#market">Market</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+  <span style="font-size:1rem">🇧🇹</span>
+</nav>
+
+<!-- HOME -->
+<div id="home">
+  <div class="hero-strip">
+    <div class="hic" data-lbl="Gelephu Mindfulness City International Airport — artist impression · Source: Daily Bhutan / GMC">
+      <img src="https://www.dailybhutan.com/media/4393/2gelephu-international-airport-artist-impression.jpg" alt="Gelephu Mindfulness City International Airport artist impression" onerror="this.src='https://www.dailybhutan.com/pub_files/01000101983593/gmc-s-2024-milestones-a-new-chapter-for-bhutan-s-growth_8920.jpg'"/>
+    </div>
+    <div class="hic ter-coin-cell" data-lbl="TER གཏེར་ — world's first sovereign gold-backed digital token · Bhutan 2025 · ter.bt">
+      <img src="TERCoinSymbol.png" alt="TER gold coin symbol — dragon emblem Bhutan sovereign token" style="object-fit:contain;background:#0A0800;padding:18px"/>
+    </div>
+    <div class="hic" data-lbl="GMC masterplan — a 2,500 km² mindful city blending Bhutanese heritage with digital innovation · Source: Daily Bhutan">
+      <img src="https://www.dailybhutan.com/media/4394/3gelephu-international-airport-artist-impression.jpg" alt="Gelephu Mindfulness City masterplan artist impression" onerror="this.src='https://www.dailybhutan.com/media/4396/5gelephu-international-airport-artist-impression.jpg'"/>
+    </div>
+  </div>
+  <div class="strip-fade"></div>
+  <div class="hero-body">
+    <div>
+      <div class="htag"><div class="htag-line"></div><span>Kingdom of Bhutan · GMC Digital Economy · 2026</span></div>
+      <h1 class="ht">TER — <em>གཏེརི</em><strong>Gold-Backed Digital</strong>Asset Research</h1>
+      <p class="hero-sub">Where Bhutanese tradition meets the digital economy</p>
+      <p class="hero-desc">A comprehensive analysis of TER — the world's first sovereign gold-backed digital token, launched December 17, 2025 by Gelephu Mindfulness City on Solana. Examining market stability, investor trust, and adoption barriers in Bhutan's emerging digital financial ecosystem.</p>
+      <div class="hero-btns">
+        <a href="#survey" class="btn-g">Explore Findings</a>
+        <a href="#ter" class="btn-o">About TER Token</a>
+        <a href="#sources" class="btn-o">View Sources</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="sc"><div class="sc-n">7.8<sup>M</sup></div><div class="sc-l"><strong>Tokens in Circulation</strong><p>TER tokens live on Solana as of early 2026</p></div></div>
+      <div class="sc"><div class="sc-n">0.01<sup>g</sup></div><div class="sc-l"><strong>Gold Per Token</strong><p>Each TER = 0.01g of 99.99% pure physical gold</p></div></div>
+      <div class="sc"><div class="sc-n">85<sup>%</sup></div><div class="sc-l"><strong>Moderate–High Trust</strong><p>Of surveyed investors trust TER (primary survey data)</p></div></div>
+      <div class="sc"><div class="sc-n">Dec<sup>'25</sup></div><div class="sc-l"><strong>Official Launch</strong><p>Bhutan's 118th National Day — December 17, 2025</p></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="band"></div>
+
+<!-- ABOUT -->
+<div id="about"><div class="wrap">
+  <div class="srow rv">
+    <div><div class="ey"><div class="eyl"></div><span>About the Research</span></div><h2 class="sh">Purpose, Background<br>&amp; <em>Objectives</em></h2></div>
+    <p class="sdesc">Evaluating TER's stability and trustworthiness through five years of market data (2020–2025) and an original investor survey — focused on Bhutan's emerging digital financial ecosystem.</p>
+  </div>
+  <div class="ag">
+    <div>
+      <div class="at rv">
+        <p>TER — from the Dzongkha word <em>གཏེརི</em> meaning <strong>"Treasure"</strong> — is the world's first sovereign-backed physical gold-backed digital token. Launched on Bhutan's National Day, December 17, 2025, issued by Gelephu Mindfulness City, running on Solana, custodied by DK Bank.</p>
+        <div class="pq"><p>"TER marks a foundational step toward a values-driven digital economy rooted in real assets and sovereign trust — demonstrating how a crypto-friendly city can welcome responsible innovation while staying rooted in Bhutan's values."</p></div>
+        <p>As a personal TER investor, this research combines academic rigour with lived investment experience — examining whether a gold-backed token can truly offer greater stability than volatile cryptocurrencies.</p>
+        <p>The research draws on five years of historical price data (2020–2025) for gold, Bitcoin, and Ethereum, alongside an original quantitative survey of TER investors and potential adopters in Bhutan's growing digital economy.</p>
+      </div>
+      <div class="og rv">
+        <div class="ob"><div class="ob-n">01</div><h4>Research Aim</h4><p>Can TER offer greater stability than Bitcoin and Ethereum? Tested through five years of market data.</p></div>
+        <div class="ob"><div class="ob-n">02</div><h4>Data Sources</h4><p>Investing.com, World Gold Council, CoinShare, The Block — 2020–2025 historical price data.</p></div>
+        <div class="ob"><div class="ob-n">03</div><h4>Methodology</h4><p>Quantitative primary survey combined with time-series analysis in Excel, Tableau &amp; Google Sheets.</p></div>
+        <div class="ob"><div class="ob-n">04</div><h4>Personal Stake</h4><p>As a TER investor, academic analysis meets real-world investment experience and perspective.</p></div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="img-stack">
+        <div class="ic"><img src="https://www.dailybhutan.com/pub_files/01000101983593/gmc-s-2024-milestones-a-new-chapter-for-bhutan-s-growth_8920.jpg" alt="Gelephu Mindfulness City GMC Bhutan" onerror="this.src='https://www.dailybhutan.com/media/4396/5gelephu-international-airport-artist-impression.jpg'"/></div>
+        <div class="ic-cap"><h4>Gelephu Mindfulness City 🏙</h4><p>GMC — formal issuer of TER — is His Majesty's visionary 2,500 km² city in southern Bhutan. Source: <a href="https://www.dailybhutan.com/article/gmc-s-2024-milestones-a-new-chapter-for-bhutan-s-growth" target="_blank">Daily Bhutan</a></p></div>
+        <br/>
+        <div class="ic"><img src="https://www.bbs.bt/wp-content/uploads/2026/02/IMG_3806-1.jpeg" alt="Ugyen Norlha Choeten GMC Gelephu consecration 2026" onerror="this.src='uguen.jpeg'"/></div>
+        <div class="ic-cap"><h4>Ugyen Norlha Choeten, Gelephu 🇧🇹</h4><p>GMC's first completed spiritual landmark — consecrated February 21, 2026. A 53-ft stupa-temple at the Gelephu Border Gate. Source: <a href="https://www.bbs.bt/239091/" target="_blank">BBS · March 2, 2026</a></p></div>
+        <div class="bbs-block">
+          <div class="bbs-tag">BBS · Bhutan Broadcasting Service · March 2, 2026</div>
+          <h4 class="bbs-title">"Ugyen Norlha Choeten stands tall as one of GMC's first spiritual landmarks"</h4>
+          <p class="bbs-body">Dedicated to Ugyen Norlha — the prosperity manifestation of Guru Rinpoche — the Choeten was built to commemorate the birth of HRH Gyalsem Sonam Yangden Wangchuck. It houses 27 deity statues on the ground floor and ~34,000 Tongkus on the upper floor, along with the Kangyur and Tenjur Buddhist texts. Unique wall sculptures of the "Lhatsho" (gathering of prosperity deities) are said to be found nowhere else in Bhutan. As GMC grows, this Choeten is expected to lay a strong spiritual foundation — ensuring the city's transformation is guided by faith and Bhutanese values.</p>
+          <a href="https://www.bbs.bt/239091/" target="_blank" class="bbs-link">↗ Read full BBS report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="divider"></div>
+
+<!-- TER TOKEN -->
+<div id="ter"><div class="wrap">
+  <div class="srow rv">
+    <div><div class="ey"><div class="eyl"></div><span>The TER Token</span></div><h2 class="sh">World's First Sovereign<br><em>Gold-Backed Digital Token</em></h2></div>
+    <p class="sdesc">Launched Dec 17, 2025 on Solana by GMC. Each TER = 0.01g of 99.99% pure gold. Custodied by DK Bank, regulated by the Royal Monetary Authority. Tokenization by Matrixdock.</p>
+  </div>
+  <div class="rv" style="display:flex;justify-content:center;margin-bottom:32px">
+    <div style="position:relative;width:160px;height:160px">
+      <img src="TERCoinSymbol.png" alt="TER gold coin dragon symbol" style="width:160px;height:160px;object-fit:contain;filter:drop-shadow(0 8px 32px rgba(180,130,10,.45))"/>
+    </div>
+  </div>
+  <div class="tcg rv">
+    <div class="tc"><div class="tc-ic">⛓</div><h3>Built on Solana</h3><p>Chosen for speed, ultra-low transaction costs, and minimal environmental footprint — aligned with Bhutan's clean hydropower commitment. Solana Foundation President Lily Liu personally endorsed the choice.</p><span class="tc-fact">Solana Network</span></div>
+    <div class="tc"><div class="tc-ic">🏦</div><h3>DK Bank Custody</h3><p>DK Bank — Bhutan's first digital bank, regulated by the Royal Monetary Authority — is the exclusive distributor and custodian, providing institutional-grade security and full regulatory compliance.</p><span class="tc-fact">RMA Regulated</span></div>
+    <div class="tc"><div class="tc-ic">🥇</div><h3>Physical Gold Backing</h3><p>Every TER token backed by 0.01g of 99.99% pure physical gold in secure vaults worldwide. Matrixdock (Matrixport Group) handles tokenization — the same technology used in institutional gold markets globally.</p><span class="tc-fact">0.01g / Token</span></div>
+    <div class="tc"><div class="tc-ic">🌏</div><h3>Global Accessibility</h3><p>Bhutan's digital nomad visa requires a fully refundable $10,000 TER deposit — directly bootstrapping global adoption. TER gives international investors digital, liquid access to gold with on-chain transparency.</p><span class="tc-fact">7,848,806 Circulating</span></div>
+  </div>
+  <div class="tline rv">
+    <div class="ey" style="margin-bottom:14px"><div class="eyl"></div><span>Key Milestones · With Sources</span></div>
+    <div class="tli"><div class="tld">Jan 2025</div><div class="tlb"><h4>GMC Adopts Crypto Strategic Reserves</h4><p>GMC integrates Bitcoin, Ethereum, BNB into strategic reserves.</p><a href="https://www.coindesk.com/business/2025/01/10/bhutan-s-crypto-reserve-could-pave-way-for-economic-growth-in-other-countries" target="_blank">↗ CoinDesk</a></div></div>
+    <div class="tli"><div class="tld">Jun 2025</div><div class="tlb"><h4>Binance Pay — 1,000+ Merchants Accept Crypto</h4><p>DK Bank &amp; Binance Pay enable crypto payments across Bhutanese tourism and retail.</p><a href="https://www.coindesk.com/markets/2025/06/30/bhutan-bets-on-binance-pay-to-power-crypto-backed-tourism-economy" target="_blank">↗ CoinDesk</a></div></div>
+    <div class="tli"><div class="tld">Dec 11, 2025</div><div class="tlb"><h4>TER Officially Announced by GMC</h4><p>GMC unveils TER — world's first sovereign gold-backed token on Solana.</p><a href="https://gmc.bt/news/bhutan-digitizes-gold-with-launch-of-sovereign-token-ter_x1hd7" target="_blank">↗ gmc.bt</a>&nbsp;&nbsp;<a href="https://www.coindesk.com/business/2025/12/10/bhutan-debuts-ter-gold-backed-token-on-solana" target="_blank">↗ CoinDesk</a></div></div>
+    <div class="tli"><div class="tld">Dec 17 🇧🇹</div><div class="tlb"><h4>TER Launches on National Day + Bitcoin Pledge</h4><p>TER officially launches. King Jigme Khesar pledges up to 10,000 BTC (~$1B) for GMC development.</p><a href="https://www.coindesk.com/policy/2025/12/17/bhutan-commits-up-to-10-000-bitcoin-to-back-new-mindfulness-based-economic-hub" target="_blank">↗ CoinDesk — BTC Pledge</a></div></div>
+    <div class="tli"><div class="tld">Feb 2026</div><div class="tlb"><h4>Digital Nomad Visa — $10,000 TER Deposit</h4><p>Bhutan's nomad visa program requires a fully refundable $10,000 TER deposit, boosting adoption.</p><a href="https://www.cryptotimes.io/2026/02/24/bhutans-bold-frontier-launches-gold-stablecoin-backed-nomad-visa/" target="_blank">↗ CryptoTimes</a></div></div>
+  </div>
+</div></div>
+
+<!-- GMC -->
+<div id="gmc">
+  <div class="gmc-g">
+    <div class="gmc-imgs">
+      <div class="gi" data-cap="GMC International Airport — set for completion 2029 · enabling flights to Europe, SE Asia, Middle East · Source: Daily Bhutan">
+        <img src="https://www.dailybhutan.com/media/4397/6gelephu-international-airport-artist-impression.jpg" alt="GMC Gelephu International Airport artist impression render" onerror="this.src='https://www.dailybhutan.com/media/4396/5gelephu-international-airport-artist-impression.jpg'"/>
+      </div>
+      <div class="gi" data-cap="GMC airport terminal design — Bhutanese cultural architecture meets world-class infrastructure · Source: Daily Bhutan">
+        <img src="https://www.dailybhutan.com/media/4396/5gelephu-international-airport-artist-impression.jpg" alt="GMC Gelephu airport terminal Bhutanese design" onerror="this.src='https://www.dailybhutan.com/media/4394/3gelephu-international-airport-artist-impression.jpg'"/>
+      </div>
+    </div>
+    <div class="gmc-panel">
+      <div class="gmc-ey">Gelephu Mindfulness City · Special Administrative Region · Bhutan</div>
+      <h2 class="gmc-t">A New Global Hub for<br><strong>Mindful Digital Finance</strong></h2>
+      <p class="gmc-d">GMC is His Majesty King Jigme Khesar's vision — spanning 2,500 km² in southern Bhutan, blending Bhutanese values with digital innovation. Finance &amp; Digital Assets is one of GMC's eight core priority industries. TER is its flagship digital asset.</p>
+      <div class="gmc-ns">
+        <div class="gmc-n"><span class="gmc-nn">2,500</span><span class="gmc-nl">km² — 3× Singapore</span></div>
+        <div class="gmc-n"><span class="gmc-nn">10,000</span><span class="gmc-nl">BTC pledged for GMC</span></div>
+        <div class="gmc-n"><span class="gmc-nn">8</span><span class="gmc-nl">core priority industries</span></div>
+      </div>
+      <p class="gmc-src">Sources: <a href="https://gmc.bt" target="_blank">gmc.bt</a> · <a href="https://en.wikipedia.org/wiki/Gelephu_Mindfulness_City" target="_blank">Wikipedia</a> · <a href="https://big.dk/projects/gelephu-mindfulness-city-16791" target="_blank">BIG Architects</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="band"></div>
+
+<!-- SURVEY -->
+<div id="survey"><div class="wrap">
+  <div class="srow rv">
+    <div><div class="ey"><div class="eyl"></div><span>Survey Results</span></div><h2 class="sh">Awareness, Trust &amp;<br><em>Investment Behaviour</em></h2></div>
+    <p class="sdesc">Original primary survey data from TER investors and potential users — covering awareness, trust, financial engagement, and the real reasons people hesitate to invest.</p>
+  </div>
+
+  <!-- Survey methodology banner -->
+  <div class="survey-meta rv">
+    <div class="smeta-item">
+      <span class="smeta-n">125</span>
+      <span class="smeta-l">Total Respondents</span>
+    </div>
+    <div class="smeta-div"></div>
+    <div class="smeta-item">
+      <span class="smeta-n">18+</span>
+      <span class="smeta-l">Age Screening Applied<br><small>Only respondents 18 and above were included</small></span>
+    </div>
+    <div class="smeta-div"></div>
+    <div class="smeta-item">
+      <span class="smeta-n">Quantitative</span>
+      <span class="smeta-l">Survey Methodology<br><small>Structured questionnaire · Excel &amp; Tableau analysis</small></span>
+    </div>
+    <div class="smeta-div"></div>
+    <div class="smeta-item">
+      <span class="smeta-n">2025–26</span>
+      <span class="smeta-l">Data Collection Period<br><small>Focused on Bhutan's emerging digital economy</small></span>
+    </div>
+  </div>
+
+  <!-- Row 1: Financial Participation + Gold Interest -->
+  <div class="sg3" style="grid-template-columns:1fr 1fr;margin-bottom:12px">
+    <!-- Finding 01: Financial Participation -->
+    <div class="scard rv">
+      <div class="stag">Finding 01 · Current Investment Participation</div>
+      <h3>Who Is Already Investing?</h3>
+      <p class="sdsc">Out of 125 respondents — overall financial market participation</p>
+      <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
+        <div style="text-align:center;flex:1">
+          <div style="font-family:var(--fd);font-size:2.8rem;font-weight:700;color:#8A2020;line-height:1">66.4%</div>
+          <div style="font-size:.64rem;color:var(--mut);margin-top:3px">do NOT currently<br>invest (83 respondents)</div>
+        </div>
+        <div style="width:1px;height:60px;background:var(--bdr)"></div>
+        <div style="text-align:center;flex:1">
+          <div style="font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--grn);line-height:1">33.6%</div>
+          <div style="font-size:.64rem;color:var(--mut);margin-top:3px">actively investing<br>(42 respondents)</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <div class="ib-label">What this tells us</div>
+        <p>Most respondents are not yet engaged in financial markets — reflecting limited exposure or cautious behaviour. However, the 33.6% of active investors represent an immediate audience for TER. If awareness and trust increase, the larger non-investing group is a significant untapped opportunity.</p>
+      </div>
+    </div>
+    <!-- Finding 02: Gold Interest -->
+    <div class="scard rv">
+      <div class="stag">Finding 02 · Interest in Gold Investment</div>
+      <h3>Gold as a Trusted Asset</h3>
+      <p class="sdsc">Respondent willingness to invest in gold — directly relevant to TER</p>
+      <div class="bars" style="margin-bottom:14px">
+        <div class="bi"><div class="bl"><span>Would invest in gold</span><span class="bp">78 respondents</span></div><div class="btrk"><div class="bf b1" style="width:65.5%;animation-delay:.1s"></div></div></div>
+        <div class="bi"><div class="bl"><span>Might invest in gold</span><span class="bp">32 respondents</span></div><div class="btrk"><div class="bf b2" style="width:26.9%;animation-delay:.2s"></div></div></div>
+        <div class="bi"><div class="bl"><span>Would not invest</span><span class="bp">9 respondents</span></div><div class="btrk"><div class="bf b4" style="width:7.6%;animation-delay:.3s"></div></div></div>
+      </div>
+      <div class="insight-box">
+        <div class="ib-label">What this tells us</div>
+        <p>A strong majority show positive or potential interest in gold. Since TER is directly backed by physical gold, this finding is critical — it suggests that linking a digital asset to gold increases confidence and acceptance, because gold already holds strong credibility as a store of value.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Awareness + Trust + Investment Intention -->
+  <div class="sg3" style="margin-bottom:12px">
+    <!-- Finding 03: TER Awareness -->
+    <div class="scard rv">
+      <div class="stag">Finding 03 · TER Awareness</div>
+      <h3>How Well Do People Know TER?</h3>
+      <p class="sdsc">Level of awareness about TER among respondents</p>
+      <div class="bars">
+        <div class="bi"><div class="bl"><span>Know a little</span><span class="bp">42.02%</span></div><div class="btrk"><div class="bf b1" style="width:42%;animation-delay:.1s"></div></div></div>
+        <div class="bi"><div class="bl"><span>Know name only</span><span class="bp">26.05%</span></div><div class="btrk"><div class="bf b2" style="width:26%;animation-delay:.2s"></div></div></div>
+        <div class="bi"><div class="bl"><span>Moderately aware</span><span class="bp">24.37%</span></div><div class="btrk"><div class="bf b3" style="width:24%;animation-delay:.3s"></div></div></div>
+        <div class="bi"><div class="bl"><span>Don't know at all</span><span class="bp">5.04%</span></div><div class="btrk"><div class="bf b4" style="width:5%;animation-delay:.4s"></div></div></div>
+        <div class="bi"><div class="bl"><span>Very high awareness</span><span class="bp">2.52%</span></div><div class="btrk"><div class="bf b3" style="width:2.5%;animation-delay:.5s"></div></div></div>
+      </div>
+      <div class="insight-box" style="margin-top:12px">
+        <div class="ib-label">What this tells us</div>
+        <p>General awareness exists but is mostly basic-level. TER is not completely unknown — but deep understanding is still limited. There is strong potential for targeted education campaigns.</p>
+      </div>
+    </div>
+
+    <!-- Finding 04: Trust in TER -->
+    <div class="scard rv">
+      <div class="stag">Finding 04 · Trust in TER</div>
+      <h3>Investor Trust Levels</h3>
+      <p class="sdsc">Trust distribution — even with basic awareness, confidence is high</p>
+      <div class="dw">
+        <svg width="130" height="130" viewBox="0 0 130 130">
+          <circle cx="65" cy="65" r="48" fill="none" stroke="#EAD89A" stroke-width="14"/>
+          <circle cx="65" cy="65" r="48" fill="none" stroke="#0F4018" stroke-width="14" stroke-dasharray="301.6" stroke-dashoffset="124.2" transform="rotate(-90 65 65)"/>
+          <circle cx="65" cy="65" r="48" fill="none" stroke="#4A2E00" stroke-width="14" stroke-dasharray="301.6" stroke-dashoffset="222.7" transform="rotate(118.6 65 65)"/>
+          <circle cx="65" cy="65" r="48" fill="none" stroke="#6B6B00" stroke-width="14" stroke-dasharray="301.6" stroke-dashoffset="257.5" transform="rotate(209.3 65 65)"/>
+          <text x="65" y="61" text-anchor="middle" font-family="Playfair Display" font-size="20" font-weight="700" fill="#4A2E00">85%</text>
+          <text x="65" y="73" text-anchor="middle" font-family="Outfit" font-size="8" fill="#6B4E10">trust TER</text>
+        </svg>
+      </div>
+      <div class="dleg" style="margin-bottom:12px">
+        <div class="dr"><div style="display:flex;align-items:center"><div class="dd" style="background:#0F4018"></div><span>Moderate trust</span></div><span class="dp">58.82%</span></div>
+        <div class="dr"><div style="display:flex;align-items:center"><div class="dd" style="background:#4A2E00"></div><span>Complete trust</span></div><span class="dp">26.47%</span></div>
+        <div class="dr"><div style="display:flex;align-items:center"><div class="dd" style="background:#6B6B00"></div><span>Neutral / unsure</span></div><span class="dp">11.76%</span></div>
+        <div class="dr"><div style="display:flex;align-items:center"><div class="dd" style="background:#EAD89A"></div><span>Trust a little</span></div><span class="dp">small %</span></div>
+      </div>
+      <div class="insight-box">
+        <div class="ib-label">What this tells us</div>
+        <p>People may trust the concept of a gold-backed digital asset even if they don't fully understand it yet — a powerful signal for TER's market positioning.</p>
+      </div>
+    </div>
+
+    <!-- Finding 05: Future Investment Intention -->
+    <div class="scard rv">
+      <div class="stag">Finding 05 · Future Investment Intention</div>
+      <h3>Will People Hold TER?</h3>
+      <p class="sdsc">Respondents' future intention to invest in TER</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
+        <div style="background:var(--bg2);border-radius:4px;overflow:hidden;position:relative;height:44px;display:flex;align-items:center">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:41.67%;background:linear-gradient(90deg,var(--gd),var(--gl));border-radius:4px;animation:barIn 1.3s var(--ez) both"></div>
+          <span style="position:relative;z-index:1;font-size:.72rem;font-weight:500;color:#fff;padding:0 12px">Definitely yes</span>
+          <span style="position:relative;z-index:1;margin-left:auto;font-family:var(--fd);font-weight:700;font-size:1.1rem;color:var(--gd);padding:0 12px">39.58%</span>
+        </div>
+        <div style="background:var(--bg2);border-radius:4px;overflow:hidden;position:relative;height:44px;display:flex;align-items:center">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:41.67%;background:linear-gradient(90deg,#0F4018,#2A8A40);border-radius:4px;animation:barIn 1.3s .1s var(--ez) both"></div>
+          <span style="position:relative;z-index:1;font-size:.72rem;font-weight:500;color:#fff;padding:0 12px">Probably yes</span>
+          <span style="position:relative;z-index:1;margin-left:auto;font-family:var(--fd);font-weight:700;font-size:1.1rem;color:var(--grn);padding:0 12px">41.67%</span>
+        </div>
+        <div style="background:var(--bg2);border-radius:4px;overflow:hidden;position:relative;height:44px;display:flex;align-items:center">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:18.75%;background:var(--bg3);border-radius:4px;animation:barIn 1.3s .2s var(--ez) both"></div>
+          <span style="position:relative;z-index:1;font-size:.72rem;font-weight:500;color:var(--mut);padding:0 12px">Unsure</span>
+          <span style="position:relative;z-index:1;margin-left:auto;font-family:var(--fd);font-weight:700;font-size:1.1rem;color:var(--mut);padding:0 12px">18.75%</span>
+        </div>
+      </div>
+      <div class="insight-box">
+        <div class="ib-label">What this tells us</div>
+        <p>Over 80% show positive intention to hold TER in the future. Hesitation is relatively low. Market readiness appears promising — if awareness improves, strong adoption is very achievable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Finding 06 — Hesitation horizontal bar chart -->
+  <div class="hcard rv">
+    <div class="hhead">
+      <div class="htag2">Finding 06 · What Discourages Investment in Digital Assets?</div>
+      <div class="htitle">Main Reasons for Hesitation Among Non-Investors</div>
+      <div class="hsub">Survey data — respondents who hesitate to invest in digital assets · trust, risk perception and familiarity are the top barriers</div>
+    </div>
+    <div class="hbars">
+      <div class="hb hb1">
+        <div class="hb-lbl">I do not trust digital assets</div>
+        <div class="hb-track"><div class="hb-fill" style="width:33.33%;animation-delay:.1s">Largest barrier</div></div>
+        <div class="hb-pct">33.33%</div>
+      </div>
+      <div class="hb hb3">
+        <div class="hb-lbl">I find digital assets too risky or volatile</div>
+        <div class="hb-track"><div class="hb-fill" style="width:22.22%;animation-delay:.22s">TER's ~13% volatility addresses this</div></div>
+        <div class="hb-pct">22.22%</div>
+      </div>
+      <div class="hb hb2">
+        <div class="hb-lbl">I prefer traditional options (cash, bank deposits, or gold)</div>
+        <div class="hb-track"><div class="hb-fill" style="width:22.22%;animation-delay:.34s">Natural TER audience — TER IS gold</div></div>
+        <div class="hb-pct">22.22%</div>
+      </div>
+      <div class="hb hb4">
+        <div class="hb-lbl">I do not understand how digital assets work</div>
+        <div class="hb-track"><div class="hb-fill" style="width:11.11%;animation-delay:.46s">Education gap — fixable</div></div>
+        <div class="hb-pct">11.11%</div>
+      </div>
+      <div class="hb hb5">
+        <div class="hb-lbl">Digital assets are not relevant to me</div>
+        <div class="hb-track"><div class="hb-fill" style="width:11.11%;animation-delay:.58s">Relevance / use-case gap</div></div>
+        <div class="hb-pct">11.11%</div>
+      </div>
+    </div>
+    <div class="insight-box" style="margin-top:16px">
+      <div class="ib-label">Overall interpretation</div>
+      <p>Trust, perceived risk, and preference for traditional financial systems are the biggest barriers to digital asset adoption. Improving financial literacy and building trust could significantly increase adoption. Notably, the 22.22% who prefer gold-backed traditional assets are TER's most natural target audience — since TER IS backed by physical gold.</p>
+    </div>
+  </div>
+
+  <!-- Finding 07: Long-term asset preference -->
+  <div class="hcard rv" style="margin-top:12px">
+    <div class="hhead">
+      <div class="htag2">Finding 07 · Long-Term Asset Preference</div>
+      <div class="htitle">Gold-Backed Digital Assets vs. Other Options</div>
+      <div class="hsub">Respondents' preference for gold-backed digital assets as a long-term store of value</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:var(--bg2);border-radius:4px;overflow:hidden;position:relative;height:52px;display:flex;align-items:center">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:88.24%;background:linear-gradient(90deg,var(--gd),var(--gl));border-radius:4px;animation:barIn 1.4s var(--ez) both"></div>
+          <span style="position:relative;z-index:1;font-size:.72rem;font-weight:500;color:#fff;padding:0 14px">Prefer gold-backed digital assets</span>
+          <span style="position:relative;z-index:1;margin-left:auto;font-family:var(--fd);font-weight:700;font-size:1.2rem;color:var(--gd);padding:0 14px;background:var(--gc);height:100%;display:flex;align-items:center">88.24%</span>
+        </div>
+        <div style="background:var(--bg2);border-radius:4px;overflow:hidden;position:relative;height:52px;display:flex;align-items:center">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:11.76%;background:var(--bg3);border-radius:4px;animation:barIn 1.4s .15s var(--ez) both"></div>
+          <span style="position:relative;z-index:1;font-size:.72rem;font-weight:500;color:var(--mut);padding:0 14px">Unsure / no preference</span>
+          <span style="position:relative;z-index:1;margin-left:auto;font-family:var(--fd);font-weight:700;font-size:1.2rem;color:var(--mut);padding:0 14px;background:var(--gc);height:100%;display:flex;align-items:center">11.76%</span>
+        </div>
+      </div>
+      <div class="insight-box" style="margin-top:0">
+        <div class="ib-label">Overall interpretation</div>
+        <p>An overwhelming 88.24% prefer gold-backed digital assets for long-term value. This strongly indicates that combining digital technology with gold's stability increases investor confidence compared to traditional cryptocurrencies — validating TER's core proposition.</p>
+      </div>
+    </div>
+  </div>
+
+</div></div>
+
+<div class="divider"></div>
+
+<!-- MARKET -->
+<div id="market"><div class="wrap">
+  <div class="srow rv">
+    <div><div class="ey"><div class="eyl"></div><span>Market Stability Analysis</span></div><h2 class="sh">Stability, Volatility<br>&amp; <em>Asset Behaviour</em></h2></div>
+    <p class="sdesc">A time-series comparison of Gold, Bitcoin, and Ethereum prices from 2020 to 2025 — confirming TER's stability advantage as a sovereign gold-backed digital instrument.</p>
+  </div>
+
+  <!-- Chart 1: Time-Series Line Chart -->
+  <div class="chart-card rv">
+    <div class="chart-head">
+      <div class="htag2">Chart 1 · Price Trend Comparison 2020–2025</div>
+      <div class="htitle">Gold vs Bitcoin vs Ethereum — Normalised Price Movement</div>
+      <div class="hsub">Index base 100 = Jan 2020 · Shows relative price movement, not absolute price · Data: Investing.com, The Block, World Gold Council</div>
+    </div>
+    <div class="chart-area">
+      <svg id="lineChart" viewBox="0 0 760 300" preserveAspectRatio="xMidYMid meet" style="width:100%;overflow:visible">
+        <!-- Grid lines -->
+        <line x1="60" y1="20" x2="60" y2="260" stroke="#EAD89A" stroke-width="1"/>
+        <line x1="60" y1="260" x2="740" y2="260" stroke="#EAD89A" stroke-width="1"/>
+        <line x1="60" y1="200" x2="740" y2="200" stroke="#EAD89A" stroke-width=".5" stroke-dasharray="4,4"/>
+        <line x1="60" y1="140" x2="740" y2="140" stroke="#EAD89A" stroke-width=".5" stroke-dasharray="4,4"/>
+        <line x1="60" y1="80" x2="740" y2="80" stroke="#EAD89A" stroke-width=".5" stroke-dasharray="4,4"/>
+        <line x1="60" y1="20" x2="740" y2="20" stroke="#EAD89A" stroke-width=".5" stroke-dasharray="4,4"/>
+        <!-- Y axis labels -->
+        <text x="52" y="264" text-anchor="end" font-size="9" fill="#6B4E10">0</text>
+        <text x="52" y="204" text-anchor="end" font-size="9" fill="#6B4E10">200</text>
+        <text x="52" y="144" text-anchor="end" font-size="9" fill="#6B4E10">400</text>
+        <text x="52" y="84" text-anchor="end" font-size="9" fill="#6B4E10">600</text>
+        <text x="52" y="24" text-anchor="end" font-size="9" fill="#6B4E10">800</text>
+        <!-- X axis labels -->
+        <text x="60" y="275" text-anchor="middle" font-size="9" fill="#6B4E10">2020</text>
+        <text x="172" y="275" text-anchor="middle" font-size="9" fill="#6B4E10">2021</text>
+        <text x="284" y="275" text-anchor="middle" font-size="9" fill="#6B4E10">2022</text>
+        <text x="396" y="275" text-anchor="middle" font-size="9" fill="#6B4E10">2023</text>
+        <text x="508" y="275" text-anchor="middle" font-size="9" fill="#6B4E10">2024</text>
+        <text x="620" y="275" text-anchor="middle" font-size="9" fill="#6B4E10">2025</text>
+        <!-- Bitcoin line (highest, most volatile) — peaks 2021, drops 2022, recovers 2024-25 -->
+        <polyline id="btcLine" fill="none" stroke="#C03030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          points="60,240 172,80 284,200 340,220 396,210 452,120 508,60 564,50 620,55 680,58 740,65"
+          style="stroke-dasharray:1200;stroke-dashoffset:1200;animation:drawLine 2s .3s var(--ez) forwards"/>
+        <!-- Ethereum line -->
+        <polyline id="ethLine" fill="none" stroke="#2060A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          points="60,245 172,95 284,215 340,228 396,220 452,145 508,85 564,78 620,80 680,82 740,88"
+          style="stroke-dasharray:1200;stroke-dashoffset:1200;animation:drawLine 2s .5s var(--ez) forwards"/>
+        <!-- Gold line (stable, gradual rise) -->
+        <polyline id="goldLine" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="60,240 172,220 284,215 340,212 396,208 452,200 508,195 564,188 620,180 680,172 740,165"
+          style="stroke-dasharray:800;stroke-dashoffset:800;animation:drawLine 2s .1s var(--ez) forwards"/>
+        <!-- Event annotations -->
+        <line x1="284" y1="20" x2="284" y2="260" stroke="#8A2020" stroke-width=".7" stroke-dasharray="3,3"/>
+        <text x="288" y="34" font-size="8" fill="#8A2020">2022 Crypto</text>
+        <text x="288" y="44" font-size="8" fill="#8A2020">Downturn</text>
+        <line x1="396" y1="20" x2="396" y2="260" stroke="#0F4018" stroke-width=".7" stroke-dasharray="3,3"/>
+        <text x="400" y="34" font-size="8" fill="#0F4018">2023</text>
+        <text x="400" y="44" font-size="8" fill="#0F4018">Recovery Phase</text>
+        <!-- Legend -->
+        <rect x="62" y="22" width="10" height="2.5" fill="#B8860B" rx="1"/>
+        <text x="76" y="27" font-size="9" fill="#4A2E00" font-weight="600">Gold (TER backing)</text>
+        <rect x="62" y="34" width="10" height="2" fill="#C03030" rx="1"/>
+        <text x="76" y="39" font-size="9" fill="#4A2E00">Bitcoin</text>
+        <rect x="130" y="34" width="10" height="2" fill="#2060A0" rx="1"/>
+        <text x="144" y="39" font-size="9" fill="#4A2E00">Ethereum</text>
+      </svg>
+    </div>
+    <div class="insight-box">
+      <div class="ib-label">What this chart tells us · from your research</div>
+      <p>Bitcoin shows the highest volatility, with sharp rises in 2021 and 2024–2025, and a major correction in 2022. Ethereum follows a similar pattern at a smaller scale. Gold remains relatively stable throughout, with gradual upward movement and far fewer sharp fluctuations. The 2022 crypto downturn is clearly visible — a broad market-wide correction that did not significantly affect gold. The <strong>2023 recovery phase</strong> marks where crypto markets began rebounding after the crash. <strong>Gold demonstrates long-term stability, while cryptocurrencies provide higher growth potential with significantly higher risk.</strong></p>
+    </div>
+  </div>
+
+  <!-- Chart 2: Annual Volatility Bars -->
+  <div class="chart-card rv" style="margin-top:14px">
+    <div class="chart-head">
+      <div class="htag2">Chart 2 · Annual Volatility Comparison</div>
+      <div class="htitle">Bitcoin vs Ethereum vs Gold — Absolute Volatility by Year</div>
+      <div class="hsub">Higher bar = more price instability · Gold consistently the lowest · Data: The Block, Investing.com</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;align-items:end;height:180px;padding:0 8px">
+      <!-- 2020 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end">
+        <div style="width:100%;display:flex;gap:3px;align-items:flex-end;height:160px">
+          <div style="flex:1;background:linear-gradient(0deg,#C03030,#E06060);border-radius:3px 3px 0 0;animation:growUp .9s .1s var(--ez) both" data-h="55" style2="height:55px"></div>
+          <div style="flex:1;background:linear-gradient(0deg,#2060A0,#5090D0);border-radius:3px 3px 0 0;animation:growUp .9s .2s var(--ez) both" data-h="70" style2="height:70px"></div>
+          <div style="flex:1;background:linear-gradient(0deg,#8A6000,#D4A520);border-radius:3px 3px 0 0;animation:growUp .9s .3s var(--ez) both" data-h="14" style2="height:14px"></div>
+        </div>
+        <span style="font-size:.62rem;color:var(--mut);font-weight:500">2020</span>
+      </div>
+      <!-- 2021 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end">
+        <div style="width:100%;display:flex;gap:3px;align-items:flex-end;height:160px">
+          <div style="flex:1;height:110px;background:linear-gradient(0deg,#C03030,#E06060);border-radius:3px 3px 0 0;animation:growUp .9s .15s var(--ez) both"></div>
+          <div style="flex:1;height:140px;background:linear-gradient(0deg,#2060A0,#5090D0);border-radius:3px 3px 0 0;animation:growUp .9s .25s var(--ez) both"></div>
+          <div style="flex:1;height:11px;background:linear-gradient(0deg,#8A6000,#D4A520);border-radius:3px 3px 0 0;animation:growUp .9s .35s var(--ez) both"></div>
+        </div>
+        <span style="font-size:.62rem;color:var(--mut);font-weight:500">2021</span>
+      </div>
+      <!-- 2022 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end">
+        <div style="width:100%;display:flex;gap:3px;align-items:flex-end;height:160px">
+          <div style="flex:1;height:100px;background:linear-gradient(0deg,#C03030,#E06060);border-radius:3px 3px 0 0;animation:growUp .9s .2s var(--ez) both"></div>
+          <div style="flex:1;height:120px;background:linear-gradient(0deg,#2060A0,#5090D0);border-radius:3px 3px 0 0;animation:growUp .9s .3s var(--ez) both"></div>
+          <div style="flex:1;height:13px;background:linear-gradient(0deg,#8A6000,#D4A520);border-radius:3px 3px 0 0;animation:growUp .9s .4s var(--ez) both"></div>
+        </div>
+        <span style="font-size:.62rem;color:var(--mut);font-weight:500">2022</span>
+      </div>
+      <!-- 2023 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end">
+        <div style="width:100%;display:flex;gap:3px;align-items:flex-end;height:160px">
+          <div style="flex:1;height:72px;background:linear-gradient(0deg,#C03030,#E06060);border-radius:3px 3px 0 0;animation:growUp .9s .25s var(--ez) both"></div>
+          <div style="flex:1;height:86px;background:linear-gradient(0deg,#2060A0,#5090D0);border-radius:3px 3px 0 0;animation:growUp .9s .35s var(--ez) both"></div>
+          <div style="flex:1;height:9px;background:linear-gradient(0deg,#8A6000,#D4A520);border-radius:3px 3px 0 0;animation:growUp .9s .45s var(--ez) both"></div>
+        </div>
+        <span style="font-size:.62rem;color:var(--mut);font-weight:500">2023</span>
+      </div>
+      <!-- 2024 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end">
+        <div style="width:100%;display:flex;gap:3px;align-items:flex-end;height:160px">
+          <div style="flex:1;height:88px;background:linear-gradient(0deg,#C03030,#E06060);border-radius:3px 3px 0 0;animation:growUp .9s .3s var(--ez) both"></div>
+          <div style="flex:1;height:100px;background:linear-gradient(0deg,#2060A0,#5090D0);border-radius:3px 3px 0 0;animation:growUp .9s .4s var(--ez) both"></div>
+          <div style="flex:1;height:11px;background:linear-gradient(0deg,#8A6000,#D4A520);border-radius:3px 3px 0 0;animation:growUp .9s .5s var(--ez) both"></div>
+        </div>
+        <span style="font-size:.62rem;color:var(--mut);font-weight:500">2024</span>
+      </div>
+      <!-- 2025 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end">
+        <div style="width:100%;display:flex;gap:3px;align-items:flex-end;height:160px">
+          <div style="flex:1;height:92px;background:linear-gradient(0deg,#C03030,#E06060);border-radius:3px 3px 0 0;animation:growUp .9s .35s var(--ez) both"></div>
+          <div style="flex:1;height:106px;background:linear-gradient(0deg,#2060A0,#5090D0);border-radius:3px 3px 0 0;animation:growUp .9s .45s var(--ez) both"></div>
+          <div style="flex:1;height:12px;background:linear-gradient(0deg,#8A6000,#D4A520);border-radius:3px 3px 0 0;animation:growUp .9s .55s var(--ez) both"></div>
+        </div>
+        <span style="font-size:.62rem;color:var(--mut);font-weight:500">2025</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:18px;margin-top:12px;padding:0 8px">
+      <div style="display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--ink2)"><div style="width:10px;height:10px;background:#C03030;border-radius:2px"></div>Bitcoin</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--ink2)"><div style="width:10px;height:10px;background:#2060A0;border-radius:2px"></div>Ethereum (highest overall)</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--ink2)"><div style="width:10px;height:10px;background:#D4A520;border-radius:2px"></div>Gold / TER (consistently lowest)</div>
+    </div>
+    <div class="insight-box" style="margin-top:12px">
+      <div class="ib-label">What this chart tells us · from your research</div>
+      <p>Ethereum has the highest volatility overall, especially around 2021. Bitcoin shows high but slightly lower volatility than Ethereum. Gold maintains consistently low volatility across all years. Volatility began recovering in 2023 after the 2022 crash, then slightly increased again in 2024–2025 as crypto markets surged. <strong>Crypto assets experience large price swings year-to-year, while gold remains stable — supporting the idea that TER inherits gold's lower volatility characteristics.</strong></p>
+    </div>
+  </div>
+
+  <!-- Asset summary cards -->
+  <div class="mg" style="margin-top:14px">
+    <div class="mc rv"><div class="mct"><div class="mcic">🥇</div><div><h3>Gold</h3><div class="mbadge cg">Low Volatility · Safe Haven</div></div></div><p>Gradual upward movement over five years with fewer sharp fluctuations. Gold's long-term stability and inflation-hedge properties form TER's core value proposition. Source: <a href="https://www.investing.com/commodities/gold-historical-data" target="_blank">Investing.com</a> · <a href="https://www.gold.org" target="_blank">World Gold Council</a></p><div class="vl"><span>Annualised Volatility</span><span>~12%</span></div><div class="vtr"><div class="vf b1" style="width:12%"></div></div></div>
+    <div class="mc rv"><div class="mct"><div class="mcic">₿</div><div><h3>Bitcoin</h3><div class="mbadge cr">High Volatility · Speculative</div></div></div><p>Sharp rises in 2021 and 2024–2025, major correction in 2022. During boom phases, extremely high growth — but during downturns, significant corrections. Unsuitable as a stable store of value. Source: <a href="https://www.theblock.co" target="_blank">The Block</a></p><div class="vl"><span>Annualised Volatility</span><span>~72%</span></div><div class="vtr"><div class="vf" style="width:72%;background:linear-gradient(90deg,#8A2020,#C05050)"></div></div></div>
+    <div class="mc rv"><div class="mct"><div class="mcic">Ξ</div><div><h3>Ethereum</h3><div class="mbadge cb">Highest Volatility · Utility</div></div></div><p>Highest overall volatility — especially around 2021. Follows Bitcoin's pattern but exceeds it in instability. Cryptocurrencies outperform in expansions, but suffer large corrections in downturns. Source: <a href="https://www.theblock.co" target="_blank">The Block</a></p><div class="vl"><span>Annualised Volatility</span><span>~82%</span></div><div class="vtr"><div class="vf" style="width:82%;background:linear-gradient(90deg,#0A3060,#5080B0)"></div></div></div>
+    <div class="mc rv"><div class="mct"><div class="mcic" style="font-size:.65rem;font-family:serif">གཏེར</div><div><h3>TER (Gold-Backed)</h3><div class="mbadge cgr">Hybrid · Sovereign Stable</div></div></div><p>Inherits gold's ~12–13% volatility while delivering blockchain liquidity. Gold acts as a stabilising asset across all market cycles — and TER is designed to carry that same characteristic into the digital economy. Source: <a href="https://ter.bt" target="_blank">ter.bt</a></p><div class="vl"><span>Annualised Volatility</span><span>~13% (gold-pegged)</span></div><div class="vtr"><div class="vf b3" style="width:13%"></div></div></div>
+  </div>
+
+  <div class="ctab rv">
+    <div class="crow head"><div class="cell">Asset</div><div class="cell">Volatility</div><div class="cell">Stability</div><div class="cell">Trust Potential</div></div>
+    <div class="crow"><div class="cell">🥇 Gold</div><div class="cell"><span class="good">Low (~12%)</span></div><div class="cell"><span class="good">Very High</span></div><div class="cell"><span class="good">Established</span></div></div>
+    <div class="crow"><div class="cell">གཏེར TER</div><div class="cell"><span class="good">Low (~13%)</span></div><div class="cell"><span class="good">High</span></div><div class="cell"><span class="mid">Growing</span></div></div>
+    <div class="crow"><div class="cell">₿ Bitcoin</div><div class="cell"><span class="bad">Very High (~72%)</span></div><div class="cell"><span class="bad">Low</span></div><div class="cell"><span class="mid">Speculative</span></div></div>
+    <div class="crow"><div class="cell">Ξ Ethereum</div><div class="cell"><span class="bad">Highest (~82%)</span></div><div class="cell"><span class="bad">Lowest</span></div><div class="cell"><span class="mid">Speculative</span></div></div>
+  </div>
+</div></div>
+
+<div class="band"></div>
+
+<!-- CONCLUSION -->
+<div id="conclusion"><div class="wrap">
+  <div class="srow rv">
+    <div><div class="ey"><div class="eyl"></div><span>Conclusion</span></div><h2 class="sh">Key Insights &amp;<br><em>Implications</em></h2></div>
+    <p class="sdesc">TER's gold backing delivers real stability. The survey data shows distrust of digital assets is the biggest barrier — trust-building is as important as education.</p>
+  </div>
+  <div class="rv" style="text-align:center;margin-bottom:46px">
+    <p class="cq">"Rooted in Bhutan's spirit of trust, integrity, and responsible finance, TER embodies the nation's commitment to inclusive, sustainable innovation — bridging the ancient treasure of gold with the digital economy of tomorrow."</p>
+    <span class="ca">— GMC Official Statement · TER Launch, December 17, 2025 · Bhutan's 118th National Day</span>
+  </div>
+  <div class="cst rv">
+    <div class="css"><span class="csn">85%</span><span class="csl">moderate to complete trust<br>among surveyed investors</span></div>
+    <div class="css"><span class="csn">7.8M</span><span class="csl">TER tokens in circulation<br>within months of launch</span></div>
+    <div class="css"><span class="csn">6×</span><span class="csl">lower volatility vs Bitcoin<br>due to physical gold backing</span></div>
+  </div>
+  <div class="cb2 rv">
+    <div class="ct">
+      <p>Market data confirms TER delivers on its stability promise — volatility comparable to gold (~13%) and dramatically lower than Bitcoin (~72%) or Ethereum (~82%). Cryptocurrencies outperform during expansion phases but suffer large corrections during downturns. <strong>Gold acts as a stabilising asset across market cycles</strong> — and TER is built to carry that same characteristic into the digital economy.</p>
+      <p>The survey data reveals that <strong>66.4% of respondents do not yet invest in financial assets</strong> — a significant untapped audience if awareness grows. Meanwhile, <strong>78 respondents showed willingness to invest in gold</strong>, directly validating TER's gold-backed approach. Trust, perceived risk, and preference for traditional financial systems are the biggest adoption barriers.</p>
+      <p>Most encouragingly, <strong>over 80% expressed positive intention to hold TER</strong>, and <strong>88.24% prefer gold-backed digital assets for long-term value</strong> — validating the core research hypothesis that combining gold's stability with digital accessibility is TER's key competitive advantage.</p>
+    </div>
+    <div class="recs">
+      <div class="rec"><div class="recn">01</div><div><h4>Build Digital Asset Trust</h4><p>Address the 33.33% who "don't trust digital assets" — through audits, reserve reporting, and RMA regulatory clarity. Trust is the single largest barrier.</p></div></div>
+      <div class="rec"><div class="recn">02</div><div><h4>Reframe TER as Traditional Gold</h4><p>The 22.22% preferring "traditional options like gold" ARE TER's natural audience. TER is backed by gold — messaging must make this explicit and immediate.</p></div></div>
+      <div class="rec"><div class="recn">03</div><div><h4>Address Volatility Perception with Data</h4><p>The 22.22% who find digital assets "too risky" need to see TER's ~13% vs Bitcoin's ~72% — the volatility chart tells a powerful, convincing story.</p></div></div>
+      <div class="rec"><div class="recn">04</div><div><h4>Education through DK Bank</h4><p>The 11.11% who "don't understand" are the most fixable barrier — targeted demos and explainers through DK Bank's existing channels can close this gap.</p></div></div>
+    </div>
+  </div>
+</div></div>
+
+<div class="divider"></div>
+
+<!-- SOURCES -->
+<div id="sources"><div class="wrap">
+  <div class="srow rv">
+    <div><div class="ey"><div class="eyl"></div><span>References &amp; Sources</span></div><h2 class="sh">Where the<br><em>Information Comes From</em></h2></div>
+    <p class="sdesc">Every claim in this website is sourced from official publications or reputable news outlets. Click any link to verify the original source directly.</p>
+  </div>
+  <div class="srcg rv">
+    <div class="srcc"><div class="srcc-cat">Official · TER</div><div class="srcc-t">GMC — TER Launch Announcement</div><div class="srcc-d">Official GMC press release: TER, DK Bank custody, Solana, Matrixdock partnership details.</div><a href="https://gmc.bt/news/bhutan-digitizes-gold-with-launch-of-sovereign-token-ter_x1hd7" target="_blank" class="srcc-l">↗ gmc.bt — TER Announcement</a></div>
+    <div class="srcc"><div class="srcc-cat">Official · TER Website</div><div class="srcc-t">TER Official Website — ter.bt</div><div class="srcc-d">The official TER token website — gold backing structure, how to purchase, and token details.</div><a href="https://ter.bt" target="_blank" class="srcc-l">↗ ter.bt</a></div>
+    <div class="srcc"><div class="srcc-cat">Official · GMC</div><div class="srcc-t">Gelephu Mindfulness City — Official Website</div><div class="srcc-d">GMC's vision, eight priority industries including Finance &amp; Digital Assets, gallery and news.</div><a href="https://gmc.bt" target="_blank" class="srcc-l">↗ gmc.bt</a></div>
+    <div class="srcc"><div class="srcc-cat">News · TER on Solana</div><div class="srcc-t">CoinDesk — Bhutan Debuts TER Gold-Backed Token</div><div class="srcc-d">Coverage of TER's Solana launch, DK Bank custody role, Matrixdock as tokenization partner.</div><a href="https://www.coindesk.com/business/2025/12/10/bhutan-debuts-ter-gold-backed-token-on-solana" target="_blank" class="srcc-l">↗ CoinDesk — TER Launch</a></div>
+    <div class="srcc"><div class="srcc-cat">News · Bitcoin Pledge</div><div class="srcc-t">CoinDesk — Bhutan Pledges 10,000 BTC for GMC</div><div class="srcc-d">King Jigme Khesar commits up to 10,000 Bitcoin (~$1B) to fund GMC development, Dec 17, 2025.</div><a href="https://www.coindesk.com/policy/2025/12/17/bhutan-commits-up-to-10-000-bitcoin-to-back-new-mindfulness-based-economic-hub" target="_blank" class="srcc-l">↗ CoinDesk — BTC Pledge</a></div>
+    <div class="srcc"><div class="srcc-cat">News · Nomad Visa</div><div class="srcc-t">CryptoTimes — Bhutan's TER-Backed Nomad Visa</div><div class="srcc-d">Bhutan's nomad visa requiring a $10,000 TER deposit — launched February 2026.</div><a href="https://www.cryptotimes.io/2026/02/24/bhutans-bold-frontier-launches-gold-stablecoin-backed-nomad-visa/" target="_blank" class="srcc-l">↗ CryptoTimes</a></div>
+    <div class="srcc"><div class="srcc-cat">Blockchain · Solana</div><div class="srcc-t">Solana Official Website</div><div class="srcc-d">Why TER chose Solana — speed, low fees, minimal environmental impact, enterprise-grade infrastructure.</div><a href="https://solana.com" target="_blank" class="srcc-l">↗ solana.com</a></div>
+    <div class="srcc"><div class="srcc-cat">Market Data · Gold</div><div class="srcc-t">Investing.com — Historical Gold Price Data</div><div class="srcc-d">Five years of gold price data (2020–2025) used to calculate ~12% annualised volatility figure.</div><a href="https://www.investing.com/commodities/gold-historical-data" target="_blank" class="srcc-l">↗ Investing.com — Gold Data</a></div>
+    <div class="srcc"><div class="srcc-cat">Market Research · Gold</div><div class="srcc-t">World Gold Council</div><div class="srcc-d">Global authority on gold — volatility benchmarks, safe-haven role, and inflation hedge properties.</div><a href="https://www.gold.org" target="_blank" class="srcc-l">↗ gold.org</a></div>
+    <div class="srcc"><div class="srcc-cat">Market Data · Crypto</div><div class="srcc-t">The Block — Bitcoin &amp; Ethereum Historical Data</div><div class="srcc-d">Crypto price data used for Bitcoin (~72%) and Ethereum (~82%) annualised volatility figures.</div><a href="https://www.theblock.co" target="_blank" class="srcc-l">↗ theblock.co</a></div>
+    <div class="srcc"><div class="srcc-cat">Architecture</div><div class="srcc-t">BIG (Bjarke Ingels Group) — GMC Masterplan</div><div class="srcc-d">Official GMC architectural masterplan — Bhutanese cultural design and sustainable infrastructure.</div><a href="https://big.dk/projects/gelephu-mindfulness-city-16791" target="_blank" class="srcc-l">↗ big.dk — GMC Masterplan</a></div>
+    <div class="srcc"><div class="srcc-cat">Encyclopedia</div><div class="srcc-t">Wikipedia — Gelephu Mindfulness City</div><div class="srcc-d">Comprehensive overview of GMC's establishment, Bitcoin reserves, TER, and digital milestones.</div><a href="https://en.wikipedia.org/wiki/Gelephu_Mindfulness_City" target="_blank" class="srcc-l">↗ Wikipedia — GMC</a></div>
+  </div>
+</div></div>
+
+<footer>
+  <div class="ftl"><strong>TER གཏེརི — Gold Stability Analysis</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Research · 2026</div>
+  <div class="ftr"><span>🇧🇹 Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
+</footer>
+
+<script>
+// Cursor
+const cur=document.getElementById("cur"),cur2=document.getElementById("cur2");
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+"px";cur.style.top=my+"px"});
+(function loop(){rx+=(mx-rx)*.09;ry+=(my-ry)*.09;cur2.style.left=rx+"px";cur2.style.top=ry+"px";requestAnimationFrame(loop)})();
+document.querySelectorAll("a,button").forEach(el=>{
+  el.addEventListener("mouseenter",()=>{cur.style.transform="translate(-50%,-50%) scale(2.4)";cur2.style.opacity="0"});
+  el.addEventListener("mouseleave",()=>{cur.style.transform="translate(-50%,-50%) scale(1)";cur2.style.opacity="1"});
+});
+// Scroll reveal
+const obs=new IntersectionObserver(en=>{
+  en.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add("on"),i*55)});
+},{threshold:.07,rootMargin:"0px 0px -30px 0px"});
+document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
+// Counter
+const cEl=document.getElementById("ctr");
+const cObs=new IntersectionObserver(en=>{
+  if(en[0].isIntersecting){
+    let s=null;
+    requestAnimationFrame(function a(ts){if(!s)s=ts;const p=Math.min((ts-s)/1800,1),ease=1-Math.pow(1-p,3);cEl.textContent=Math.floor(ease*80)+"%";if(p<1)requestAnimationFrame(a);});
+    cObs.disconnect();
+  }
+},{threshold:.5});
+cObs.observe(cEl);
+// Nav active
+const secs=[...document.querySelectorAll("[id]")],lnks=[...document.querySelectorAll(".nlinks a")];
+window.addEventListener("scroll",()=>{let c="";secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)c=s.id});lnks.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+c));},{passive:true});
+</script>
+</body>
+</html>
