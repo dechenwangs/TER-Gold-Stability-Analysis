@@ -66,6 +66,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:60px;display:flex;ali
 .intro-highlight{background:var(--bg2);border-left:2px solid var(--gl);padding:14px 18px;margin:8px 0}
 .intro-highlight p{font-family:var(--fd);font-size:.96rem;font-style:italic;color:var(--ink);line-height:1.65;margin-bottom:0}
 .project-goals{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.project-goals .pg-item[style*="grid-column:span 2"]{grid-column:span 2}
 .pg-item{background:var(--bg2);border:1px solid var(--bdr);padding:14px 16px;position:relative;overflow:hidden}
 .pg-item::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gl),var(--gp));transform:scaleX(0);transition:transform .3s var(--ez)}
 .pg-item:hover::before{transform:scaleX(1)}
@@ -715,6 +716,14 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
             <h4>Strategic Recommendations</h4>
             <p>Data-backed recommendations for improving TER's adoption, trust, and positioning as a gold-backed digital instrument.</p>
           </div>
+          <div class="pg-item" style="grid-column:span 2;border-top:2px solid var(--gl);background:linear-gradient(135deg,rgba(15,64,24,.06),rgba(180,130,10,.05))">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
+              <div class="pg-num" style="margin-bottom:0">05</div>
+              <span style="font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grn);background:rgba(15,64,24,.1);padding:3px 10px;border:1px solid rgba(15,64,24,.2)">Prototype</span>
+            </div>
+            <h4>TER Pay — Everyday Payment Platform</h4>
+            <p>A working prototype that allows users to make everyday payments using TER. TER Pay is designed to bridge the gap between investment and usability — letting people experience TER's stability through real transactions. By paying with TER in daily life, users build practical understanding and trust that data alone cannot always achieve. The prototype covers the full payment flow: QR scanning, gold-to-TER conversion, confirmation, merchant dashboard, and auto-save features.</p>
+          </div>
         </div>
       </div>
       <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap">
@@ -794,11 +803,15 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
           <p style="font-size:.82rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:12px;">
             This internship project draws on five years of gold, Bitcoin, and Ethereum price data, alongside an original survey of 125 Bhutanese respondents. Together, they tell a compelling story: TER's gold backing provides real, measurable stability — and with the right communication and education, it can earn the trust of investors who are, right now, just waiting to understand it better.
           </p>
+          <p style="font-size:.82rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:12px;">
+            To bring this insight to life, the project also includes <strong style="color:var(--ink)">TER Pay</strong> — a prototype payment platform that allows users to make everyday transactions using TER. Rather than treating TER purely as an investment asset, TER Pay demonstrates its potential as a usable currency in daily life. By experiencing TER through real payments, users can better understand how it works, witness its stability firsthand, and build the kind of genuine confidence that data alone cannot always convey.
+          </p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
             <span style="padding:5px 12px;background:rgba(180,130,10,.1);border:1px solid var(--bdr);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd)">125 Survey Respondents</span>
             <span style="padding:5px 12px;background:rgba(180,130,10,.1);border:1px solid var(--bdr);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd)">5 Years of Price Data</span>
             <span style="padding:5px 12px;background:rgba(180,130,10,.1);border:1px solid var(--bdr);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd)">Gold · Bitcoin · Ethereum</span>
             <span style="padding:5px 12px;background:rgba(180,130,10,.1);border:1px solid var(--bdr);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd)">Personal Investor Perspective</span>
+            <span style="padding:5px 12px;background:rgba(15,64,24,.12);border:1px solid rgba(15,64,24,.25);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--grn)">TER Pay Prototype</span>
           </div>
         </div>
       </div>
@@ -1463,9 +1476,9 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
   <div class="band"></div>
   <div style="background:var(--gd);padding:72px 72px 60px;position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(212,165,32,.04) 0,rgba(212,165,32,.04) 1px,transparent 1px,transparent 40px);pointer-events:none"></div>
-    <div class="ey rv"><div class="eyl"></div><span>App Prototype · DK Bank TER Wallet · v2</span></div>
+    <div class="ey rv"><div class="eyl"></div><span>App Prototype · DK Bank TER Wallet · v5 Clean</span></div>
     <h2 class="sh rv" style="color:var(--gp);font-size:clamp(2rem,3.5vw,3rem);margin-bottom:14px">TER-Pay <em style="color:var(--gl)">User Flow</em><br>Prototype Screens</h2>
-    <p style="font-size:.84rem;font-weight:300;color:rgba(240,216,112,.65);line-height:1.9;max-width:680px" class="rv">Five key screens showing the complete TER payment journey — from the home wallet through QR scanning, payment confirmation, success, and the merchant's auto-save dashboard. Each screen is annotated with its design intent.</p>
+    <p style="font-size:.84rem;font-weight:300;color:rgba(240,216,112,.65);line-height:1.9;max-width:680px" class="rv">Six screens showing the complete TER payment journey — from the home wallet through QR scanning, payment confirmation, success, the merchant's auto-save dashboard, and the auto-save rate modal. Each screen is annotated with its design intent.</p>
   </div>
 
   <div style="max-width:1140px;margin:0 auto;padding:52px 72px 72px">
@@ -1481,59 +1494,75 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
           <span style="margin-left:auto;font-size:.56rem;color:var(--mut)">Balance hidden by default</span>
         </div>
         <!-- Phone mockup -->
-        <div style="background:#0D1B2E;border:1px solid var(--bdr);padding:0;position:relative;border-radius:0 0 4px 4px;overflow:hidden">
+        <div style="background:#f7f9fc;border:1px solid var(--bdr);padding:0;position:relative;border-radius:0 0 4px 4px;overflow:hidden">
           <!-- Status bar -->
-          <div style="background:#0D1B2E;padding:8px 14px 4px;display:flex;justify-content:space-between;align-items:center">
+          <div style="background:#1A3A5C;padding:8px 14px 4px;display:flex;justify-content:space-between;align-items:center">
             <span style="font-size:.55rem;color:rgba(255,255,255,.7);font-weight:500">9:41</span>
-            <div style="width:60px;height:6px;background:#111;border-radius:3px"></div>
+            <div style="width:60px;height:6px;background:rgba(0,0,0,.3);border-radius:3px"></div>
             <span style="font-size:.55rem;color:rgba(255,255,255,.7)">GMC_WiFi 🔋</span>
           </div>
-          <!-- Header -->
-          <div style="background:#1A3A5C;padding:10px 14px;text-align:center">
-            <span style="font-family:var(--fd);font-size:.9rem;font-weight:700;color:#fff">DK Bank</span>
+          <!-- Nav bar -->
+          <div style="background:#f7f9fc;border-bottom:1px solid #dde4ec;padding:7px 0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center">
+            <span style="font-size:.52rem;color:#1A3A5C;font-weight:700">■ Home</span>
+            <span style="font-size:.52rem;color:#9ab">■ Pay</span>
+            <span style="font-size:.52rem;color:#9ab">■ History</span>
+            <span style="font-size:.52rem;color:#9ab">■ Profile</span>
           </div>
-          <!-- Privacy banner -->
-          <div style="background:#f0f4f8;padding:7px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #dde4ec">
-            <span style="font-size:.9rem">🔒</span>
-            <span style="font-size:.58rem;color:#5a7a9a;font-style:italic">Balance hidden by default — tap to reveal</span>
+          <!-- Location subheader -->
+          <div style="background:#1A3A5C;padding:6px 12px;text-align:center">
+            <span style="font-size:.54rem;color:rgba(255,255,255,.55);letter-spacing:.06em">DK Bank · Gelephu Mindfulness City · GMC</span>
           </div>
           <!-- Balance card -->
-          <div style="background:#1A3A5C;margin:10px 10px 0;border-radius:6px;padding:16px 14px;text-align:center">
-            <div style="font-size:.6rem;color:rgba(255,255,255,.55);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">My TER Balance</div>
-            <div style="display:flex;justify-content:center;gap:6px;margin-bottom:6px">
-              <div style="width:11px;height:11px;background:rgba(255,255,255,.2);border-radius:50%"></div>
-              <div style="width:11px;height:11px;background:rgba(255,255,255,.2);border-radius:50%"></div>
-              <div style="width:11px;height:11px;background:rgba(255,255,255,.2);border-radius:50%"></div>
-              <div style="width:11px;height:11px;background:rgba(255,255,255,.2);border-radius:50%"></div>
-              <div style="width:11px;height:11px;background:rgba(255,255,255,.2);border-radius:50%"></div>
-              <div style="width:11px;height:11px;background:rgba(255,255,255,.2);border-radius:50%"></div>
+          <div style="background:#1A3A5C;margin:10px 10px 6px;border-radius:6px;padding:16px 14px;text-align:center">
+            <div style="font-size:.58rem;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">My TER Balance</div>
+            <div style="display:flex;justify-content:center;gap:5px;margin-bottom:6px">
+              <div style="width:10px;height:10px;background:rgba(255,255,255,.25);border-radius:50%"></div>
+              <div style="width:10px;height:10px;background:rgba(255,255,255,.25);border-radius:50%"></div>
+              <div style="width:10px;height:10px;background:rgba(255,255,255,.25);border-radius:50%"></div>
+              <div style="width:10px;height:10px;background:rgba(255,255,255,.25);border-radius:50%"></div>
+              <div style="width:10px;height:10px;background:rgba(255,255,255,.25);border-radius:50%"></div>
             </div>
-            <div style="font-size:.62rem;color:rgba(255,255,255,.45);font-style:italic">Tap to reveal</div>
+            <div style="font-size:.6rem;color:rgba(255,255,255,.4);font-style:italic;margin-bottom:6px">Tap to reveal</div>
+            <div style="font-size:.55rem;color:rgba(255,255,255,.35);letter-spacing:.06em">1 TER = 0.01g Au</div>
           </div>
-          <!-- Gold info -->
-          <div style="background:#f0f4f8;margin:8px 10px;border-radius:4px;padding:7px 10px;display:flex;align-items:center;gap:6px">
-            <div style="width:20px;height:20px;background:#C8A51A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:700;color:#fff;flex-shrink:0">Au</div>
-            <span style="font-size:.6rem;color:#6a7a8a;font-style:italic">Gold-backed · 1 TER = 0.01g Au</span>
+          <!-- Savings Pot -->
+          <div style="background:#e8f5ec;margin:0 10px 8px;border-radius:5px;padding:9px 12px;border:1px solid #a5d6b0;display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-size:.8rem">🪙</span>
+              <div>
+                <div style="font-size:.56rem;font-weight:700;color:#1A5C3A;text-transform:uppercase;letter-spacing:.08em">Savings Pot</div>
+                <div style="font-family:var(--fd);font-size:.85rem;font-weight:700;color:#2A7A40">0.47 TER</div>
+              </div>
+            </div>
+            <div style="font-size:.52rem;color:#5a8a6a;text-align:right;font-style:italic">10% auto-save on</div>
           </div>
-          <!-- CTA -->
-          <div style="margin:0 10px 8px;background:#1A3A5C;border-radius:5px;padding:11px;text-align:center;cursor:default">
-            <span style="font-size:.7rem;font-weight:700;color:#fff;letter-spacing:.06em">⬛ Scan to Pay with TER</span>
+          <!-- Action buttons row -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin:0 10px 8px">
+            <div style="text-align:center;padding:8px 4px">
+              <div style="width:30px;height:30px;background:#1A3A5C;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;font-size:.7rem;color:#fff">↑</div>
+              <span style="font-size:.5rem;color:#1A3A5C;font-weight:600">Send</span>
+            </div>
+            <div style="text-align:center;padding:8px 4px">
+              <div style="width:30px;height:30px;background:#1A3A5C;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;font-size:.7rem;color:#fff">⬛</div>
+              <span style="font-size:.5rem;color:#1A3A5C;font-weight:600">QR Scan</span>
+            </div>
+            <div style="text-align:center;padding:8px 4px">
+              <div style="width:30px;height:30px;background:#1A3A5C;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;font-size:.85rem;color:#fff;font-weight:700">+</div>
+              <span style="font-size:.5rem;color:#1A3A5C;font-weight:600">Top Up</span>
+            </div>
+            <div style="text-align:center;padding:8px 4px">
+              <div style="width:30px;height:30px;background:#1A3A5C;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;font-size:.6rem;color:#fff">≡</div>
+              <span style="font-size:.5rem;color:#1A3A5C;font-weight:600">History</span>
+            </div>
           </div>
-          <!-- Two buttons -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 10px 10px">
-            <div style="border:1px solid #dde4ec;border-radius:4px;padding:9px;text-align:center"><span style="font-size:.65rem;color:#1A3A5C;font-weight:500">Send TER</span></div>
-            <div style="border:1px solid #dde4ec;border-radius:4px;padding:9px;text-align:center"><span style="font-size:.65rem;color:#1A3A5C;font-weight:500">History</span></div>
-          </div>
-          <!-- Nav -->
-          <div style="background:#f7f9fc;border-top:1px solid #dde4ec;padding:7px 0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center">
-            <span style="font-size:.52rem;color:#1A3A5C;font-weight:600">Home</span>
-            <span style="font-size:.52rem;color:#9ab">Pay</span>
-            <span style="font-size:.52rem;color:#9ab">History</span>
-            <span style="font-size:.52rem;color:#9ab">Profile</span>
+          <!-- Gold badge footer -->
+          <div style="background:#fffbe8;border-top:1px solid #e8d88a;padding:7px 12px;display:flex;align-items:center;gap:6px">
+            <div style="width:18px;height:18px;background:#C8A51A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.48rem;font-weight:700;color:#fff;flex-shrink:0">Au</div>
+            <span style="font-size:.55rem;color:#6B4E10;font-style:italic">Gold-backed · RMA Regulated</span>
           </div>
         </div>
         <div style="background:var(--gc);border:1px solid var(--bdr);border-top:none;padding:10px 14px">
-          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> Balance is hidden by default. The privacy banner is the first thing users see — setting up the trust promise before any amount is shown.</p>
+          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> Balance is hidden by default with dots masking the amount. The Savings Pot shows auto-save progress. Four quick-action buttons give instant access to core functions.</p>
         </div>
       </div>
 
@@ -1550,13 +1579,20 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
             <div style="width:60px;height:6px;background:#111;border-radius:3px"></div>
             <span style="font-size:.55rem;color:rgba(255,255,255,.7)">GMC_WiFi 🔋</span>
           </div>
+          <!-- Nav bar -->
+          <div style="background:#0D1B2E;border-bottom:1px solid rgba(255,255,255,.07);padding:6px 0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center">
+            <span style="font-size:.5rem;color:rgba(255,255,255,.35)">■ Home</span>
+            <span style="font-size:.5rem;color:#00E5C8;font-weight:700">■ Pay</span>
+            <span style="font-size:.5rem;color:rgba(255,255,255,.35)">■ History</span>
+            <span style="font-size:.5rem;color:rgba(255,255,255,.35)">■ Profile</span>
+          </div>
           <div style="background:#1A3A5C;padding:9px 14px;display:flex;align-items:center;gap:8px">
             <span style="color:rgba(255,255,255,.7);font-size:.75rem">←</span>
             <span style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:#fff">Scan QR Code</span>
           </div>
           <!-- Location banner -->
           <div style="background:#0e5c3a;padding:5px 14px;text-align:center">
-            <span style="font-size:.56rem;color:rgba(100,255,180,.85);font-style:italic">Gelephu Mindfulness City · GMC Commercial District</span>
+            <span style="font-size:.56rem;color:rgba(100,255,180,.85);font-style:italic">GMC Commercial District</span>
           </div>
           <!-- Camera viewfinder -->
           <div style="background:#0a1220;margin:10px;position:relative;height:160px;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center">
@@ -1575,17 +1611,26 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
               <div style="width:16px;height:16px;background:#fff;border-radius:2px"></div>
             </div>
           </div>
-          <div style="padding:6px 10px;text-align:center">
-            <span style="font-size:.6rem;color:rgba(255,255,255,.45);font-style:italic">Point camera at merchant QR</span>
+          <div style="padding:5px 10px 6px;text-align:center">
+            <span style="font-size:.6rem;color:rgba(255,255,255,.45);font-style:italic">Point camera at merchant QR code</span>
           </div>
-          <!-- Manual entry button -->
-          <div style="margin:0 10px 12px;background:#00E5C8;border-radius:5px;padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px">
-            <span style="font-size:.62rem">⬛</span>
-            <span style="font-size:.68rem;font-weight:700;color:#000;letter-spacing:.06em">Enter Code Manually</span>
+          <!-- Options row -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 10px 12px">
+            <div style="background:#1A3A5C;border-radius:4px;padding:9px;text-align:center;display:flex;align-items:center;justify-content:center;gap:5px">
+              <span style="font-size:.6rem;color:rgba(255,255,255,.8)">#</span>
+              <span style="font-size:.62rem;color:rgba(255,255,255,.8);font-weight:500">Enter Account No.</span>
+            </div>
+            <div style="background:#1A3A5C;border-radius:4px;padding:9px;text-align:center;display:flex;align-items:center;justify-content:center;gap:5px">
+              <span style="font-size:.6rem;color:rgba(255,255,255,.8)">■</span>
+              <span style="font-size:.62rem;color:rgba(255,255,255,.8);font-weight:500">Choose from Album</span>
+            </div>
+          </div>
+          <div style="padding:6px;text-align:center;border-top:1px solid rgba(255,255,255,.06)">
+            <span style="font-size:.5rem;color:rgba(255,255,255,.25);font-style:italic">Secured by DK Bank Blockchain · Solana</span>
           </div>
         </div>
         <div style="background:var(--gc);border:1px solid var(--bdr);border-top:none;padding:10px 14px">
-          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> Location context (GMC Commercial District) reassures the user they're scanning a legitimate merchant in the correct zone.</p>
+          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> Location context (GMC Commercial District) reassures the user they're scanning a legitimate merchant. Two fallback options — enter account number or pick from album — ensure accessibility.</p>
         </div>
       </div>
 
@@ -1601,25 +1646,45 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
             <div style="width:60px;height:6px;background:#ddd;border-radius:3px"></div>
             <span style="font-size:.55rem;color:#666">GMC_WiFi 🔋</span>
           </div>
+          <!-- Nav bar -->
+          <div style="background:#f7f2e8;border-bottom:1px solid #e0d8c8;padding:6px 0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center">
+            <span style="font-size:.5rem;color:#aaa">■ Home</span>
+            <span style="font-size:.5rem;color:#1A3A5C;font-weight:700">■ Pay</span>
+            <span style="font-size:.5rem;color:#aaa">■ History</span>
+            <span style="font-size:.5rem;color:#aaa">■ Profile</span>
+          </div>
           <div style="background:#1A3A5C;padding:9px 14px;display:flex;align-items:center;gap:8px">
             <span style="color:rgba(255,255,255,.7);font-size:.75rem">←</span>
             <span style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:#fff">Confirm Payment</span>
           </div>
-          <!-- Paying to -->
-          <div style="background:#fff;margin:10px 10px 6px;border-radius:6px;padding:10px 12px;border:1px solid #e8e0d0">
-            <div style="font-size:.55rem;color:#999;margin-bottom:3px">Paying to:</div>
-            <div style="font-family:var(--fd);font-size:.88rem;font-weight:700;color:#1A3A5C">Deki's Kitchen · GMC</div>
+          <!-- Merchant -->
+          <div style="background:#fff;margin:10px 10px 6px;border-radius:6px;padding:10px 12px;border:1px solid #e8e0d0;display:flex;align-items:center;gap:8px">
+            <div style="width:28px;height:28px;background:#1A3A5C;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.7rem;font-weight:700;color:#fff;flex-shrink:0">DK</div>
+            <div>
+              <div style="font-family:var(--fd);font-size:.85rem;font-weight:700;color:#1A3A5C">Deki's Kitchen</div>
+              <div style="font-size:.55rem;color:#999">GMC Commercial Street</div>
+            </div>
           </div>
           <!-- Amount -->
           <div style="background:#1A3A5C;margin:0 10px 6px;border-radius:6px;padding:14px 12px;text-align:center">
-            <div style="font-size:.56rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px">Amount</div>
+            <div style="font-size:.52rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px">Amount</div>
             <div style="font-family:var(--fd);font-size:2rem;font-weight:700;color:#fff;line-height:1">1.28 TER</div>
-            <div style="font-size:.66rem;color:rgba(255,255,255,.5);margin-top:4px">≈ 180 BTN</div>
+            <div style="font-size:.64rem;color:rgba(255,255,255,.45);margin-top:4px">≈ 180 BTN</div>
           </div>
           <!-- Gold backing — THE TRUST MOMENT -->
           <div style="background:#fffbe8;margin:0 10px 8px;border-radius:6px;padding:10px 12px;border:2px solid #C8A51A;display:flex;align-items:center;gap:8px">
             <div style="width:24px;height:24px;background:#C8A51A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:700;color:#fff;flex-shrink:0">Au</div>
-            <span style="font-size:.66rem;color:#6B4E10">Backed by: <strong style="color:#4A2E00;font-size:.75rem">0.0128g gold</strong></span>
+            <span style="font-size:.64rem;color:#6B4E10">Gold-backed: <strong style="color:#4A2E00;font-size:.72rem">0.0128g gold</strong></span>
+          </div>
+          <!-- PIN entry -->
+          <div style="margin:0 10px 6px;background:#fff;border-radius:5px;padding:10px 12px;border:1px solid #e0d8c8">
+            <div style="font-size:.54rem;color:#999;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Enter PIN to confirm</div>
+            <div style="display:flex;gap:8px;justify-content:center">
+              <div style="width:22px;height:22px;border:1.5px solid #1A3A5C;border-radius:4px;background:#f0f4f8"></div>
+              <div style="width:22px;height:22px;border:1.5px solid #1A3A5C;border-radius:4px;background:#f0f4f8"></div>
+              <div style="width:22px;height:22px;border:1.5px solid #1A3A5C;border-radius:4px;background:#f0f4f8"></div>
+              <div style="width:22px;height:22px;border:1.5px solid #1A3A5C;border-radius:4px;background:#f0f4f8"></div>
+            </div>
           </div>
           <!-- Confirm button -->
           <div style="margin:0 10px 6px;background:#2A7A40;border-radius:5px;padding:11px;text-align:center">
@@ -1631,19 +1696,19 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
           </div>
         </div>
         <div style="background:var(--gc);border:1px solid var(--bdr);border-top:none;padding:10px 14px">
-          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">★ The trust moment:</strong> The gold backing line — "0.0128g gold" — is the critical design element. Balance is deliberately absent. Only the payment amount is shown.</p>
+          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">★ The trust moment:</strong> Gold backing — "0.0128g gold" — is the critical element. PIN confirmation (not biometric) keeps the flow device-agnostic. Only the payment amount is shown, never the balance.</p>
         </div>
       </div>
     </div>
 
-    <!-- SCREEN ROW 2: 2 across, centered -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:780px;margin:0 auto">
+    <!-- SCREEN ROW 2: 3 across -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-bottom:28px">
 
       <!-- Screen 4 -->
       <div class="rv" style="display:flex;flex-direction:column;gap:0">
         <div style="background:#2A7A40;border:1px solid var(--bdr);border-bottom:none;padding:12px 16px;display:flex;align-items:center;gap:10px">
           <span style="font-size:.5rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)">Screen 4</span>
-          <span style="font-family:var(--fd);font-size:.88rem;font-weight:600;color:#fff">Success Screen</span>
+          <span style="font-family:var(--fd);font-size:.88rem;font-weight:600;color:#fff">Payment Successful</span>
           <span style="margin-left:auto;font-size:.56rem;color:rgba(255,255,255,.5)">Karma only sees his payment</span>
         </div>
         <div style="background:#e8f5ec;border:1px solid var(--bdr);border-radius:0 0 4px 4px;overflow:hidden">
@@ -1651,28 +1716,39 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
             <span style="font-size:.55rem;color:#666">9:41</span>
             <span style="font-size:.55rem;color:#666">GMC_WiFi 🔋</span>
           </div>
+          <!-- Nav bar -->
+          <div style="background:#e8f5ec;border-bottom:1px solid #c5e0cc;padding:6px 0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center">
+            <span style="font-size:.5rem;color:#aaa">■ Home</span>
+            <span style="font-size:.5rem;color:#2A7A40;font-weight:700">■ Pay</span>
+            <span style="font-size:.5rem;color:#aaa">■ History</span>
+            <span style="font-size:.5rem;color:#aaa">■ Profile</span>
+          </div>
           <div style="background:#2A7A40;padding:9px 14px;text-align:center">
             <span style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:#fff">DK Bank</span>
           </div>
+          <!-- Success icon -->
           <div style="padding:16px 10px 8px;text-align:center">
-            <div style="width:56px;height:56px;background:#2A7A40;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:1.5rem">✓</div>
-            <div style="font-family:var(--fd);font-size:1.1rem;font-weight:700;color:#2A7A40;margin-bottom:12px">Payment Successful</div>
+            <div style="width:52px;height:52px;background:#2A7A40;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:1.4rem;color:#fff">✓</div>
+            <div style="font-family:var(--fd);font-size:1rem;font-weight:700;color:#2A7A40;margin-bottom:4px">Payment Successful</div>
           </div>
-          <div style="background:#fff;margin:0 10px 8px;border-radius:6px;padding:12px;text-align:center;border:1px solid #c5e0cc">
-            <div style="font-family:var(--fd);font-size:1rem;font-weight:700;color:#1A3A5C">1.28 TER Sent</div>
-            <div style="font-size:.6rem;color:#5a9a6a;margin-top:2px">Transaction Completed</div>
+          <!-- Amount sent -->
+          <div style="background:#fff;margin:0 10px 6px;border-radius:6px;padding:12px;text-align:center;border:1px solid #c5e0cc">
+            <div style="font-family:var(--fd);font-size:1.1rem;font-weight:700;color:#1A3A5C">1.28 TER</div>
+            <div style="font-size:.58rem;color:#5a9a6a;margin-top:2px">→ Deki's Kitchen · GMC</div>
+            <div style="font-size:.5rem;color:#aaa;margin-top:3px;font-style:italic">TX: 7xK3...mQ9p · Solana</div>
           </div>
-          <div style="text-align:center;padding:4px 10px 4px;font-size:.6rem;color:#9ab;font-style:italic">→ Deki's Kitchen · GMC</div>
-          <div style="background:#f0f4f8;margin:4px 10px 8px;border-radius:4px;padding:8px 10px;display:flex;align-items:center;gap:6px">
-            <span style="font-size:.75rem">🔒</span>
-            <span style="font-size:.56rem;color:#5a7a9a;font-style:italic">Merchant details are private — you only see your payment</span>
+          <!-- Savings Pot update -->
+          <div style="background:#e8f5ec;margin:0 10px 8px;border-radius:5px;padding:9px 12px;border:1px solid #a5d6b0">
+            <div style="font-size:.54rem;font-weight:700;color:#1A5C3A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">🪙 Savings Pot</div>
+            <div style="font-family:var(--fd);font-size:.88rem;font-weight:700;color:#2A7A40">0.47 TER <span style="font-size:.6rem;font-weight:400;color:#5a8a6a">total</span></div>
+            <div style="font-size:.56rem;color:#5a8a6a;margin-top:2px">+ 0.13 TER added from this payment (10% auto-save)</div>
           </div>
           <div style="margin:0 10px 10px;background:#2A7A40;border-radius:5px;padding:10px;text-align:center">
             <span style="font-size:.7rem;font-weight:700;color:#fff">Done</span>
           </div>
         </div>
         <div style="background:var(--gc);border:1px solid var(--bdr);border-top:none;padding:10px 14px">
-          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> Karma sees only his outgoing payment. Deki's auto-save amount is private — only she sees it on her merchant dashboard.</p>
+          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> Karma sees only his outgoing payment and his own Savings Pot update. Deki's auto-save amount remains private — only visible on her merchant dashboard.</p>
         </div>
       </div>
 
@@ -1685,69 +1761,146 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
         </div>
         <div style="background:#f7f9fc;border:1px solid var(--bdr);border-radius:0 0 4px 4px;overflow:hidden">
           <div style="background:#1A5C5C;padding:8px 14px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:.55rem;color:rgba(255,255,255,.6)">Deki's Kitchen — TER Merchant Dashboard · GMC Commercial Street</span>
-            <span style="font-size:.55rem;color:rgba(255,255,255,.4)">9:41</span>
+            <span style="font-size:.52rem;color:rgba(255,255,255,.55)">TER Merchant Dashboard · Deki's Kitchen</span>
+            <span style="font-size:.52rem;color:rgba(255,255,255,.4)">9:41</span>
+          </div>
+          <!-- Nav bar -->
+          <div style="background:#1A5C5C;border-bottom:1px solid rgba(255,255,255,.08);padding:5px 0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center">
+            <span style="font-size:.49rem;color:rgba(255,255,255,.35)">■ Home</span>
+            <span style="font-size:.49rem;color:rgba(255,255,255,.35)">■ Pay</span>
+            <span style="font-size:.49rem;color:rgba(255,255,255,.35)">■ History</span>
+            <span style="font-size:.49rem;color:rgba(255,255,255,.35)">■ Profile</span>
           </div>
           <!-- Payment received header -->
           <div style="background:#2A7A40;padding:10px 14px;display:flex;align-items:center;gap:8px">
             <span style="font-size:.9rem;color:#fff">✓</span>
             <span style="font-family:var(--fd);font-size:.85rem;font-weight:700;color:#fff">Payment Received!</span>
-            <span style="margin-left:auto;font-size:.56rem;color:rgba(255,255,255,.5);font-style:italic">Just now</span>
+            <span style="margin-left:auto;font-size:.54rem;color:rgba(255,255,255,.5);font-style:italic">Just now</span>
           </div>
           <!-- Payment details -->
           <div style="background:#fff;margin:8px;border-radius:6px;padding:10px 12px;border:1px solid #dde4ec">
-            <div style="font-size:.58rem;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Payment Details</div>
+            <div style="font-size:.56rem;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Payment Details</div>
             <div style="display:grid;grid-template-columns:50px 1fr;gap:4px 8px;font-size:.6rem">
               <span style="color:#999">From:</span><span style="font-weight:600;color:#1A3A5C">Karma W. · DK Bank</span>
               <span style="color:#999">Amount:</span><span style="font-weight:600;color:#1A3A5C">1.28 TER (≈ 180 BTN)</span>
-              <span style="color:#999">TX ID:</span><span style="color:#9ab;font-size:.55rem">7xK3...mQ9p · Solana Blockchain</span>
+              <span style="color:#999">TX ID:</span><span style="color:#9ab;font-size:.54rem">7xK3...mQ9p · Solana</span>
             </div>
           </div>
-          <!-- Auto-save triggered -->
-          <div style="background:#e8f5ec;margin:0 8px 8px;border-radius:6px;border:1px solid #a5d6b0;padding:10px 12px">
-            <div style="display:flex;align-items:center;gap:5px;margin-bottom:8px">
-              <span style="font-size:.65rem">✓</span>
-              <span style="font-size:.58rem;font-weight:700;color:#1A5C3A;text-transform:uppercase;letter-spacing:.1em">Auto-Save Triggered · 10% of Payment</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px">
-              <div>
-                <div style="font-family:var(--fd);font-size:1.3rem;font-weight:700;color:#2A7A40;line-height:1">0.128 TER</div>
-                <div style="font-size:.55rem;color:#5a8a6a;margin-top:2px">saved automatically<br>to your TER Savings Wallet</div>
+          <!-- Auto-save rate row -->
+          <div style="background:#fff;margin:0 8px 6px;border-radius:5px;padding:8px 12px;border:1px solid #dde4ec;display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:.58rem;color:#666">Auto-Save Rate: <strong style="color:#1A5C3A">10%</strong></span>
+            <span style="font-size:.56rem;color:#1A3A5C;text-decoration:underline;font-weight:500">Edit rate →</span>
+          </div>
+          <!-- Split display -->
+          <div style="background:#e8f5ec;margin:0 8px 6px;border-radius:5px;border:1px solid #a5d6b0;padding:9px 12px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div style="text-align:center">
+                <div style="font-family:var(--fd);font-size:.95rem;font-weight:700;color:#1A3A5C">1.152 TER</div>
+                <div style="font-size:.5rem;color:#5a8a6a;margin-top:2px">to wallet</div>
               </div>
-            </div>
-            <div style="margin-top:6px;display:flex;align-items:center;gap:5px">
-              <div style="width:14px;height:14px;background:#C8A51A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.4rem;font-weight:700;color:#fff;flex-shrink:0">Au</div>
-              <span style="font-size:.54rem;color:#6a8a6a;font-style:italic">≈ 0.00128g gold added to your savings · Customer does not see this</span>
+              <div style="text-align:center;border-left:1px solid #a5d6b0">
+                <div style="font-family:var(--fd);font-size:.95rem;font-weight:700;color:#2A7A40">0.128 TER</div>
+                <div style="font-size:.5rem;color:#5a8a6a;margin-top:2px">saved</div>
+              </div>
             </div>
           </div>
           <!-- Today's savings -->
-          <div style="background:#fff;margin:0 8px 8px;border-radius:6px;padding:10px 12px;border:1px solid #dde4ec;display:flex;align-items:center;justify-content:space-between">
+          <div style="background:#fff;margin:0 8px 8px;border-radius:5px;padding:9px 12px;border:1px solid #dde4ec;display:flex;align-items:center;justify-content:space-between">
             <div>
-              <div style="font-size:.56rem;color:#999;margin-bottom:3px">Today's Total Savings:</div>
-              <div style="font-family:var(--fd);font-size:.85rem;font-weight:700;color:#2A7A40">1.42 TER <span style="font-size:.62rem;font-weight:400;color:#5a8a6a">accumulated in savings wallet</span></div>
+              <div style="font-size:.54rem;color:#999;margin-bottom:2px">Today's Total Savings:</div>
+              <div style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:#2A7A40">1.42 TER</div>
             </div>
-            <div style="width:22px;height:22px;background:#C8A51A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.52rem;font-weight:700;color:#fff">Au</div>
+            <div style="width:20px;height:20px;background:#C8A51A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.48rem;font-weight:700;color:#fff">Au</div>
           </div>
-          <div style="padding:7px;text-align:center;border-top:1px solid #e0e4ea">
-            <span style="font-size:.5rem;color:#aaa;font-style:italic">Secured by DK Bank · Solana Blockchain · RMA Regulated · Auto-save is private and not visible to customers</span>
+          <div style="padding:6px;text-align:center;border-top:1px solid #e0e4ea">
+            <span style="font-size:.48rem;color:#aaa;font-style:italic">Secured by DK Bank · Solana · RMA Regulated</span>
           </div>
         </div>
         <div style="background:var(--gc);border:1px solid var(--bdr);border-top:none;padding:10px 14px">
-          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> The auto-save feature is Deki's private incentive. The gold (Au) icon reinforces value. This is the merchant's reason to set everything up.</p>
+          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> The auto-save feature is Deki's private incentive. The 10% split is shown clearly. The "Edit rate →" link opens the auto-save modal (Screen 5b). Customer never sees this screen.</p>
+        </div>
+      </div>
+
+      <!-- Screen 5b — Auto-Save Rate Modal -->
+      <div class="rv" style="display:flex;flex-direction:column;gap:0">
+        <div style="background:var(--bg2);border:1px solid var(--bdr);border-bottom:none;padding:12px 16px;display:flex;align-items:center;gap:10px">
+          <span style="font-size:.5rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl)">Screen 5b</span>
+          <span style="font-family:var(--fd);font-size:.88rem;font-weight:600;color:var(--ink)">Auto-Save Rate Modal</span>
+          <span style="margin-left:auto;font-size:.56rem;color:var(--mut)">Merchant-only</span>
+        </div>
+        <div style="background:#f7f9fc;border:1px solid var(--bdr);border-radius:0 0 4px 4px;overflow:hidden;position:relative">
+          <!-- Dimmed background to simulate modal overlay -->
+          <div style="background:#1A5C5C;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;filter:brightness(.55)">
+            <span style="font-size:.52rem;color:rgba(255,255,255,.55)">TER Merchant Dashboard · Deki's Kitchen</span>
+            <span style="font-size:.52rem;color:rgba(255,255,255,.4)">9:41</span>
+          </div>
+          <div style="background:rgba(0,0,0,.35);padding:8px 14px;filter:brightness(.55)">
+            <span style="font-size:.5rem;color:rgba(255,255,255,.3)">■ Dashboard background dimmed</span>
+          </div>
+          <!-- Modal card -->
+          <div style="background:#fff;margin:10px;border-radius:8px;border:1px solid #dde4ec;box-shadow:0 8px 32px rgba(0,0,0,.18);overflow:hidden">
+            <!-- Modal header -->
+            <div style="background:#1A5C5C;padding:12px 14px;display:flex;align-items:center;justify-content:space-between">
+              <span style="font-family:var(--fd);font-size:.88rem;font-weight:700;color:#fff">Set Auto-Save Rate</span>
+              <span style="color:rgba(255,255,255,.6);font-size:.9rem;font-weight:300">✕</span>
+            </div>
+            <!-- Subtitle -->
+            <div style="padding:8px 14px 6px;background:#f7f9fc;border-bottom:1px solid #eee">
+              <span style="font-size:.56rem;color:#888;font-style:italic">Applied to every payment going forward</span>
+            </div>
+            <!-- Rate display -->
+            <div style="padding:14px;text-align:center">
+              <div style="font-family:var(--fd);font-size:2.4rem;font-weight:700;color:#1A5C3A;line-height:1;margin-bottom:10px">10%</div>
+              <!-- Rate option grid -->
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px">
+                <div style="border:1.5px solid #dde4ec;border-radius:5px;padding:7px 4px;text-align:center;background:#f7f9fc">
+                  <span style="font-size:.7rem;color:#888">0%</span>
+                </div>
+                <div style="border:1.5px solid #dde4ec;border-radius:5px;padding:7px 4px;text-align:center;background:#f7f9fc">
+                  <span style="font-size:.7rem;color:#888">5%</span>
+                </div>
+                <div style="border:2px solid #1A5C3A;border-radius:5px;padding:7px 4px;text-align:center;background:#e8f5ec">
+                  <span style="font-size:.7rem;font-weight:700;color:#1A5C3A">10%</span>
+                </div>
+                <div style="border:1.5px solid #dde4ec;border-radius:5px;padding:7px 4px;text-align:center;background:#f7f9fc">
+                  <span style="font-size:.7rem;color:#888">15%</span>
+                </div>
+                <div style="border:1.5px solid #dde4ec;border-radius:5px;padding:7px 4px;text-align:center;background:#f7f9fc">
+                  <span style="font-size:.7rem;color:#888">20%</span>
+                </div>
+                <div style="border:1.5px solid #C8A51A;border-radius:5px;padding:7px 4px;text-align:center;background:#fffbe8">
+                  <span style="font-size:.7rem;color:#6B4E10;font-weight:600">Custom</span>
+                </div>
+              </div>
+              <div style="font-size:.54rem;color:#aaa;font-style:italic;margin-bottom:10px">Tap Custom → type any value (0–100%)</div>
+              <!-- Action buttons -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <div style="background:#f7f9fc;border:1px solid #dde4ec;border-radius:5px;padding:9px;text-align:center">
+                  <span style="font-size:.66rem;color:#888">Cancel</span>
+                </div>
+                <div style="background:#1A5C3A;border-radius:5px;padding:9px;text-align:center">
+                  <span style="font-size:.66rem;font-weight:700;color:#fff">Save Changes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--gc);border:1px solid var(--bdr);border-top:none;padding:10px 14px">
+          <p style="font-size:.66rem;color:var(--mut);line-height:1.6;margin:0"><strong style="color:var(--ink)">Design intent:</strong> Merchant-only modal for adjusting the auto-save rate. Six preset options plus Custom. The selected rate (10%) is highlighted. Changes apply to all future payments immediately.</p>
         </div>
       </div>
     </div>
 
     <!-- Prototype summary note -->
     <div class="rv" style="background:var(--bg2);border:1px solid var(--bdr);border-left:3px solid var(--gl);padding:18px 22px;margin-top:36px">
-      <div style="font-size:.52rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);margin-bottom:6px">About This Prototype</div>
-      <p style="font-size:.78rem;color:var(--mut);line-height:1.9;margin:0">These screens represent the DK Bank TER Wallet prototype v2, designed around the user story of Karma and Deki. Core design principles: (1) balance hidden by default to protect financial privacy, (2) gold backing shown prominently at the trust moment, (3) auto-save is merchant-only and never visible to customers, (4) payment confirmation PIN — not biometric — to be device-agnostic, (5) both sides see only what is relevant to them.</p>
+      <div style="font-size:.52rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);margin-bottom:6px">About This Prototype · v5 Clean</div>
+      <p style="font-size:.78rem;color:var(--mut);line-height:1.9;margin:0">These screens represent the DK Bank TER Wallet prototype v5 Clean, designed around the user story of Karma and Deki. Core design principles: (1) balance hidden by default to protect financial privacy, (2) gold backing shown prominently at the trust moment (Screen 3), (3) auto-save is merchant-only and never visible to customers, (4) payment confirmation uses PIN — not biometric — to be device-agnostic, (5) both sides see only what is relevant to them, (6) the new auto-save rate modal (Screen 5b) gives merchants full control over their savings rate with six preset options and a custom input.</p>
     </div>
   </div>
 
   <div class="band"></div>
   <footer>
-    <div class="ftl"><strong>TER གཏེར་ — App Prototype</strong><br>Dechen Wangmo · DK Bank TER Wallet · v2 · 2026</div>
+    <div class="ftl"><strong>TER གཏེར་ — App Prototype</strong><br>Dechen Wangmo · DK Bank TER Wallet · v5 Clean · 2026</div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · RMA Regulated</div>
   </footer>
 </div>
