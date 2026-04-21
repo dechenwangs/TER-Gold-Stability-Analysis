@@ -509,6 +509,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 .tviz-btn:hover{background:rgba(232,121,29,.12);border-color:rgba(232,121,29,.4);color:#E8791D}
 .tviz-btn.active{background:#E8791D;border-color:#E8791D;color:#fff}
 
+
 /* ─── HOW TER CREATES VALUE PAGE ─── */
 #page-value{background:var(--bg)}
 .value-hero{background:var(--gd);padding:72px 72px 60px;position:relative;overflow:hidden}
@@ -553,6 +554,34 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
   .value-future{grid-template-columns:1fr}
   .value-keymessage{padding:36px 20px}
 }
+
+/* ─── TRANSACTION FLOW PAGE ─── */
+.txf-hero{background:linear-gradient(135deg,var(--gd) 0,#1C0D00 55%,#0C2210 100%);padding:56px 72px 44px;position:relative;overflow:hidden}
+.txf-hero::before{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(135deg,rgba(212,165,32,.03) 0,rgba(212,165,32,.03) 1px,transparent 1px,transparent 40px)}
+.txf-legend-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.txf-leg-item{display:inline-flex;align-items:center;gap:7px;font-size:.6rem;font-weight:500;padding:5px 14px;border-radius:2px}
+.txf-leg-grey{background:rgba(240,240,240,.06);border:1px solid rgba(240,240,240,.15);color:rgba(220,220,220,.8)}
+.txf-leg-orange{background:rgba(200,140,20,.12);border:1px solid rgba(200,140,20,.3);color:rgba(240,200,100,.85)}
+.txf-leg-blue{background:rgba(30,80,160,.15);border:1px solid rgba(60,120,200,.3);color:rgba(140,180,240,.9)}
+.txf-leg-green{background:rgba(20,110,50,.15);border:1px solid rgba(40,160,80,.3);color:rgba(100,220,130,.9)}
+.txf-leg-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+.txf-body{padding:48px 72px 72px;background:var(--bg)}
+.txf-section-label{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.txf-section-label .line{width:24px;height:1px;background:var(--gl)}
+.txf-section-label span{font-size:.55rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gl)}
+.txf-diagram-wrap{display:flex;flex-direction:column;gap:32px}
+.txf-diagram-card{background:var(--gc);border:1px solid var(--bdr);box-shadow:var(--shd);overflow:hidden;position:relative;transition:box-shadow .3s,transform .3s}
+.txf-diagram-card:hover{box-shadow:0 8px 40px rgba(80,50,0,.14);transform:translateY(-2px)}
+.txf-diagram-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gl),var(--gp))}
+.txf-card-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px 14px;border-bottom:1px solid var(--bdr);background:var(--bg2)}
+.txf-card-header h3{font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--ink)}
+.txf-card-header h3 em{font-style:italic;color:var(--gd)}
+.txf-card-badge{font-size:.52rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;background:rgba(180,130,10,.1);border:1px solid rgba(180,130,10,.25);color:var(--gd);border-radius:2px}
+.txf-card-img{width:100%;display:block;image-rendering:crisp-edges}
+.txf-connector{display:flex;align-items:center;justify-content:center;gap:14px;padding:4px 0}
+.txf-connector-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--bdr),transparent)}
+.txf-connector-icon{font-size:1.2rem;color:var(--gl);opacity:.7}
+
 </style>
 </head>
 <body>
@@ -576,6 +605,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     <li><button class="nav-page-btn" data-page="value">How This Project Creates Value</button></li>
     <li><button class="nav-page-btn" data-page="sources">Sources</button></li>
     <li><button class="nav-page-btn" data-page="prototype">Prototype</button></li>
+    <li><button class="nav-page-btn" data-page="txflow">Transaction Flow</button></li>
   </ul>
 </nav>
 
@@ -715,18 +745,59 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
             <h4>Strategic Recommendations</h4>
             <p>Data-backed recommendations for improving TER's adoption, trust, and positioning as a gold-backed digital instrument.</p>
           </div>
-          <div class="pg-item" style="grid-column:span 2;border-top:2px solid var(--gl);background:linear-gradient(135deg,rgba(15,64,24,.06),rgba(180,130,10,.05))">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
-              <div class="pg-num" style="margin-bottom:0">05</div>
-              <span style="font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grn);background:rgba(15,64,24,.1);padding:3px 10px;border:1px solid rgba(15,64,24,.2)">Prototype</span>
+          <div class="pg-item" style="grid-column:span 2;border:none;padding:0;overflow:hidden;background:none;">
+            <style>
+              .proto-box{position:relative;background:linear-gradient(135deg,#2A1400 0%,#1a0d00 45%,#0a2010 100%);padding:22px 26px;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:110px}
+              .proto-box::before{content:"PAY";position:absolute;right:170px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:5.5rem;font-weight:700;color:rgba(255,255,255,.045);line-height:1;pointer-events:none;user-select:none;letter-spacing:.05em}
+              .proto-box-left{position:relative;z-index:1;flex:1}
+              .proto-eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+              .proto-eyebrow-line{width:14px;height:1px;background:var(--gl)}
+              .proto-eyebrow span{font-size:.5rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gl)}
+              .proto-box-left h4{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--gp);margin-bottom:6px;line-height:1.25;text-transform:none;letter-spacing:0}
+              .proto-box-left h4 em{font-style:italic;color:var(--gl);font-weight:400}
+              .proto-box-left p{font-size:.72rem;font-weight:300;color:rgba(240,216,112,.55);line-height:1.75;margin:0;max-width:360px}
+              .proto-box-right{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:10px;flex-shrink:0}
+              .proto-view-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;background:#fff;color:var(--gd);border:none;font-family:var(--fb);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:none;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;white-space:nowrap}
+              .proto-view-btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 10px 36px rgba(212,165,32,.45)}
+              .proto-view-btn .pvb-icon{width:22px;height:22px;background:var(--gl);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;transition:background .25s}
+              .proto-view-btn:hover .pvb-icon{background:var(--gd)}
+              .proto-view-btn .pvb-arrow{font-size:.9rem;transition:transform .3s}
+              .proto-view-btn:hover .pvb-arrow{transform:translateX(4px)}
+              .proto-live{display:flex;align-items:center;gap:6px}
+              .proto-live-dot{width:6px;height:6px;background:#4ADE80;border-radius:50%;flex-shrink:0;animation:pulse-dot 2s infinite}
+              .proto-live span{font-size:.52rem;color:rgba(240,216,112,.4);font-weight:300;letter-spacing:.04em}
+            </style>
+            <div style="padding:14px 16px 12px;background:linear-gradient(135deg,rgba(15,64,24,.06),rgba(180,130,10,.05));border-top:2px solid var(--gl)">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
+                <div class="pg-num" style="margin-bottom:0">05</div>
+                <span style="font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grn);background:rgba(15,64,24,.1);padding:3px 10px;border:1px solid rgba(15,64,24,.2)">Prototype</span>
+              </div>
+              <h4 style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:4px">TER Pay — Everyday Payment Platform</h4>
+              <p style="font-size:.7rem;font-weight:300;color:var(--mut);line-height:1.6;margin-bottom:0">A working prototype that allows users to make everyday payments using TER. TER Pay is designed to bridge the gap between investment and usability — letting people experience TER's stability through real transactions. By paying with TER in daily life, users build practical understanding and trust that data alone cannot always achieve. The prototype covers the full payment flow: QR scanning, gold-to-TER conversion, confirmation, merchant dashboard, and auto-save features.</p>
             </div>
-            <h4>TER Pay — Everyday Payment Platform</h4>
-            <p>A working prototype that allows users to make everyday payments using TER. TER Pay is designed to bridge the gap between investment and usability — letting people experience TER's stability through real transactions. By paying with TER in daily life, users build practical understanding and trust that data alone cannot always achieve. The prototype covers the full payment flow: QR scanning, gold-to-TER conversion, confirmation, merchant dashboard, and auto-save features.</p>
+            <div class="proto-box">
+              <div class="proto-box-left">
+                <div class="proto-eyebrow"><div class="proto-eyebrow-line"></div><span>Live Prototype · TER Pay</span></div>
+                <h4>Experience TER Pay <em>in action</em></h4>
+                <p>See every screen of the payment flow — from wallet to QR scan to confirmation — and feel how gold-backed currency works in everyday life.</p>
+              </div>
+              <div class="proto-box-right">
+                <button class="proto-view-btn nav-page-btn" data-page="prototype">
+                  <span class="pvb-icon">⊞</span>
+                  View Prototype
+                  <span class="pvb-arrow">→</span>
+                </button>
+                <div class="proto-live">
+                  <span class="proto-live-dot"></span>
+                  <span>7 interactive screens · Full payment flow</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap">
-        <button class="nav-page-btn" data-page="research" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📊 View Survey Findings</button>
+        <button class="nav-page-btn" data-page="survey" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📊 View Survey Findings</button>
         <button class="nav-page-btn" data-page="market" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📈 Market Analysis</button>
         <button class="nav-page-btn" data-page="conclusion" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">✅ Conclusion</button>
       </div>
@@ -1475,7 +1546,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
   <div class="band"></div>
   <div style="background:var(--gd);padding:72px 72px 60px;position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(212,165,32,.04) 0,rgba(212,165,32,.04) 1px,transparent 1px,transparent 40px);pointer-events:none"></div>
-    <div class="ey rv"><div class="eyl"></div><span>Wallet Prototype · DK Bank TER</span></div>
+    <div class="ey rv"><div class="eyl"></div><span>TER Pay · DK Bank Prototype</span></div>
     <h2 class="sh rv" style="color:var(--gp);font-size:clamp(2rem,3.5vw,3rem);margin-bottom:14px">TER-Pay <em style="color:var(--gl)">User Flow</em><br>Prototype Screens</h2>
     <p style="font-size:.84rem;font-weight:300;color:rgba(240,216,112,.65);line-height:1.9;max-width:680px" class="rv">Seven screens showing the complete TER payment journey — from the home wallet through QR scanning, payment confirmation, success, the merchant's auto-save dashboard, auto-save rate settings, and the user auto-save profile screen. Each screen is annotated with its design intent.</p>
   </div>
@@ -2056,11 +2127,413 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
         </div>
       </div>
     </div>
-
+  </div>
 
   <div class="band"></div>
   <footer>
     <div class="ftl"><strong>TER གཏེར་ — Wallet Prototype</strong><br>Dechen Wangmo · DK Bank TER Wallet · 2026</div>
+    <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · RMA Regulated</div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE: TRANSACTION FLOW
+══════════════════════════════════════════════ -->
+<div id="page-txflow" class="page">
+  <div class="band"></div>
+
+  <!-- ═══ TRANSACTION FLOW DIAGRAM ═══ -->
+  <div style="background:var(--gd);padding:52px 72px 44px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(212,165,32,.04) 0,rgba(212,165,32,.04) 1px,transparent 1px,transparent 40px);pointer-events:none"></div>
+    <div style="position:absolute;font-family:var(--fd);font-size:16rem;font-weight:700;color:rgba(255,255,255,.025);bottom:-20px;right:60px;line-height:1;pointer-events:none">PAY</div>
+    <div style="max-width:1140px;margin:0 auto;position:relative;z-index:1;">
+
+      <!-- Section header -->
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <div style="width:20px;height:1px;background:var(--gl)"></div>
+        <span style="font-size:.52rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gl)">TER-Pay · Transaction Flow v4 · Payment Lifecycle</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;">
+        <div>
+          <h2 style="font-family:var(--fd);font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:400;color:var(--gp);line-height:1.18;margin-bottom:12px;">
+            How a TER Payment<br><em style="font-style:italic;color:var(--gl)">Actually Works — Under the Hood</em>
+          </h2>
+          <p style="font-size:.8rem;font-weight:300;color:rgba(240,216,112,.65);line-height:1.9;max-width:620px;margin-bottom:0;">
+            This diagram maps every technical step that fires behind a single tap. The flow below is the direct technical counterpart to the User Story — the same payment, seen from the system's perspective rather than the user's.
+          </p>
+
+          <!-- Key facts strip -->
+          <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;">
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:2px;">
+              <div style="font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(212,165,32,.6);margin-bottom:3px;">Actors</div>
+              <div style="font-size:.72rem;font-weight:500;color:var(--gp)">Customer · System · Merchant</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:2px;">
+              <div style="font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(212,165,32,.6);margin-bottom:3px;">Settlement</div>
+              <div style="font-size:.72rem;font-weight:500;color:var(--gp)">Solana Blockchain · &lt;1 second</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:2px;">
+              <div style="font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(212,165,32,.6);margin-bottom:3px;">★ New Feature</div>
+              <div style="font-size:.72rem;font-weight:500;color:var(--gp)">Dual Auto-Save · Both Parties</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:2px;">
+              <div style="font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(212,165,32,.6);margin-bottom:3px;">Steps</div>
+              <div style="font-size:.72rem;font-weight:500;color:var(--gp)">12 steps · 6 phases</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Story Button -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;padding-top:8px;">
+          <a href="https://analysis-stability-trust-ter.netlify.app/" target="_blank" style="display:inline-flex;flex-direction:column;align-items:center;gap:8px;padding:18px 24px;background:rgba(255,255,255,.08);border:1px solid rgba(212,165,32,.4);text-decoration:none;transition:all .25s;border-radius:2px;min-width:160px;cursor:none;" onmouseenter="this.style.background='rgba(212,165,32,.15)';this.style.borderColor='rgba(212,165,32,.7)'" onmouseleave="this.style.background='rgba(255,255,255,.08)';this.style.borderColor='rgba(212,165,32,.4)'">
+            <span style="font-size:1.5rem">📖</span>
+            <span style="font-family:var(--fd);font-size:.78rem;font-weight:600;color:var(--gp);text-align:center;line-height:1.3">Read the<br>User Story</span>
+            <span style="font-size:.55rem;font-weight:400;color:rgba(212,165,32,.6);letter-spacing:.1em;text-transform:uppercase">The human side →</span>
+          </a>
+          <p style="font-size:.58rem;font-weight:300;color:rgba(240,216,112,.4);text-align:center;line-height:1.5;max-width:160px;margin:0">
+            See how Karma experiences this same flow in real life
+          </p>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;">
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:.58rem;font-weight:500;padding:5px 13px;border-radius:2px;background:rgba(158,158,158,.12);border:1px solid rgba(158,158,158,.3);color:rgba(230,230,230,.8);">
+          <span style="width:10px;height:10px;border-radius:2px;background:#9e9e9e;flex-shrink:0;display:inline-block;"></span>Existing — already built
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:.58rem;font-weight:500;padding:5px 13px;border-radius:2px;background:rgba(200,140,20,.14);border:1px solid rgba(200,140,20,.35);color:rgba(240,200,80,.9);">
+          <span style="width:10px;height:10px;border-radius:2px;background:#C88A14;flex-shrink:0;display:inline-block;"></span>Partial — needs upgrading
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:.58rem;font-weight:500;padding:5px 13px;border-radius:2px;background:rgba(30,80,160,.15);border:1px solid rgba(60,120,200,.35);color:rgba(140,190,250,.9);">
+          <span style="width:10px;height:10px;border-radius:2px;background:#3A6EC8;flex-shrink:0;display:inline-block;"></span>New — needs building
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:.58rem;font-weight:500;padding:5px 13px;border-radius:2px;background:rgba(20,110,50,.15);border:1px solid rgba(40,160,80,.35);color:rgba(100,230,140,.9);">
+          <span style="width:10px;height:10px;border-radius:2px;background:#28A050;flex-shrink:0;display:inline-block;"></span>New ★ — Dual auto-save
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swimlane diagram -->
+  <div style="background:var(--bg);padding:0 72px 72px;">
+    <div style="max-width:1140px;margin:0 auto;">
+
+      <!-- Column headers -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:0;">
+        <div style="background:var(--gd);padding:16px 20px;text-align:center;">
+          <div style="font-size:.48rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,165,32,.6);margin-bottom:4px;">KARMA (USER)</div>
+          <div style="font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--gp);">DK Bank App</div>
+        </div>
+        <div style="background:#3A2200;padding:16px 20px;text-align:center;">
+          <div style="font-size:.48rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,165,32,.6);margin-bottom:4px;">TER SYSTEM</div>
+          <div style="font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--gl);">Blockchain · Gold Oracle · Wallet</div>
+        </div>
+        <div style="background:#002A2A;padding:16px 20px;text-align:center;">
+          <div style="font-size:.48rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(100,220,180,.5);margin-bottom:4px;">DEKI (MERCHANT)</div>
+          <div style="font-family:var(--fd);font-size:1.05rem;font-weight:700;color:#7FE0C0;">Merchant Tablet</div>
+        </div>
+      </div>
+
+      <!-- Phase label: Initiation -->
+      <div style="background:var(--bg3);padding:8px 20px;border-left:3px solid var(--gl);margin-bottom:0;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:.5rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gd);">INITIATION</span>
+      </div>
+
+      <!-- Steps 1-3: Karma column -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--bdr);border-top:none;">
+
+        <!-- Step 1 -->
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--gd);color:var(--gp);font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">1</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Opens app</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Taps 'Scan to Pay with TER'</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(158,158,158,.12);border:1px solid rgba(158,158,158,.3);color:#777;">■ EXISTING</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+
+        <!-- Step 2 -->
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#3A6EC8;color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">2</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Initiates QR Scan</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">App activates camera scanner</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(30,80,160,.1);border:1px solid rgba(60,120,200,.3);color:#3A6EC8;">■ NEW</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+
+        <!-- Step 3 -->
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#3A6EC8;color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">3</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Scans QR Code</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Uses phone camera to scan Deki's QR code on the counter</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(30,80,160,.1);border:1px solid rgba(60,120,200,.3);color:#3A6EC8;">■ NEW</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+      </div>
+
+      <!-- Phase label: Gold Conversion & Auto-Save -->
+      <div style="background:var(--bg3);padding:8px 20px;border-left:3px solid #C88A14;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:.5rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#7A5200;">GOLD CONVERSION &amp; AUTO-SAVE CALCULATION</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--bdr);border-top:none;">
+
+        <!-- Steps 4 & 5: TER System column -->
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#C88A14;color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">4</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Query Gold Price</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Current gold-backed exchange rate is fetched from the oracle</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(200,140,20,.1);border:1px solid rgba(200,140,20,.3);color:#C88A14;">• PARTIAL</span>
+            </div>
+          </div>
+        </div>
+        <div style="padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+
+        <!-- Step 5 -->
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#3A6EC8;color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">5</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Calculate Conversion</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:2px;">180 BTN → 1.28 TER (0.0128g Au)</div>
+              <div style="font-size:.6rem;font-style:italic;color:var(--gl);margin-bottom:6px;">example conversion</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(30,80,160,.1);border:1px solid rgba(60,120,200,.3);color:#3A6EC8;">■ NEW</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+
+        <!-- Steps 5a & 5b: Dual auto-save -->
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(40,160,80,.04);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#28A050;color:#fff;font-size:.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">5a</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Customer Auto-Save</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Karma 10% → 0.128 TER swept from his balance</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(20,110,50,.1);border:1px solid rgba(40,160,80,.3);color:#28A050;">★ NEW · Dual auto-save</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(40,160,80,.04);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#28A050;color:#fff;font-size:.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">5b</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Merchant Auto-Save</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Deki 10% → 0.128 TER from received amount</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(20,110,50,.1);border:1px solid rgba(40,160,80,.3);color:#28A050;">★ NEW · Dual auto-save</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase label: Confirmation -->
+      <div style="background:var(--bg3);padding:8px 20px;border-left:3px solid var(--gd);display:flex;align-items:center;gap:10px;">
+        <span style="font-size:.5rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gd);">CONFIRMATION</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--bdr);border-top:none;">
+
+        <!-- Step 6 -->
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#3A6EC8;color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">6</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Confirmation Screen</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Paying to: Deki's Kitchen<br><em>Balance hidden — only amount shown</em></div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(30,80,160,.1);border:1px solid rgba(60,120,200,.3);color:#3A6EC8;">■ NEW</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+
+        <!-- Step 7 -->
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#3A6EC8;color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">7</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Karma Confirms</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Payment authorised — confirmed by user (PIN, biometric, or tap — device-dependent)</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(30,80,160,.1);border:1px solid rgba(60,120,200,.3);color:#3A6EC8;">■ NEW</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+      </div>
+
+      <!-- Phase label: Blockchain Settlement -->
+      <div style="background:var(--bg3);padding:8px 20px;border-left:3px solid #3A6EC8;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:.5rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#2A4E98;">BLOCKCHAIN SETTLEMENT</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--bdr);border-top:none;">
+
+        <!-- Steps 8 & 9 -->
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#9e9e9e;color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">8</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Broadcast to Solana</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Signed transaction sent to blockchain</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(158,158,158,.12);border:1px solid rgba(158,158,158,.3);color:#777;">■ EXISTING</span>
+            </div>
+          </div>
+        </div>
+        <div style="padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+
+        <!-- Step 9 -->
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#9e9e9e;color:#fff;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">9</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Transaction Recorded</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Unique TX ID embedded in memo field — permanently traceable on the Solana ledger</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(158,158,158,.12);border:1px solid rgba(158,158,158,.3);color:#777;">■ EXISTING</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+
+        <!-- Steps 10a, 10b, 10c -->
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(40,160,80,.04);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#28A050;color:#fff;font-size:.52rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">10a</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Karma's Wallets Updated</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Spendable −1.408 TER · Savings Pot +0.128 TER</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(20,110,50,.1);border:1px solid rgba(40,160,80,.3);color:#28A050;">★ UPDATED</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(40,160,80,.04);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#28A050;color:#fff;font-size:.52rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">10b</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Both Confirmed</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Simultaneous · real-time</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(20,110,50,.1);border:1px solid rgba(40,160,80,.3);color:#28A050;">★ UPDATED</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(40,160,80,.04);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#28A050;color:#fff;font-size:.52rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">10c</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Deki's Wallets Updated</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Merchant +1.152 TER · Savings Pot +0.128 TER</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(20,110,50,.1);border:1px solid rgba(40,160,80,.3);color:#28A050;">★ UPDATED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase label: Completion -->
+      <div style="background:var(--bg3);padding:8px 20px;border-left:3px solid #28A050;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:.5rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#1A6030;">COMPLETION</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--bdr);border-top:none;">
+
+        <!-- Step 11a -->
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#3A6EC8;color:#fff;font-size:.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">11a</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Karma Sees Success</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Payment confirmed + savings pot shown</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(30,80,160,.1);border:1px solid rgba(60,120,200,.3);color:#3A6EC8;">■ NEW</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-right:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:#3A6EC8;color:#fff;font-size:.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">11b</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Deki Receives Confirm</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">1.152 TER merchant · 0.128 TER saved</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(30,80,160,.1);border:1px solid rgba(60,120,200,.3);color:#3A6EC8;">■ NEW</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 12 -->
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+        <div style="border-right:1px solid var(--bdr);border-top:1px solid var(--bdr);padding:16px 18px;background:var(--gc);">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--gd);color:var(--gp);font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">12</span>
+            <div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Payment Complete</div>
+              <div style="font-size:.64rem;font-weight:300;color:var(--mut);line-height:1.5;margin-bottom:6px;">Receipt issued · done</div>
+              <span style="font-size:.48rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;background:rgba(158,158,158,.12);border:1px solid rgba(158,158,158,.3);color:#777;">■ EXISTING</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--bdr);padding:16px 18px;background:rgba(253,250,240,.4);"></div>
+      </div>
+
+      <!-- User Story CTA -->
+      <div style="margin-top:24px;display:grid;grid-template-columns:1fr auto;gap:0;background:var(--gd);overflow:hidden;">
+        <div style="padding:24px 28px;">
+          <div style="font-size:.5rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gl);margin-bottom:8px;">From the System's Diagram → To the Human Story</div>
+          <p style="font-family:var(--fd);font-size:.96rem;font-weight:400;font-style:italic;color:var(--gp);line-height:1.6;margin:0;max-width:560px;">
+            "He entered his PIN. Done. What happened in that single second behind the screen, he would never need to know."
+          </p>
+          <p style="font-size:.72rem;font-weight:300;color:rgba(240,216,112,.55);margin-top:8px;line-height:1.7;">
+            The 12 steps above are invisible to Karma. The User Story is the same payment seen from his side — the doubt, the queue, the quiet satisfaction.
+          </p>
+        </div>
+        <div style="background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;padding:24px 32px;border-left:1px solid rgba(255,255,255,.08);">
+          <a href="https://analysis-stability-trust-ter.netlify.app/" target="_blank"
+             style="display:inline-flex;flex-direction:column;align-items:center;gap:10px;padding:20px 28px;background:rgba(212,165,32,.15);border:1px solid rgba(212,165,32,.5);text-decoration:none;border-radius:2px;transition:all .25s;cursor:none;white-space:nowrap;"
+             onmouseenter="this.style.background='rgba(212,165,32,.28)';this.style.transform='translateY(-2px)'"
+             onmouseleave="this.style.background='rgba(212,165,32,.15)';this.style.transform='translateY(0)'">
+            <span style="font-size:1.8rem">📖</span>
+            <div style="text-align:center">
+              <div style="font-family:var(--fd);font-size:.88rem;font-weight:600;color:var(--gp);line-height:1.3;">Read the User Story</div>
+              <div style="font-size:.58rem;font-weight:400;color:var(--gl);letter-spacing:.12em;text-transform:uppercase;margin-top:4px;">From Doubt to Trust →</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Key distinction box -->
+      <div style="margin-top:24px;background:rgba(212,165,32,.06);border:1px solid rgba(212,165,32,.3);border-left:3px solid var(--gl);padding:20px 24px;">
+        <div style="font-size:.52rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl);margin-bottom:8px;">KEY DISTINCTION FROM DK BANK'S EXISTING APPROACH</div>
+        <p style="font-size:.75rem;font-weight:300;color:var(--ink2);line-height:1.8;margin:0;">
+          The <strong style="color:var(--ink)">optional auto-save</strong> in gold-backed TER (not fiat) is what separates this system. When the merchant enables it, every payment automatically grows their savings in TER — preserving gold-backed value. This is the incentive that motivates a busy merchant to do the work of setting up a merchant wallet.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="band"></div>
+  <footer>
+    <div class="ftl"><strong>TER གཏེར་ — Transaction Flow v4</strong><br>Dechen Wangmo · DK Bank TER · 2026</div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · RMA Regulated</div>
   </footer>
 </div>
@@ -2201,5 +2674,7 @@ function loadTableauSheet(sheet) {
   if (btn) btn.classList.add('active');
 }
 </script>
+
+
 </body>
 </html>
