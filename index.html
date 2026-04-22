@@ -606,6 +606,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     <li><button class="nav-page-btn" data-page="sources">Sources</button></li>
     <li><button class="nav-page-btn" data-page="prototype">Prototype</button></li>
     <li><button class="nav-page-btn" data-page="txflow">Transaction Flow</button></li>
+    <li><button class="nav-page-btn" data-page="story">User Story</button></li>
   </ul>
 </nav>
 
@@ -673,7 +674,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     </div><!-- /sp-storyboard -->
   </div><!-- /sp-body -->
 </div><!-- /story-panel -->
-══════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════ -->
 <div id="page-intro" class="page active">
   <div class="intro-hero">
     <!-- LEFT: Internship Identity -->
@@ -2495,8 +2496,8 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
           </p>
         </div>
         <div style="background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;padding:24px 32px;border-left:1px solid rgba(255,255,255,.08);">
-          <a href="https://analysis-stability-trust-ter.netlify.app/" target="_blank"
-             style="display:inline-flex;flex-direction:column;align-items:center;gap:10px;padding:20px 28px;background:rgba(212,165,32,.15);border:1px solid rgba(212,165,32,.5);text-decoration:none;border-radius:2px;transition:all .25s;cursor:none;white-space:nowrap;"
+          <button onclick="showPage('story')"
+             style="display:inline-flex;flex-direction:column;align-items:center;gap:10px;padding:20px 28px;background:rgba(212,165,32,.15);border:1px solid rgba(212,165,32,.5);border-radius:2px;transition:all .25s;cursor:none;white-space:nowrap;font-family:inherit;"
              onmouseenter="this.style.background='rgba(212,165,32,.28)';this.style.transform='translateY(-2px)'"
              onmouseleave="this.style.background='rgba(212,165,32,.15)';this.style.transform='translateY(0)'">
             <span style="font-size:1.8rem">📖</span>
@@ -2504,7 +2505,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
               <div style="font-family:var(--fd);font-size:.88rem;font-weight:600;color:var(--gp);line-height:1.3;">Read the User Story</div>
               <div style="font-size:.58rem;font-weight:400;color:var(--gl);letter-spacing:.12em;text-transform:uppercase;margin-top:4px;">From Doubt to Trust →</div>
             </div>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -2525,6 +2526,191 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · RMA Regulated</div>
   </footer>
 </div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: USER STORY
+══════════════════════════════════════════ -->
+<div id="page-story" class="page">
+
+  <!-- Hero -->
+  <div style="background:linear-gradient(135deg,var(--gd) 0,#2A1400 60%,#0C1A0C 100%);padding:64px 72px 48px;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(212,165,32,.025) 0,rgba(212,165,32,.025) 1px,transparent 1px,transparent 44px);pointer-events:none"></div>
+    <div style="position:absolute;right:60px;bottom:-10px;font-family:var(--fd);font-size:13rem;font-weight:700;color:rgba(255,255,255,.03);line-height:1;pointer-events:none">གཏེར་</div>
+    <div style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+        <div style="width:20px;height:1px;background:var(--gl)"></div>
+        <span style="font-size:.52rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gl)">TER-Pay · User Journey · Gelephu 2027</span>
+      </div>
+      <h2 style="font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;color:var(--gp);line-height:1.1;margin-bottom:12px">
+        <strong>From Doubt to Trust</strong><br>
+        <em style="color:var(--gl)">A TER-Pay User Story</em>
+      </h2>
+      <p style="font-size:.8rem;font-weight:300;color:rgba(240,216,112,.55);line-height:1.9;max-width:600px;margin-bottom:24px">
+        The same payment you just saw mapped in the Transaction Flow — told from Karma's side. The doubt at the counter, the queue, the quiet satisfaction on the street outside.
+      </p>
+      <!-- Persona card -->
+      <div style="display:inline-grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:14px 20px;border-radius:2px">
+        <div style="width:42px;height:42px;background:rgba(212,165,32,.14);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;border:1px solid rgba(212,165,32,.25)">👤</div>
+        <div>
+          <div style="font-family:var(--fd);font-size:.88rem;font-weight:600;color:var(--gp)">Karma Wangchuk</div>
+          <div style="font-size:.62rem;font-weight:300;color:rgba(240,216,112,.5);line-height:1.6">28 · Civil Servant · Thimphu · mBoB user · TER holder · first-time TER payer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story body -->
+  <div style="max-width:860px;margin:0 auto;padding:56px 72px 72px">
+
+    <!-- The Persona -->
+    <div style="margin-bottom:48px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <div style="width:20px;height:1px;background:var(--gl)"></div>
+        <span style="font-size:.5rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl)">The Persona</span>
+      </div>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2">Karma Wangchuk, a 28-year-old civil servant based in Thimphu, is practical and not particularly tech-savvy, relying mainly on his mBoB app for everyday transactions. Although he has heard about TER and even invested in it to support the emerging digital ecosystem, he has never actually used it and remains uncertain about trusting a digital asset.</p>
+    </div>
+
+    <!-- The Setting -->
+    <div style="margin-bottom:48px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <div style="width:20px;height:1px;background:var(--gl)"></div>
+        <span style="font-size:.5rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl)">The Setting</span>
+      </div>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:10px"><strong style="color:var(--ink)">Gelephu, 2027.</strong> Karma has travelled from Thimphu for a three-day inter-agency workshop at the Gelephu Mindfulness City administrative complex. The mornings are full of presentations and panel discussions. The afternoons are free.</p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2">It is the second day. Lunchtime.</p>
+    </div>
+
+    <!-- The Narrative -->
+    <div style="margin-bottom:48px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+        <div style="width:20px;height:1px;background:var(--gl)"></div>
+        <span style="font-size:.5rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl)">The Narrative</span>
+      </div>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">The workshop session ends at 12:30 p.m. Karma steps out into the GMC's main commercial street — wider than he expected, quieter than Thimphu's lunch crowds, but alive in its own way: new shopfronts, unfamiliar signage, the air laced with fresh concrete and cut timber somewhere behind the finished buildings.</p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">A colleague points him toward a small restaurant two minutes down the road. <em style="color:var(--ink2)">"Good ema datshi. Very local."</em></p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">He eats slowly. The ema datshi is great. Outside, workers in hard hats walk past, clipboards in hand. The city is still becoming itself.</p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">When the last of his butter tea is gone, he walks up to the counter to pay. <strong style="color:var(--ink)">180 BTN.</strong> He reaches for his phone, ready to pay with mBoB as usual. Then he notices the sign.</p>
+
+      <!-- Pull quote -->
+      <div style="border-left:3px solid var(--gl);padding:14px 20px;background:rgba(180,130,10,.05);margin:24px 0;font-family:var(--fd);font-size:1.05rem;font-style:italic;color:var(--gd);line-height:1.6">
+        "Pay with TER."
+      </div>
+
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">Behind the counter, Deki is moving fast. She put that sign up three weeks ago after her cousin convinced her to try it. She was skeptical then too — a whole afternoon setting up the wallet, wondering if any customer would actually use it.</p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:18px">Karma has some TER in his DK account, but he has never used it before. Questions run through his mind:</p>
+
+      <!-- Doubts -->
+      <div style="background:rgba(180,130,10,.06);border:1px solid rgba(180,130,10,.18);border-left:3px solid rgba(180,130,10,.4);padding:18px 22px;margin-bottom:20px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:2px">Karma's doubts</div>
+        <div style="display:flex;gap:10px;font-size:.8rem;color:var(--ink2);line-height:1.6"><span style="color:var(--gl);font-weight:700;flex-shrink:0">→</span>Is it really stable?</div>
+        <div style="display:flex;gap:10px;font-size:.8rem;color:var(--ink2);line-height:1.6"><span style="color:var(--gl);font-weight:700;flex-shrink:0">→</span>Will the value suddenly change while I'm standing here?</div>
+        <div style="display:flex;gap:10px;font-size:.8rem;color:var(--ink2);line-height:1.6"><span style="color:var(--gl);font-weight:700;flex-shrink:0">→</span>What if the payment doesn't go through?</div>
+      </div>
+
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">The line behind him is already three people deep. A man in a grey gho shifts his weight impatiently.</p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">Still unsure, Karma opens the DK Bank App and taps <em style="color:var(--ink2)">"Scan to Pay with TER."</em> He scans the QR code on Deki's counter.</p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:20px">In less than a second, the app calculates everything. It retrieves the current gold-backed value and converts 180 BTN into <strong style="color:var(--ink)">1.28 TER</strong> — not an estimate, but the exact amount locked in at that moment.</p>
+
+      <!-- Confirmation screen mockup -->
+      <div style="background:var(--gd);border-radius:4px;padding:20px 24px;margin:24px 0">
+        <div style="font-size:.48rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl);margin-bottom:12px">DK Bank · TER-Pay · Confirmation</div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);padding:8px 0;font-size:.76rem"><span style="color:rgba(240,216,112,.5)">Paying to</span><span style="color:var(--gp);font-weight:500">Deki's Kitchen</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);padding:8px 0;font-size:.76rem"><span style="color:rgba(240,216,112,.5)">Amount to merchant</span><span style="color:var(--gp);font-weight:500">1.28 TER ≈ 180 BTN</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);padding:8px 0;font-size:.76rem"><span style="color:rgba(240,216,112,.5)">Your auto-save (10%)</span><span style="color:var(--gl);font-weight:600">+0.128 TER</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);padding:8px 0;font-size:.76rem"><span style="color:rgba(240,216,112,.5)">Total from your balance</span><span style="color:var(--gp);font-weight:600">1.408 TER</span></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:.76rem"><span style="color:rgba(240,216,112,.5)">Backed by</span><span style="color:var(--gl);font-weight:500">0.01408g gold</span></div>
+        </div>
+        <div style="margin-top:14px;background:rgba(212,165,32,.15);border:1px solid rgba(212,165,32,.4);padding:10px;text-align:center;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gl);border-radius:2px">Confirm Payment</div>
+      </div>
+
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">He enters his PIN. Done.</p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2">On Deki's tablet beside the till, a quiet confirmation appears: <em style="color:var(--ink2)">Payment received: 1.28 TER.</em> Below it, a smaller line: <em style="color:var(--ink2)">0.128 TER saved automatically.</em> She glances at it, gives Karma a small nod, and slides his receipt across the counter without breaking her rhythm.</p>
+    </div>
+
+    <!-- What Karma Doesn't See -->
+    <div style="margin-bottom:48px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+        <div style="width:20px;height:1px;background:var(--gl)"></div>
+        <span style="font-size:.5rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl)">What Karma Doesn't See</span>
+      </div>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:16px">What happened in that single second behind the screen:</p>
+      <div style="background:var(--bg2);border:1px solid var(--bdr);padding:20px 24px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:.5rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:4px">Behind the transaction</div>
+        <div style="display:flex;gap:12px;font-size:.78rem;color:var(--mut);line-height:1.7"><span style="color:var(--gl);font-weight:700;flex-shrink:0;margin-top:1px">→</span>The system retrieved the real-time gold price and converted 180 BTN to exactly 1.28 TER</div>
+        <div style="display:flex;gap:12px;font-size:.78rem;color:var(--mut);line-height:1.7"><span style="color:var(--gl);font-weight:700;flex-shrink:0;margin-top:1px">→</span>A signed transaction was broadcast across the Solana blockchain</div>
+        <div style="display:flex;gap:12px;font-size:.78rem;color:var(--mut);line-height:1.7"><span style="color:var(--gl);font-weight:700;flex-shrink:0;margin-top:1px">→</span>1.152 TER moved to Deki's merchant wallet; 0.128 TER swept automatically to her savings wallet</div>
+        <div style="display:flex;gap:12px;font-size:.78rem;color:var(--mut);line-height:1.7"><span style="color:var(--gl);font-weight:700;flex-shrink:0;margin-top:1px">→</span>Separately, 0.128 TER was swept from Karma's own balance into his Savings Pot — his 10% auto-save applied silently, the same way it applies to Deki on the receiving side</div>
+        <div style="display:flex;gap:12px;font-size:.78rem;color:var(--mut);line-height:1.7"><span style="color:var(--gl);font-weight:700;flex-shrink:0;margin-top:1px">→</span>A unique Transaction ID was embedded in the memo field — permanently traceable on the Solana blockchain ledger</div>
+        <div style="display:flex;gap:12px;font-size:.78rem;color:var(--mut);line-height:1.7"><span style="color:var(--gl);font-weight:700;flex-shrink:0;margin-top:1px">→</span>Both devices received confirmation. Karma's total balance remained hidden throughout</div>
+      </div>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-top:16px">But none of that complexity touched him.</p>
+    </div>
+
+    <!-- After -->
+    <div style="margin-bottom:48px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+        <div style="width:20px;height:1px;background:var(--gl)"></div>
+        <span style="font-size:.5rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl)">After</span>
+      </div>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">Karma steps back out into the GMC street. The afternoon workshop doesn't start for another hour. He walks slowly, hands in his pockets, watching the city.</p>
+
+      <div style="border-left:3px solid var(--gl);padding:14px 20px;background:rgba(180,130,10,.05);margin:22px 0;font-family:var(--fd);font-size:1rem;font-style:italic;color:var(--gd);line-height:1.65">
+        It strikes him that he just paid for lunch in gold. Not gold bars, not a certificate, not a promise — but a verified, traceable, blockchain-recorded transfer of value backed by gold, completed in under a second.
+      </div>
+
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">Quietly, without him having to think about it, 0.128 TER had moved into his Savings Pot at the same moment — the same mechanic that worked for Deki on the other side of the counter. <strong style="color:var(--ink)">Both of them saving, from the same single payment.</strong></p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px">He thinks about Tenzin back in Thimphu. His colleague had asked him last week whether TER was actually worth trying or just another thing people talked about but never used. Karma hadn't known what to say then.</p>
+      <p style="font-size:.83rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:20px">He knows now. When he gets back to the workshop venue, he takes out his phone and sends Tenzin a message:</p>
+
+      <div style="border-left:3px solid var(--gl);padding:14px 20px;background:rgba(180,130,10,.05);margin:22px 0;font-family:var(--fd);font-size:1rem;font-style:italic;color:var(--gd);line-height:1.65">
+        "Try TER. Today."
+      </div>
+    </div>
+
+    <!-- What This Story Shows -->
+    <div style="margin-bottom:48px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+        <div style="width:20px;height:1px;background:var(--gl)"></div>
+        <span style="font-size:.5rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gl)">What This Story Shows</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="background:var(--gc);border:1px solid var(--bdr);padding:20px;box-shadow:var(--shd)">
+          <div style="font-size:.62rem;font-weight:600;color:var(--gd);margin-bottom:6px">Trust through stability</div>
+          <p style="font-size:.75rem;font-weight:300;color:var(--mut);line-height:1.8;margin:0">When Karma sees the payment is backed by gold, it doesn't feel risky. It feels solid and dependable.</p>
+        </div>
+        <div style="background:var(--gc);border:1px solid var(--bdr);padding:20px;box-shadow:var(--shd)">
+          <div style="font-size:.62rem;font-weight:600;color:var(--gd);margin-bottom:6px">Dual auto-save — both sides</div>
+          <p style="font-size:.75rem;font-weight:300;color:var(--mut);line-height:1.8;margin:0">From one payment, both Karma and Deki save automatically. Neither has to think about it or take any extra steps.</p>
+        </div>
+        <div style="background:var(--gc);border:1px solid var(--bdr);padding:20px;box-shadow:var(--shd)">
+          <div style="font-size:.62rem;font-weight:600;color:var(--gd);margin-bottom:6px">Privacy by design</div>
+          <p style="font-size:.75rem;font-weight:300;color:var(--mut);line-height:1.8;margin:0">Only the payment amount is shown. Karma's full balance stays hidden — making the experience feel safe in public.</p>
+        </div>
+        <div style="background:var(--gc);border:1px solid var(--bdr);padding:20px;box-shadow:var(--shd)">
+          <div style="font-size:.62rem;font-weight:600;color:var(--gd);margin-bottom:6px">Trust spreads person to person</div>
+          <p style="font-size:.75rem;font-weight:300;color:var(--mut);line-height:1.8;margin:0">Deki learned from her cousin. Now Karma shares it with Tenzin. This is how trust grows — one person at a time.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to flow button -->
+    <div style="text-align:center;padding-top:8px">
+      <button onclick="showPage('txflow')" style="display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--gd);color:var(--gp);border:none;font-family:var(--fb);font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:none;transition:all .3s;clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px))" onmouseenter="this.style.background='var(--gm)'" onmouseleave="this.style.background='var(--gd)'">
+        ← Back to Transaction Flow
+      </button>
+    </div>
+
+  </div>
+
+  <div class="band"></div>
+  <footer>
+    <div class="ftl"><strong>TER གཏེར་ — From Doubt to Trust</strong><br>Dechen Wangmo · DK Bank TER · 2026</div>
+    <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · RMA Regulated</div>
+  </footer>
+</div>
+
 
 
 
