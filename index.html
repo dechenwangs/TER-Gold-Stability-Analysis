@@ -300,6 +300,7 @@ h1.ht em{font-style:italic;color:var(--gd)}
 .sc-l strong{display:block;font-size:.54rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);margin-bottom:2px}
 .sc-l p{font-size:.7rem;font-weight:300;color:var(--ink2);line-height:1.45}
 .wrap{max-width:1140px;margin:0 auto;padding:88px 72px}
+.research-section .wrap{padding-top:40px}
 .divider{height:1px;background:var(--bdr);margin:0 72px}
 .ey{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .eyl{width:20px;height:1px;background:var(--gl)}
@@ -309,6 +310,7 @@ h1.ht em{font-style:italic;color:var(--gd)}
 .srow{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-bottom:52px;align-items:end}
 .sdesc{font-size:.82rem;font-weight:300;color:var(--mut);line-height:1.95;align-self:end}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .65s var(--ez),transform .65s var(--ez)}
+.research-section .rv,.research-section .rv *{opacity:1!important;transform:none!important;transition:none!important}
 .rv.on{opacity:1;transform:translateY(0)}
 #about{background:var(--bg)}
 .ag{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
@@ -428,7 +430,7 @@ h1.ht em{font-style:italic;color:var(--gd)}
 .hb3 .hb-fill{background:linear-gradient(90deg,#8A2020,#B84040)}
 .hb4 .hb-fill{background:linear-gradient(90deg,#7A3A00,#C07020)}
 .hb5 .hb-fill{background:linear-gradient(90deg,#1A4A1A,#2E7030)}
-#market{background:var(--bg2)}
+
 .mg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
 .mc{background:var(--gc);border:1px solid var(--bdr);padding:24px;box-shadow:var(--shd);transition:all .3s;position:relative;overflow:hidden}
 .mc::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gl),transparent);transform:scaleX(0);transition:transform .4s var(--ez)}
@@ -454,7 +456,7 @@ h1.ht em{font-style:italic;color:var(--gd)}
 .cell:last-child{border-right:none}
 .crow.head .cell{font-size:.54rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gd)}
 .good{color:var(--grn);font-weight:500}.mid{color:var(--gd);font-weight:500}.bad{color:#A03030;font-weight:500}
-#conclusion{background:var(--bg)}
+#conclusion{background:var(--bg2)}
 .cq{font-family:var(--fd);font-size:clamp(1.1rem,1.8vw,1.55rem);font-weight:400;font-style:italic;color:var(--ink);line-height:1.68;max-width:760px;margin:0 auto 8px;text-align:center}
 .ca{font-size:.62rem;color:var(--mut);letter-spacing:.1em;display:block;text-align:center;margin-bottom:46px}
 .cst{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--bdr);margin-bottom:46px}
@@ -530,13 +532,11 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 .value-section h3 em{font-style:italic;color:var(--gd)}
 .value-section p{font-size:.82rem;font-weight:300;color:var(--mut);line-height:2;margin-bottom:14px}
 .value-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
-.vcard{background:var(--gc);border:1px solid var(--bdr);padding:24px 20px;position:relative;overflow:hidden;transition:all .3s;box-shadow:var(--shd)}
-.vcard::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gl),var(--gp));transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ez)}
-.vcard:hover::after{transform:scaleX(1)}
-.vcard:hover{transform:translateY(-3px)}
-.vcard-icon{font-size:1.4rem;margin-bottom:10px}
-.vcard h4{font-family:var(--fd);font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:6px}
-.vcard p{font-size:.73rem;font-weight:300;color:var(--mut);line-height:1.65;margin-bottom:0}
+.vcard{background:#fff;border:1px solid rgba(130,90,0,.18);padding:28px 24px;position:relative;overflow:hidden;transition:all .3s}
+.vcard:hover{border-color:var(--gl);transform:translateY(-2px)}
+.vcard-icon{font-size:1.3rem;margin-bottom:12px}
+.vcard h4{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:8px}
+.vcard p{font-size:.76rem;font-weight:300;color:var(--mut);line-height:1.75;margin-bottom:0}
 .value-future{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
 .vfuture-item{display:flex;gap:14px;align-items:flex-start;background:var(--gc);border:1px solid var(--bdr);padding:18px 16px;box-shadow:var(--shd);transition:border-color .3s}
 .vfuture-item:hover{border-color:rgba(180,130,10,.42)}
@@ -596,14 +596,8 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
   </div>
   <ul class="nlinks">
     <li><button class="nav-page-btn on" data-page="intro">Internship</button></li>
-    <li><button class="nav-page-btn" data-page="research">Home</button></li>
-    <li><button class="nav-page-btn" data-page="about">About</button></li>
-    <li><button class="nav-page-btn" data-page="ter">TER Token</button></li>
-    <li><button class="nav-page-btn" data-page="survey">Survey</button></li>
-    <li><button class="nav-page-btn" data-page="market">Market</button></li>
-    <li><button class="nav-page-btn" data-page="conclusion">Conclusion</button></li>
-    <li><button class="nav-page-btn" data-page="value">How This Project Creates Value</button></li>
-    <li><button class="nav-page-btn" data-page="sources">Sources</button></li>
+    <li><button class="nav-page-btn" data-page="home-ter">Home &amp; TER Token</button></li>
+    <li><button class="nav-page-btn" data-page="research">Research</button></li>
     <li><button class="nav-page-btn" data-page="prototype">Prototype</button></li>
     <li><button class="nav-page-btn" data-page="txflow">Transaction Flow</button></li>
     <li><button class="nav-page-btn" data-page="story">User Story</button></li>
@@ -708,7 +702,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
           View Research
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="2" y1="7" x2="12" y2="7" stroke="white" stroke-width="1.5"/><polyline points="8,3 12,7 8,11" stroke="white" stroke-width="1.5" fill="none"/></svg>
         </button>
-        <button class="btn-o nav-page-btn" data-page="about" style="border:1px solid rgba(212,165,32,.4);color:var(--gp)">About Project</button>
+        <button class="btn-o nav-page-btn" data-page="home-ter" style="border:1px solid rgba(212,165,32,.4);color:var(--gp)">About Project</button>
       </div>
     </div>
 
@@ -798,9 +792,9 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
         </div>
       </div>
       <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap">
-        <button class="nav-page-btn" data-page="survey" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📊 View Survey Findings</button>
-        <button class="nav-page-btn" data-page="market" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📈 Market Analysis</button>
-        <button class="nav-page-btn" data-page="conclusion" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">✅ Conclusion</button>
+        <button class="nav-page-btn" data-page="research" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📊 View Survey Findings</button>
+        <button class="nav-page-btn" data-page="research" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📈 Market Analysis</button>
+        <button class="nav-page-btn" data-page="research" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">✅ Conclusion</button>
       </div>
     </div>
   </div>
@@ -900,7 +894,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 <!-- ══════════════════════════════════════════════
      PAGE: HOME / RESEARCH OVERVIEW
 ══════════════════════════════════════════════ -->
-<div id="page-research" class="page">
+<div id="page-home-ter" class="page">
   <div class="band"></div>
   <div id="home">
     <div class="hero-strip">
@@ -922,9 +916,9 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
         <p class="hero-sub">Where Bhutanese tradition meets the digital economy</p>
         <p class="hero-desc">A comprehensive analysis of TER — the world's first sovereign gold-backed digital token, launched December 17, 2025 by Gelephu Mindfulness City on Solana. Examining market stability, investor trust, and adoption barriers in Bhutan's emerging digital financial ecosystem.</p>
         <div class="hero-btns">
-          <button class="btn-g nav-page-btn" data-page="survey">Explore Findings</button>
-          <button class="btn-o nav-page-btn" data-page="ter">About TER Token</button>
-          <button class="btn-o nav-page-btn" data-page="sources">View Sources</button>
+          <button class="btn-g nav-page-btn" data-page="research">Explore Research</button>
+          <button class="btn-o nav-page-btn" data-page="prototype">View Prototype</button>
+          <button class="btn-o nav-page-btn" data-page="story">User Story</button>
         </div>
       </div>
       <div class="hero-stats">
@@ -936,19 +930,64 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     </div>
 
   </div>
+  <!-- TER TOKEN SECTION (embedded in Home & TER) -->
+  <div id="ter-embedded" style="background:var(--bg)">
+    <div class="band"></div>
+    <div class="wrap">
+    <div class="srow">
+      <div><div class="ey"><div class="eyl"></div><span>The TER Token</span></div><h2 class="sh">World's First Sovereign<br><em>Gold-Backed Digital Token</em></h2></div>
+      <p class="sdesc">Launched Dec 17, 2025 on Solana by GMC. Each TER = 0.01g of 99.99% pure gold. Custodied by DK Bank, regulated by the Royal Monetary Authority. Tokenization by Matrixdock.</p>
+    </div>
+    <div class="rv" style="display:flex;justify-content:center;margin-bottom:32px">
+      <div style="position:relative;width:120px;height:120px">
+        <img src="TERCoinSymbol.png" alt="TER gold coin dragon symbol" style="width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 8px 32px rgba(180,130,10,.45))"/>
+      </div>
+    </div>
+    <div class="tcg rv">
+      <div class="tc"><div class="tc-ic">⛓</div><h3>Built on Solana</h3><p>Chosen for speed, ultra-low transaction costs, and minimal environmental footprint — aligned with Bhutan's clean hydropower commitment.</p><span class="tc-fact">Solana Network</span></div>
+      <div class="tc"><div class="tc-ic">🏦</div><h3>DK Bank Custody</h3><p>DK Bank — Bhutan's first digital bank, regulated by the Royal Monetary Authority — is the exclusive distributor and custodian.</p><span class="tc-fact">RMA Regulated</span></div>
+      <div class="tc"><div class="tc-ic">🥇</div><h3>Physical Gold Backing</h3><p>Every TER token backed by 0.01g of 99.99% pure physical gold in secure vaults worldwide. Matrixdock handles tokenization.</p><span class="tc-fact">0.01g / Token</span></div>
+      <div class="tc"><div class="tc-ic">🌏</div><h3>Global Accessibility</h3><p>Bhutan's digital nomad visa requires a fully refundable $10,000 TER deposit — directly bootstrapping global adoption.</p><span class="tc-fact">7,848,806 Circulating</span></div>
+    </div>
+    </div>
+  </div>
+
+  <!-- SOURCES (embedded in Home & TER) -->
+  <div id="sources-embedded" style="background:var(--bg2)">
+    <div class="band"></div>
+    <div class="wrap">
+    <div class="srow">
+      <div><div class="ey"><div class="eyl"></div><span>References &amp; Sources</span></div><h2 class="sh">Where the<br><em>Information Comes From</em></h2></div>
+      <p class="sdesc">Every claim in this website is sourced from official publications or reputable news outlets. Click any link to verify the original source directly.</p>
+    </div>
+    <div class="srcg rv">
+      <div class="srcc"><div class="srcc-cat">Official · TER</div><div class="srcc-t">GMC — TER Launch Announcement</div><div class="srcc-d">Official GMC press release: TER, DK Bank custody, Solana, Matrixdock partnership details.</div><a href="https://www.analyticsinsight.net/press-release/bhutan-digitizes-gold-with-launch-of-sovereign-token-ter" target="_blank" class="srcc-l">↗ GMC Press Release (via Analytics Insight)</a></div>
+      <div class="srcc"><div class="srcc-cat">Official · TER Website</div><div class="srcc-t">TER Official Website — ter.bt</div><div class="srcc-d">The official TER token website — gold backing structure, how to purchase, and token details.</div><a href="https://ter.bt" target="_blank" class="srcc-l">↗ ter.bt</a></div>
+      <div class="srcc"><div class="srcc-cat">Official · GMC</div><div class="srcc-t">Gelephu Mindfulness City — Official Website</div><div class="srcc-d">GMC's vision, eight priority industries including Finance &amp; Digital Assets, gallery and news.</div><a href="https://gmc.bt" target="_blank" class="srcc-l">↗ gmc.bt</a></div>
+      <div class="srcc"><div class="srcc-cat">News · TER on Solana</div><div class="srcc-t">CoinDesk — Bhutan Debuts TER Gold-Backed Token</div><div class="srcc-d">Coverage of TER's Solana launch, DK Bank custody role, Matrixdock as tokenization partner.</div><a href="https://www.coindesk.com/business/2025/12/10/bhutan-debuts-ter-gold-backed-token-on-solana" target="_blank" class="srcc-l">↗ CoinDesk — TER Launch</a></div>
+      <div class="srcc"><div class="srcc-cat">News · Bitcoin Pledge</div><div class="srcc-t">CoinDesk — Bhutan Pledges 10,000 BTC for GMC</div><div class="srcc-d">King Jigme Khesar commits up to 10,000 Bitcoin (~$1B) to fund GMC development, Dec 17, 2025.</div><a href="https://www.coindesk.com/policy/2025/12/17/bhutan-commits-up-to-10-000-bitcoin-to-back-new-mindfulness-based-economic-hub" target="_blank" class="srcc-l">↗ CoinDesk — BTC Pledge</a></div>
+      <div class="srcc"><div class="srcc-cat">News · Nomad Visa</div><div class="srcc-t">CryptoTimes — Bhutan's TER-Backed Nomad Visa</div><div class="srcc-d">Bhutan's nomad visa requiring a $10,000 TER deposit — launched February 2026.</div><a href="https://www.cryptotimes.io/2026/02/24/bhutans-bold-frontier-launches-gold-stablecoin-backed-nomad-visa/" target="_blank" class="srcc-l">↗ CryptoTimes</a></div>
+      <div class="srcc"><div class="srcc-cat">Blockchain · Solana</div><div class="srcc-t">Solana Official Website</div><div class="srcc-d">Why TER chose Solana — speed, low fees, minimal environmental impact, enterprise-grade infrastructure.</div><a href="https://solana.com" target="_blank" class="srcc-l">↗ solana.com</a></div>
+      <div class="srcc"><div class="srcc-cat">Market Data · Gold</div><div class="srcc-t">Investing.com — Historical Gold Price Data</div><div class="srcc-d">Five years of gold price data (2020–2025) used to calculate ~12% annualised volatility figure.</div><a href="https://www.investing.com/commodities/gold-historical-data" target="_blank" class="srcc-l">↗ Investing.com — Gold Data</a></div>
+      <div class="srcc"><div class="srcc-cat">Market Analysis · Gold</div><div class="srcc-t">World Gold Council</div><div class="srcc-d">Global authority on gold — volatility benchmarks, safe-haven role, and inflation hedge properties.</div><a href="https://www.gold.org" target="_blank" class="srcc-l">↗ gold.org</a></div>
+      <div class="srcc"><div class="srcc-cat">Market Data · Crypto</div><div class="srcc-t">The Block — Bitcoin &amp; Ethereum Historical Data</div><div class="srcc-d">Crypto price data used for Bitcoin (~72%) and Ethereum (~82%) annualised volatility figures.</div><a href="https://www.theblock.co" target="_blank" class="srcc-l">↗ theblock.co</a></div>
+      <div class="srcc"><div class="srcc-cat">Architecture</div><div class="srcc-t">BIG (Bjarke Ingels Group) — GMC Masterplan</div><div class="srcc-d">Official GMC architectural masterplan — Bhutanese cultural design and sustainable infrastructure.</div><a href="https://big.dk/projects/gelephu-mindfulness-city-16791" target="_blank" class="srcc-l">↗ big.dk — GMC Masterplan</a></div>
+      <div class="srcc"><div class="srcc-cat">Encyclopedia</div><div class="srcc-t">Wikipedia — Gelephu Mindfulness City</div><div class="srcc-d">Comprehensive overview of GMC's establishment, Bitcoin reserves, TER, and digital milestones.</div><a href="https://en.wikipedia.org/wiki/Gelephu_Mindfulness_City" target="_blank" class="srcc-l">↗ Wikipedia — GMC</a></div>
+    </div>
+    </div>
+  </div>
+
   <footer>
-    <div class="ftl"><strong>TER གཏེརི — Gold Stability Analysis</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Internship Project · 2026</div>
+    <div class="ftl"><strong>TER གཏེརི — Home &amp; Token Overview</strong></div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
   </footer>
 </div>
 
-<!-- ══════════════════════════════════════════════
-     PAGE: ABOUT
-══════════════════════════════════════════════ -->
-<div id="page-about" class="page">
+<!-- (pages below are kept for content but removed from nav) -->
+<div id="page-about" class="page" style="display:none!important">
   <div class="band"></div>
   <div id="about"><div class="wrap">
-    <div class="srow rv">
+    <div class="srow">
       <div><div class="ey"><div class="eyl"></div><span>About the Internship Project</span></div><h2 class="sh">Purpose, Background<br>&amp; <em>Objectives</em></h2></div>
       <p class="sdesc">Evaluating TER's stability and trustworthiness through five years of market data (2020–2025) and an original investor survey — focused on Bhutan's emerging digital financial ecosystem.</p>
     </div>
@@ -985,7 +1024,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     </div>
   </div></div>
   <footer>
-    <div class="ftl"><strong>TER གཏེརི — About the Internship Project</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Internship Project · 2026</div>
+    <div class="ftl"><strong>TER གཏེརི — About the Internship Project</strong></div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
   </footer>
 </div>
@@ -993,10 +1032,10 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 <!-- ══════════════════════════════════════════════
      PAGE: TER TOKEN
 ══════════════════════════════════════════════ -->
-<div id="page-ter" class="page">
+<div id="page-ter" class="page" style="display:none!important">
   <div class="band"></div>
   <div id="ter"><div class="wrap">
-    <div class="srow rv">
+    <div class="srow">
       <div><div class="ey"><div class="eyl"></div><span>The TER Token</span></div><h2 class="sh">World's First Sovereign<br><em>Gold-Backed Digital Token</em></h2></div>
       <p class="sdesc">Launched Dec 17, 2025 on Solana by GMC. Each TER = 0.01g of 99.99% pure gold. Custodied by DK Bank, regulated by the Royal Monetary Authority. Tokenization by Matrixdock.</p>
     </div>
@@ -1047,7 +1086,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
   </div>
   <div class="band"></div>
   <footer>
-    <div class="ftl"><strong>TER གཏེརི — Token Overview</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Internship Project · 2026</div>
+    <div class="ftl"><strong>TER གཏེརི — Token Overview</strong></div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
   </footer>
 </div>
@@ -1055,10 +1094,18 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 <!-- ══════════════════════════════════════════════
      PAGE: SURVEY
 ══════════════════════════════════════════════ -->
-<div id="page-survey" class="page">
-  <div class="band"></div>
+<div id="page-research" class="page">
+  <!-- Research main tabs -->
+  <div id="research-main-tabs" style="position:sticky;top:60px;z-index:700;background:#1C0F00;border-bottom:none;display:flex;gap:0;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none">
+    <button style="flex-shrink:0;padding:15px 26px;font-family:var(--fb);font-size:.58rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:none;border:none;border-bottom:3px solid var(--gl);cursor:none;white-space:nowrap" class="r-tab-btn active" onclick="showResearchSection('survey-section', this)">Survey Findings</button>
+    <button style="flex-shrink:0;padding:15px 26px;font-family:var(--fb);font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);background:none;border:none;border-bottom:3px solid transparent;cursor:none;white-space:nowrap" class="r-tab-btn" onclick="showResearchSection('market-section', this)">Market Analysis</button>
+    <button style="flex-shrink:0;padding:15px 26px;font-family:var(--fb);font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);background:none;border:none;border-bottom:3px solid transparent;cursor:none;white-space:nowrap" class="r-tab-btn" onclick="showResearchSection('conclusion-section', this)">Conclusion</button>
+    <button style="flex-shrink:0;padding:15px 26px;font-family:var(--fb);font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);background:none;border:none;border-bottom:3px solid transparent;cursor:none;white-space:nowrap" class="r-tab-btn" onclick="showResearchSection('value-section', this)">Value Created</button>
+  </div>
+  <!-- Survey section -->
+  <div id="survey-section" class="research-section" style="display:block">
   <div id="survey"><div class="wrap">
-    <div class="srow rv">
+    <div class="srow">
       <div><div class="ey"><div class="eyl"></div><span>Survey Results</span></div><h2 class="sh">Awareness, Trust &amp;<br><em>Investment Behaviour</em></h2></div>
       <p class="sdesc">Original primary survey data from TER investors and potential users — covering awareness, trust, financial engagement, and the real reasons people hesitate to invest.</p>
     </div>
@@ -1225,24 +1272,20 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
       </div>
     </div>
   </div></div>
-  <footer>
-    <div class="ftl"><strong>TER གཏེརི — Survey Analysis</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Internship Project · 2026</div>
-    <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
-  </footer>
-</div>
 
 <!-- ══════════════════════════════════════════════
      PAGE: MARKET
 ══════════════════════════════════════════════ -->
-<div id="page-market" class="page">
-  <div class="band"></div>
-  <div id="market"><div class="wrap">
-    <div class="srow rv">
-      <div><div class="ey"><div class="eyl"></div><span>Market Stability Analysis</span></div><h2 class="sh">Stability, Volatility<br>&amp; <em>Asset Behaviour</em></h2></div>
-      <p class="sdesc">A time-series comparison of Gold, Bitcoin, and Ethereum prices from 2020 to 2025. Since TER is fully backed by physical gold (Source: <a href="https://ter.bt" target="_blank">ter.bt</a>), gold's historical volatility serves as the closest available benchmark for TER's projected price behaviour.</p>
+  </div><!-- end survey-section -->
+  <!-- Market section -->
+  <div id="market-section" class="research-section" style="display:none">
+  <div id="market" style="background:var(--bg2)"><div class="wrap" style="padding-top:52px;padding-bottom:0">
+    <div class="srow" style="margin-bottom:36px">
+      <div><div class="ey"><div class="eyl"></div><span>Market Stability Analysis</span></div><h2 class="sh" style="font-size:clamp(2rem,3.5vw,3.2rem)">Stability, Volatility<br><em>&amp; Asset Behaviour</em></h2></div>
+      <p class="sdesc" style="font-size:.84rem;line-height:1.9">A time-series comparison of Gold, Bitcoin, and Ethereum prices from 2020 to 2025. Since TER is fully backed by physical gold (Source: <a href="https://ter.bt" target="_blank">ter.bt</a>), gold's historical volatility serves as the closest available benchmark for TER's projected price behaviour.</p>
     </div>
 
-    <div class="chart-card rv">
+    <div class="chart-card">
       <div class="chart-head">
         <div class="htag2">Chart 1 · Price Trend Comparison 2020–2025</div>
         <div class="htitle">Gold vs Bitcoin vs Ethereum — Normalised Price Movement</div>
@@ -1296,7 +1339,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
       </div>
     </div>
 
-    <div class="chart-card rv" style="margin-top:14px">
+    <div class="chart-card" style="margin-top:14px">
       <div class="chart-head">
         <div class="htag2">Chart 2 · Annual Absolute Volatility 2020–2025</div>
         <div class="htitle">Bitcoin vs Ethereum vs Gold — Volatility Comparison View</div>
@@ -1389,32 +1432,26 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 
 
   </div></div>
-  <div class="band"></div>
-  <footer>
-    <div class="ftl"><strong>TER གཏེརི — Market Analysis</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Internship Project · 2026</div>
-    <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
-  </footer>
 </div>
 
-<!-- ══════════════════════════════════════════════
-     PAGE: CONCLUSION
-══════════════════════════════════════════════ -->
-<div id="page-conclusion" class="page">
-  <div class="band"></div>
-  <div id="conclusion"><div class="wrap">
-    <div class="srow rv">
-      <div><div class="ey"><div class="eyl"></div><span>Conclusion</span></div><h2 class="sh">Key Insights &amp;<br><em>Implications</em></h2></div>
-      <p class="sdesc">TER's gold backing delivers real stability. The survey data shows distrust of digital assets is the biggest barrier — trust-building is as important as education.</p>
+  </div><!-- end market-section -->
+
+  <!-- Conclusion section -->
+  <div id="conclusion-section" class="research-section" style="display:none">
+  <div id="conclusion" style="background:var(--bg2)"><div class="wrap" style="padding-top:52px">
+    <div class="srow" style="margin-bottom:36px">
+      <div><div class="ey"><div class="eyl"></div><span>Conclusion</span></div><h2 class="sh" style="font-size:clamp(2rem,3.5vw,3.2rem)">Key Insights &amp;<br><em>Implications</em></h2></div>
+      <p class="sdesc" style="font-size:.84rem;line-height:1.9">TER's gold backing delivers real stability. The survey data shows distrust of digital assets is the biggest barrier — trust-building is as important as education.</p>
     </div>
     <div class="rv" style="text-align:center;margin-bottom:46px">
       <p class="cq">"Rooted in Bhutan's spirit of trust, integrity, and responsible finance, TER embodies the nation's commitment to inclusive, sustainable innovation — bridging the ancient treasure of gold with the digital economy of tomorrow."</p>
       <span class="ca">— GMC Official Statement · TER Launch, December 17, 2025 · Bhutan's 118th National Day</span>
     </div>
-    <div class="cst rv">
+    <div class="cst">
       <div class="css"><span class="csn">85%</span><span class="csl">moderate to complete trust<br>among surveyed investors</span></div>
       <div class="css"><span class="csn">7.8M</span><span class="csl">TER tokens in circulation<br>within months of launch</span></div>
     </div>
-    <div class="cb2 rv">
+    <div class="cb2">
       <div class="ct">
         <p>Market data shows gold's annualised volatility is dramatically lower than Bitcoin or Ethereum. Since TER is fully backed by physical gold (<a href="https://ter.bt" target="_blank">ter.bt</a>), it is projected to inherit this same low-volatility profile — though empirical TER data remains limited given its December 2025 launch. Cryptocurrencies outperform during expansion phases but suffer large corrections during downturns. <strong>Gold acts as a stabilising asset across market cycles</strong> — and TER is built to carry that same characteristic into the digital economy.</p>
         <p>The survey data reveals that <strong>66.4% of respondents do not yet invest in financial assets</strong> — a significant untapped audience if awareness grows. Meanwhile, <strong>78 respondents showed willingness to invest in gold</strong>, directly validating TER's gold-backed approach. Trust, perceived risk, and preference for traditional financial systems are the biggest adoption barriers.</p>
@@ -1428,31 +1465,27 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
       </div>
     </div>
   </div></div>
-  <footer>
-    <div class="ftl"><strong>TER གཏེརི — Conclusion &amp; Recommendations</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Internship Project · 2026</div>
-    <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
-  </footer>
 </div>
 
-<!-- ══════════════════════════════════════════════
-     PAGE: HOW TER CREATES VALUE
-══════════════════════════════════════════════ -->
-<div id="page-value" class="page">
-  <div class="band"></div>
+  </div><!-- end conclusion-section -->
 
-  <!-- Hero -->
-  <div class="value-hero rv">
-    <div class="ey"><div class="eyl"></div><span>Real-World Application</span></div>
-    <h2>How This Project <strong>Creates</strong><br><em>Value</em></h2>
-    <p style="font-family:var(--fd);font-size:clamp(.9rem,1.4vw,1.15rem);font-weight:400;font-style:italic;color:var(--gl);margin-bottom:6px;margin-top:-6px">How TER Creates Value</p>
-    <p>While this project focuses on analysing TER through historical data and investor perception, its significance extends beyond this internship project. The insights generated here contribute to how TER can be understood, trusted, and adopted within Bhutan's emerging digital financial ecosystem.</p>
+  <!-- Value section -->
+  <div id="value-section" class="research-section" style="display:none">
+  <!-- Value hero header -->
+  <div style="background:var(--gd);padding:60px 72px 52px;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(212,165,32,.04) 0,rgba(212,165,32,.04) 1px,transparent 1px,transparent 40px);pointer-events:none"></div>
+    <div style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px"><div style="width:20px;height:1px;background:var(--gl)"></div><span style="font-size:.52rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gl)">Real-World Application</span></div>
+      <h2 style="font-family:var(--fd);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:400;color:var(--gp);line-height:1.1;margin-bottom:10px">How This Project <strong style="font-weight:700">Creates</strong><br><em style="font-style:italic;color:var(--gl)">Value</em></h2>
+      <p style="font-family:var(--fd);font-size:clamp(.9rem,1.3vw,1.05rem);font-weight:400;font-style:italic;color:var(--gl);margin-bottom:12px">How TER Creates Value</p>
+      <p style="font-size:.82rem;font-weight:300;color:rgba(240,216,112,.65);line-height:1.9;max-width:580px">While this project focuses on analysing TER through historical data and investor perception, its significance extends beyond this internship project. The insights generated here contribute to how TER can be understood, trusted, and adopted within Bhutan's emerging digital financial ecosystem.</p>
+    </div>
   </div>
-
   <!-- Section 1: Who Benefits -->
-  <div class="value-section rv">
+  <div class="value-section" style="background:var(--bg2);padding-top:52px">
     <div class="value-section-label"><div class="vsl-line"></div><span>Who Benefits</span></div>
-    <p>This platform acts as a bridge between complex financial data and real-world decision-making. By translating analysis into clear and intuitive insights, it makes TER more accessible to different stakeholders.</p>
-    <div class="value-cards">
+    <p style="font-size:.84rem;line-height:1.9;max-width:900px">This platform acts as a bridge between complex financial data and real-world decision-making. By translating analysis into clear and intuitive insights, it makes TER more accessible to different stakeholders.</p>
+    <div class="value-cards" style="margin-top:28px">
       <div class="vcard rv">
         <div class="vcard-icon">📊</div>
         <h4>Investors</h4>
@@ -1473,7 +1506,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
   </div>
 
   <!-- Section 2: Future Potential -->
-  <div class="value-section rv">
+  <div class="value-section">
     <div class="value-section-label"><div class="vsl-line"></div><span>Future Potential</span></div>
     <h3>Beyond the <em>Analysis</em></h3>
     <p>As TER continues to develop, this project could evolve into practical tools that extend beyond this internship project:</p>
@@ -1502,43 +1535,15 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     <p class="km-main">"The value of TER is not only defined by its connection to gold, but by how clearly its stability and purpose are communicated."</p>
     <p class="km-sub">This project demonstrates that trust in digital finance is built not only through technology, but through understanding. By combining data, visualisation, and human perception, it helps bridge the gap between technical analysis and real-world adoption.</p>
   </div>
-
-  <footer>
-    <div class="ftl"><strong>TER གཏེརི — How TER Creates Value</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Internship Project · 2026</div>
-    <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
-  </footer>
 </div>
 
-<!-- ══════════════════════════════════════════════
-     PAGE: SOURCES
-══════════════════════════════════════════════ -->
-<div id="page-sources" class="page">
-  <div class="band"></div>
-  <div id="sources"><div class="wrap">
-    <div class="srow rv">
-      <div><div class="ey"><div class="eyl"></div><span>References &amp; Sources</span></div><h2 class="sh">Where the<br><em>Information Comes From</em></h2></div>
-      <p class="sdesc">Every claim in this website is sourced from official publications or reputable news outlets. Click any link to verify the original source directly.</p>
-    </div>
-    <div class="srcg rv">
-      <div class="srcc"><div class="srcc-cat">Official · TER</div><div class="srcc-t">GMC — TER Launch Announcement</div><div class="srcc-d">Official GMC press release: TER, DK Bank custody, Solana, Matrixdock partnership details.</div><a href="https://www.analyticsinsight.net/press-release/bhutan-digitizes-gold-with-launch-of-sovereign-token-ter" target="_blank" class="srcc-l">↗ GMC Press Release (via Analytics Insight)</a></div>
-      <div class="srcc"><div class="srcc-cat">Official · TER Website</div><div class="srcc-t">TER Official Website — ter.bt</div><div class="srcc-d">The official TER token website — gold backing structure, how to purchase, and token details.</div><a href="https://ter.bt" target="_blank" class="srcc-l">↗ ter.bt</a></div>
-      <div class="srcc"><div class="srcc-cat">Official · GMC</div><div class="srcc-t">Gelephu Mindfulness City — Official Website</div><div class="srcc-d">GMC's vision, eight priority industries including Finance &amp; Digital Assets, gallery and news.</div><a href="https://gmc.bt" target="_blank" class="srcc-l">↗ gmc.bt</a></div>
-      <div class="srcc"><div class="srcc-cat">News · TER on Solana</div><div class="srcc-t">CoinDesk — Bhutan Debuts TER Gold-Backed Token</div><div class="srcc-d">Coverage of TER's Solana launch, DK Bank custody role, Matrixdock as tokenization partner.</div><a href="https://www.coindesk.com/business/2025/12/10/bhutan-debuts-ter-gold-backed-token-on-solana" target="_blank" class="srcc-l">↗ CoinDesk — TER Launch</a></div>
-      <div class="srcc"><div class="srcc-cat">News · Bitcoin Pledge</div><div class="srcc-t">CoinDesk — Bhutan Pledges 10,000 BTC for GMC</div><div class="srcc-d">King Jigme Khesar commits up to 10,000 Bitcoin (~$1B) to fund GMC development, Dec 17, 2025.</div><a href="https://www.coindesk.com/policy/2025/12/17/bhutan-commits-up-to-10-000-bitcoin-to-back-new-mindfulness-based-economic-hub" target="_blank" class="srcc-l">↗ CoinDesk — BTC Pledge</a></div>
-      <div class="srcc"><div class="srcc-cat">News · Nomad Visa</div><div class="srcc-t">CryptoTimes — Bhutan's TER-Backed Nomad Visa</div><div class="srcc-d">Bhutan's nomad visa requiring a $10,000 TER deposit — launched February 2026.</div><a href="https://www.cryptotimes.io/2026/02/24/bhutans-bold-frontier-launches-gold-stablecoin-backed-nomad-visa/" target="_blank" class="srcc-l">↗ CryptoTimes</a></div>
-      <div class="srcc"><div class="srcc-cat">Blockchain · Solana</div><div class="srcc-t">Solana Official Website</div><div class="srcc-d">Why TER chose Solana — speed, low fees, minimal environmental impact, enterprise-grade infrastructure.</div><a href="https://solana.com" target="_blank" class="srcc-l">↗ solana.com</a></div>
-      <div class="srcc"><div class="srcc-cat">Market Data · Gold</div><div class="srcc-t">Investing.com — Historical Gold Price Data</div><div class="srcc-d">Five years of gold price data (2020–2025) used to calculate ~12% annualised volatility figure.</div><a href="https://www.investing.com/commodities/gold-historical-data" target="_blank" class="srcc-l">↗ Investing.com — Gold Data</a></div>
-      <div class="srcc"><div class="srcc-cat">Market Analysis · Gold</div><div class="srcc-t">World Gold Council</div><div class="srcc-d">Global authority on gold — volatility benchmarks, safe-haven role, and inflation hedge properties.</div><a href="https://www.gold.org" target="_blank" class="srcc-l">↗ gold.org</a></div>
-      <div class="srcc"><div class="srcc-cat">Market Data · Crypto</div><div class="srcc-t">The Block — Bitcoin &amp; Ethereum Historical Data</div><div class="srcc-d">Crypto price data used for Bitcoin (~72%) and Ethereum (~82%) annualised volatility figures.</div><a href="https://www.theblock.co" target="_blank" class="srcc-l">↗ theblock.co</a></div>
-      <div class="srcc"><div class="srcc-cat">Architecture</div><div class="srcc-t">BIG (Bjarke Ingels Group) — GMC Masterplan</div><div class="srcc-d">Official GMC architectural masterplan — Bhutanese cultural design and sustainable infrastructure.</div><a href="https://big.dk/projects/gelephu-mindfulness-city-16791" target="_blank" class="srcc-l">↗ big.dk — GMC Masterplan</a></div>
-      <div class="srcc"><div class="srcc-cat">Encyclopedia</div><div class="srcc-t">Wikipedia — Gelephu Mindfulness City</div><div class="srcc-d">Comprehensive overview of GMC's establishment, Bitcoin reserves, TER, and digital milestones.</div><a href="https://en.wikipedia.org/wiki/Gelephu_Mindfulness_City" target="_blank" class="srcc-l">↗ Wikipedia — GMC</a></div>
-    </div>
-  </div></div>
+  </div><!-- end value-section -->
+
   <footer>
-    <div class="ftl"><strong>TER གཏེརི — References &amp; Sources</strong><br>Dechen Wangmo · Digital Economy &amp; Digital Assets Internship Project · 2026</div>
+    <div class="ftl"><strong>TER གཏེརི — Research &amp; Analysis</strong></div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
   </footer>
-</div>
+</div><!-- end page-research -->
 
 <!-- ══════════════════════════════════════════════
      PAGE: PROTOTYPE
@@ -2141,7 +2146,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 
   <div class="band"></div>
   <footer>
-    <div class="ftl"><strong>TER གཏེར་ — Interface Prototype</strong><br>Dechen Wangmo · DK Bank TER · 2026</div>
+    <div class="ftl"><strong>TER གཏེར་ — Interface Prototype</strong></div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · RMA Regulated</div>
   </footer>
 </div>
@@ -2531,7 +2536,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 
     <div class="band"></div>
   <footer>
-    <div class="ftl"><strong>TER གཏེར་ — Prototype &amp; Transaction Flow</strong><br>Dechen Wangmo · DK Bank TER · 2026</div>
+    <div class="ftl"><strong>TER གཏེར་ — Prototype &amp; Transaction Flow</strong></div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · RMA Regulated</div>
   </footer>
 </div>
@@ -2715,7 +2720,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
 
   <div class="band"></div>
   <footer>
-    <div class="ftl"><strong>TER གཏེར་ — From Doubt to Trust</strong><br>Dechen Wangmo · DK Bank TER · 2026</div>
+    <div class="ftl"><strong>TER གཏེར་ — From Doubt to Trust</strong></div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · RMA Regulated</div>
   </footer>
 </div>
@@ -2748,6 +2753,11 @@ function showPage(pageId) {
   document.querySelectorAll('.nav-page-btn').forEach(btn => {
     btn.classList.toggle('on', btn.dataset.page === pageId);
   });
+  // If research page, default to survey section
+  if (pageId === 'research') {
+    const firstBtn = document.querySelector('#research-main-tabs .r-tab-btn');
+    showResearchSection('survey-section', firstBtn);
+  }
   // Trigger scroll reveal for the new page
   setTimeout(() => {
     document.querySelectorAll('#page-' + pageId + ' .rv').forEach((el, i) => {
@@ -2847,6 +2857,32 @@ setTimeout(() => {
     setTimeout(() => el.classList.add('on'), i * 55);
   });
 }, 100);
+
+// ── Research section switcher ──
+function showResearchSection(sectionId, btn) {
+  document.querySelectorAll('.research-section').forEach(s => s.style.display = 'none');
+  const panel = document.getElementById(sectionId);
+  if (panel) panel.style.display = 'block';
+  document.querySelectorAll('.r-tab-btn').forEach(b => {
+    b.style.color = 'rgba(255,255,255,.45)';
+    b.style.fontWeight = '500';
+    b.style.borderBottom = '3px solid transparent';
+  });
+  if (btn) {
+    btn.style.color = '#fff';
+    btn.style.fontWeight = '600';
+    btn.style.borderBottom = '3px solid var(--gl)';
+  }
+  // Instantly reveal all rv — no stagger, no delay
+  if (panel) {
+    panel.querySelectorAll('.rv').forEach(el => el.classList.add('on'));
+  }
+}
+
+// Pre-reveal all rv in hidden research sections so they show instantly on tab click
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.research-section .rv').forEach(el => el.classList.add('on'));
+});
 
 // ── Tableau sheet switcher ──
 function loadTableauSheet(sheet) {
