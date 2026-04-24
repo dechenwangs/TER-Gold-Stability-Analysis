@@ -792,9 +792,9 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
         </div>
       </div>
       <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap">
-        <button class="nav-page-btn" data-page="research" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📊 View Survey Findings</button>
-        <button class="nav-page-btn" data-page="research" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📈 Market Analysis</button>
-        <button class="nav-page-btn" data-page="research" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">✅ Conclusion</button>
+        <button class="nav-page-btn" data-page="research" data-section="survey-section" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📊 View Survey Findings</button>
+        <button class="nav-page-btn" data-page="research" data-section="market-section" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">📈 Market Analysis</button>
+        <button class="nav-page-btn" data-page="research" data-section="conclusion-section" style="padding:9px 20px;background:var(--bg2);border:1px solid var(--bdr);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);cursor:none;font-family:var(--fb);transition:all .2s">✅ Conclusion</button>
       </div>
     </div>
   </div>
@@ -1272,6 +1272,11 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
       </div>
     </div>
   </div></div>
+  <footer>
+    <div class="ftl"><strong>TER གཏེརི — Survey Analysis</strong></div>
+    <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>DK Bank · Solana · Matrixdock · Royal Monetary Authority</div>
+  </footer>
+</div>
 
 <!-- ══════════════════════════════════════════════
      PAGE: MARKET
@@ -2725,9 +2730,6 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
   </footer>
 </div>
 
-
-
-
 <script>
 // ── Custom cursor ──
 const cur=document.getElementById("cur"),cur2=document.getElementById("cur2");
@@ -2740,7 +2742,7 @@ document.querySelectorAll("a,button").forEach(el=>{
 });
 
 // ── Page navigation ──
-function showPage(pageId) {
+function showPage(pageId, targetSection) {
   // Hide all pages
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   // Show target page
@@ -2753,10 +2755,11 @@ function showPage(pageId) {
   document.querySelectorAll('.nav-page-btn').forEach(btn => {
     btn.classList.toggle('on', btn.dataset.page === pageId);
   });
-  // If research page, default to survey section
+  // If research page, go to specified section or default to survey
   if (pageId === 'research') {
-    const firstBtn = document.querySelector('#research-main-tabs .r-tab-btn');
-    showResearchSection('survey-section', firstBtn);
+    const sectionId = targetSection || 'survey-section';
+    const sectionBtn = document.querySelector('#research-main-tabs .r-tab-btn[onclick*="' + sectionId + '"]');
+    showResearchSection(sectionId, sectionBtn);
   }
   // Trigger scroll reveal for the new page
   setTimeout(() => {
@@ -2767,7 +2770,7 @@ function showPage(pageId) {
 }
 
 document.querySelectorAll('.nav-page-btn').forEach(btn => {
-  btn.addEventListener('click', () => showPage(btn.dataset.page));
+  btn.addEventListener('click', () => showPage(btn.dataset.page, btn.dataset.section));
 });
 
 // ── Scroll reveal ──
