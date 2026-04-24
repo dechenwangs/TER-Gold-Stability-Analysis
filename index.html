@@ -34,6 +34,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:60px;display:flex;ali
 .nlinks a::after,.nlinks button::after{content:"";position:absolute;bottom:2px;left:10px;right:10px;height:1px;background:var(--gl);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ez)}
 .nlinks a:hover,.nlinks a.on,.nlinks button:hover,.nlinks button.on{color:var(--gd)}
 .nlinks a:hover::after,.nlinks a.on::after,.nlinks button:hover::after,.nlinks button.on::after{transform:scaleX(1)}
+.nav-proto-btn{display:inline-flex!important;align-items:center;gap:5px;padding:5px 10px 5px 8px!important;background:linear-gradient(135deg,rgba(212,165,32,.12),rgba(212,165,32,.06))!important;border:1px solid rgba(212,165,32,.3)!important;border-radius:3px!important;color:var(--gl)!important;position:relative;overflow:hidden;animation:proto-glow-pulse 2.8s ease-in-out infinite}
+.nav-proto-btn::after{display:none!important}
+.nav-proto-btn::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(212,165,32,.15),transparent);transform:translateX(-100%);animation:proto-shimmer 2.8s ease-in-out infinite}
+.nav-proto-btn:hover{background:linear-gradient(135deg,rgba(212,165,32,.22),rgba(212,165,32,.12))!important;border-color:rgba(212,165,32,.7)!important;box-shadow:0 0 14px rgba(212,165,32,.25)!important;color:var(--gp)!important}
+.nav-proto-btn.on{background:linear-gradient(135deg,rgba(212,165,32,.28),rgba(212,165,32,.14))!important;border-color:var(--gl)!important;color:var(--gp)!important}
+.proto-nav-dot{width:5px;height:5px;background:#4ADE80;border-radius:50%;flex-shrink:0;animation:proto-dot-blink 1.6s ease-in-out infinite;box-shadow:0 0 5px rgba(74,222,128,.6)}
+.proto-nav-label{font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.proto-nav-tag{font-size:.44rem;font-weight:700;letter-spacing:.18em;color:var(--gl);background:rgba(212,165,32,.18);border:1px solid rgba(212,165,32,.35);padding:1px 5px;border-radius:2px;opacity:.85}
+@keyframes proto-glow-pulse{0%,100%{box-shadow:0 0 6px rgba(212,165,32,.15)}50%{box-shadow:0 0 14px rgba(212,165,32,.35),0 0 24px rgba(212,165,32,.1)}}
+@keyframes proto-shimmer{0%{transform:translateX(-100%)}60%,100%{transform:translateX(200%)}}
+@keyframes proto-dot-blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 
 /* ─── PAGE SYSTEM ─── */
 .page{display:none;min-height:100vh;padding-top:65px}
@@ -52,6 +63,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:60px;display:flex;ali
 .intro-left h1 em{font-style:italic;color:var(--gl)}
 .intro-tagline{font-size:.88rem;font-weight:300;color:rgba(240,216,112,.7);line-height:1.9;max-width:480px}
 .intro-meta{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:10px}
+.intro-meta .im-item:nth-child(2){grid-column:span 1}
+.intro-meta .im-item:nth-child(5),.intro-meta .im-item:nth-child(6){grid-column:span 1}
 .im-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:14px 16px}
 .im-label{font-size:.52rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);margin-bottom:4px}
 .im-val{font-family:var(--fd);font-size:.94rem;font-weight:600;color:var(--gp);line-height:1.3}
@@ -598,7 +611,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     <li><button class="nav-page-btn on" data-page="intro">Internship</button></li>
     <li><button class="nav-page-btn" data-page="home-ter">Home &amp; TER Token</button></li>
     <li><button class="nav-page-btn" data-page="research">Research</button></li>
-    <li><button class="nav-page-btn" data-page="prototype">Prototype</button></li>
+    <li><button class="nav-page-btn nav-proto-btn" data-page="prototype"><span class="proto-nav-dot"></span><span class="proto-nav-label">TER Pay</span></button></li>
     <li><button class="nav-page-btn" data-page="txflow">Transaction Flow</button></li>
     <li><button class="nav-page-btn" data-page="story">User Story</button></li>
   </ul>
@@ -677,24 +690,32 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
         <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" stroke="#D4A520" stroke-width="1" fill="none"/><circle cx="5" cy="5" r="1.5" fill="#D4A520"/></svg>
         <span>Intern Report · 2026</span>
       </div>
-      <h1>Bhutan Data Scientists<br><em>Pvt. Ltd.</em><strong>Internship 2026</strong></h1>
-      <p class="intro-tagline">This internship project was carried out as part of my internship at Bhutan Data Scientists Pvt. Ltd. — exploring the intersection of data analytics, digital assets, and Bhutan's emerging financial ecosystem through the lens of TER, the world's first sovereign gold-backed digital token.</p>
+      <h1><em>Internship</em><strong> 2026</strong></h1>
+      <p class="intro-tagline">I am Dechen Wangmo, a third-year student pursuing a Bachelor of Business Intelligence and Information Systems at Gedu College of Business Studies. This internship project was completed at Bhutan Data Scientists Pvt. Ltd. — applying data analytics and information systems skills to explore TER, the world's first sovereign gold-backed digital token.</p>
       <div class="intro-meta">
         <div class="im-item">
-          <div class="im-label">Organisation</div>
+          <div class="im-label">Name</div>
+          <div class="im-val">Dechen Wangmo</div>
+        </div>
+        <div class="im-item">
+          <div class="im-label">Programme</div>
+          <div class="im-val">B. Business Intelligence &amp; Information Systems</div>
+        </div>
+        <div class="im-item">
+          <div class="im-label">Institution</div>
+          <div class="im-val">Gedu College of Business Studies</div>
+        </div>
+        <div class="im-item">
+          <div class="im-label">Year of Study</div>
+          <div class="im-val">3rd Year</div>
+        </div>
+        <div class="im-item">
+          <div class="im-label">Host Organisation</div>
           <div class="im-val"><a href="https://datascientists.bt/" target="_blank" style="color:var(--gp);text-decoration:none;border-bottom:1px solid rgba(212,165,32,.4)">Bhutan Data Scientists Pvt. Ltd.</a></div>
         </div>
         <div class="im-item">
-          <div class="im-label">Role</div>
-          <div class="im-val">Data Practitioner</div>
-        </div>
-        <div class="im-item">
-          <div class="im-label">Period</div>
-          <div class="im-val">2026</div>
-        </div>
-        <div class="im-item">
-          <div class="im-label">Country</div>
-          <div class="im-val">Kingdom of Bhutan</div>
+          <div class="im-label">Internship Role</div>
+          <div class="im-val">Data Practitioner · 2026</div>
         </div>
       </div>
       <div class="intro-cta">
@@ -772,7 +793,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
             </div>
             <div class="proto-box">
               <div class="proto-box-left">
-                <div class="proto-eyebrow"><div class="proto-eyebrow-line"></div><span>Live Prototype · TER Pay</span></div>
+                <div class="proto-eyebrow"><div class="proto-eyebrow-line"></div><span>Prototype · TER Pay</span></div>
                 <h4>Experience TER Pay <em>in action</em></h4>
                 <p>See every screen of the payment flow — from the home dashboard to QR scan to confirmation — and feel how gold-backed currency works in everyday life.</p>
               </div>
@@ -806,7 +827,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
         <span style="font-size:.52rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gl)">Why This Internship Project</span>
       </div>
       <h2 style="font-family:var(--fd);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:400;color:var(--ink);line-height:1.18;margin-bottom:32px;">
-        A Story That Begins <em style="font-style:italic;color:var(--gd)">with a Personal Investment</em>
+        My Story — <em style="font-style:italic;color:var(--gd)">From Curiosity to Research</em>
       </h2>
 
       <!-- Story chapters -->
@@ -884,7 +905,7 @@ footer{background:var(--gd);padding:28px 72px;display:flex;justify-content:space
     </div>
   </div>
   <footer>
-    <div class="ftl"><strong>Bhutan Data Scientists Pvt. Ltd.</strong><br>Data Practitioner · TER Internship Project · 2026</div>
+    <div class="ftl"><strong>Dechen Wangmo</strong><br>3rd Year · BBIS · Gedu College of Business Studies · Data Practitioner Internship 2026</div>
     <div class="ftr"><span>Kingdom of Bhutan · Gelephu Mindfulness City</span>TER གཏེར་ · Gold-Backed Digital Asset Analysis</div>
   </footer>
 </div>
